@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FarmerRoutingModule } from '/farmer-routing.module';
+import { FarmerRoutingModule } from './farmer-routing.module';
 import { FarmerLoginComponent } from './component/farmer-login/farmer-login.component';
 import { FarmerRegisterComponent } from './component/farmer-register/farmer-register.component';
 import { AadhaarPageComponent } from './component/aadhaar-page/aadhaar-page.component';

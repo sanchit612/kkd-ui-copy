@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomerRoutingModule } from '/customer-routing.module';
+import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerLoginComponent } from './component/customer-login/customer-login.component';
 import { CustomerRegisterComponent } from './component/customer-register/customer-register.component';
 import { CustomerHeaderComponent } from './component/customer-header/customer-header.component';
