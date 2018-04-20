@@ -1,5 +1,5 @@
 <header>
-   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark topnav">
      <a class="navbar-brand" href="#">
    <img src="../../../assets/Header/kkd_logo.png" width="60" height="60" alt="">
    </a>
@@ -17,7 +17,7 @@
        </ul>
        <form class="form-inline mt-2 mt-md-0" (ngSubmit)='submitSearch($event)'>
          <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)='sendToParent()'>Search</button>
        </form>
      </div>
    </nav>

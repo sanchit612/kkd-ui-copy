@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BodyComponent } from './shared/body/body.component';
-import { SearchResultComponent } from './shared/search-result/search-result.component';
+import { SearchResultComponent } from './home-page/search-result/search-result.component';
 import { HelpComponent } from './shared/help/help.component';
 import { SupportComponent } from './shared/support/support.component';
 import { AboutUsComponent } from './shared/about-us/about-us.component';

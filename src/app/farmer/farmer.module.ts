@@ -13,11 +13,15 @@ import { FarmerPreviousOrderComponent } from './component/farmer-dashboard/farme
 import { FarmerViewProductComponent } from './component/farmer-dashboard/farmer-view-product/farmer-view-product.component';
 import { FarmerComponent } from './farmer.component';
 
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     FarmerRoutingModule,
   ],
+
   declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent],
 })
 export class FarmerModule { }

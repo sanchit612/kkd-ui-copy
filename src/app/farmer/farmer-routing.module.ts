@@ -8,6 +8,7 @@ import { FarmerBankDetailsComponent } from './component/farmer-dashboard/farmer-
 import { FarmerCurrentOrderComponent} from './component/farmer-dashboard/farmer-current-order/farmer-current-order.component';
 import { FarmerPreviousOrderComponent } from './component/farmer-dashboard/farmer-previous-order/farmer-previous-order.component';
 import { FarmerViewProductComponent} from './component/farmer-dashboard/farmer-view-product/farmer-view-product.component';
+import { FarmerMyAccountComponent } from './component/farmer-my-account/farmer-my-account.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path:'farmer/currentOrder',component:FarmerCurrentOrderComponent },
     { path:'farmer/previousOrder',component:FarmerPreviousOrderComponent },
     { path:'farmer/viewProduct',component:FarmerViewProductComponent },
+    { path:'farmer/myAccount',component:FarmerMyAccountComponent },
   ];
 
 @NgModule({
