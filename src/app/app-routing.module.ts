@@ -1,10 +1,35 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
+import { BodyComponent } from './shared/body/body.component';
+import { SearchResultComponent } from './shared/search-result/search-result.component';
+import { HelpComponent } from './shared/help/help.component';
+import { SupportComponent } from './shared/support/support.component';
+import { AboutUsComponent } from './shared/about-us/about-us.component';
+import { PoliciesComponent } from './shared/policies/policies.component';
+import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
+import { AppComponent } from './app.component';
+import { FarmerComponent } from './farmer/farmer.component';
+import { CustomerComponent } from './customer/customer.component';
+
+const routes: Routes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component:BodyComponent },
+    { path: 'connect', component:ConnectUsComponent  },
+    { path: 'policies', component:PoliciesComponent  },
+    { path: 'help', component:HelpComponent  },
+    { path: 'about', component:AboutUsComponent  },
+    { path: 'connect', component:ConnectUsComponent  },
+    { path: 'search/home', component:SearchResultComponent },
+    { path: 'support', component:SupportComponent },
+    { path: 'farmer', component:FarmerComponent },
+    { path: 'customer', component:CustomerComponent }
+  ];
 
 @NgModule({
   imports: [
-    CommonModule
+    RouterModule.forRoot(routes),
   ],
-  declarations: []
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
