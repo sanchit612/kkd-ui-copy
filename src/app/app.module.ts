@@ -13,7 +13,7 @@ import { SupportComponent } from './shared/support/support.component';
 import { AboutUsComponent } from './shared/about-us/about-us.component';
 import { PoliciesComponent } from './shared/policies/policies.component';
 import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
