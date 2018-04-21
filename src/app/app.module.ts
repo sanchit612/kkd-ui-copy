@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home-page/header/header.component';
@@ -41,6 +42,7 @@ import { CommonHeaderComponent } from './shared/common-header/common-header.comp
     CustomerModule,
     FarmerModule,
     FormsModule,
+    HttpModule
   ],
 
   providers: [],
