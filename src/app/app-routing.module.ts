@@ -11,10 +11,12 @@ import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
 import { AppComponent } from './app.component';
 import { FarmerComponent } from './farmer/farmer.component';
 import { CustomerComponent } from './customer/customer.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component:BodyComponent },
+    { path: 'home', component:HomePageComponent },
+    { path: 'body', component:BodyComponent },
     { path: 'connect', component:ConnectUsComponent  },
     { path: 'policies', component:PoliciesComponent  },
     { path: 'help', component:HelpComponent  },

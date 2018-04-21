@@ -12,4 +12,13 @@ export class HomePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchInput: String;
+
+  public setDataFromChild(event){
+    this.searchInput=event.search;
+  }
+
+
+
+
 }

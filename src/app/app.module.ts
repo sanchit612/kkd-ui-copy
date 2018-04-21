@@ -17,6 +17,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { CustomerModule } from './customer/customer.module';
 import { FarmerModule } from './farmer/farmer.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AboutUsComponent,
     PoliciesComponent,
     ConnectUsComponent,
-    HomePageComponent
+    HomePageComponent,
+    CommonHeaderComponent
   ],
   imports: [
     BrowserModule,
