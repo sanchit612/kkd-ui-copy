@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FarmerHeaderService } from '../../service/farmer-header.service';
+import { FarmerHeaderService } from '../../services/farmer-header/farmer-header.service';
 @Component({
   selector: 'app-farmer-header',
   templateUrl: './farmer-header.component.html',
