@@ -1,4 +1,150 @@
-<app-farmer-header></app-farmer-header>
-<p>
-  farmer-my-account works!
-</p>
+<div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-4">
+        <img alt="Bootstrap Image Preview" src="http://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle" />
+        <h4>{{farmerId}}</h4>
+          <h4>{{farmerName}} </h4>
+      </div>
+      <div class="col-md-4">          
+        <address>
+          <strong>{{farmerAddressLine}}</strong><br />{{farmerCity}} {{farmerDistrict}}<br />{{farmerState}} {{farmerPincode}} <br/>
+        </address>
+        <h6>{{farmerMobileNumber}}</h6> 
+        <!-- <button type="button" class="btn btn-primary">
+            CHANGE PASSWORD
+        </button> 
+        <button type="button" class="btn btn-primary">
+            Delete Profile
+        </button> -->
+        <address>
+          <strong>{{farmerAlternateAddressLine}}</strong><br />{{farmerAlternateCity}} {{farmerAlternateDistrict}}<br />{{farmerAlternateState}} {{farmerAlternatePincode}} <br/>
+        </address>
+        <h6>{{farmerAlternateNumber}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+        
+        <!-- <div class="col-md-2">
+        </div>
+      </div><br />
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+    <div class="row">
+            <div class="col-md-12">
+              <p class="lead"><span class="text-uppercase"><b>Alternate Address</b></span></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 border p-3">
+              <form>
+                <div class="form-inline"><label>Address Line</label>
+                  <br>
+                  <br>
+                  <p>   </p>
+                  <input [(ngModel)]="farmerAlternateAddressLine" type="text" class="form-control"
+                   placeholder="Enter Address" name="farmerAlternateAddressLine"> </div>
+                <div class="form-inline"> <label>City</label>
+                  <br>
+                  <br>
+                  <p>        </p>
+                  <input [(ngModel)]="farmerAlternateCity" type="text" class="form-control"
+                   placeholder="Enter City" name="farmerAlternateCity"> </div>
+                <div class="form-inline"> <label>District</label>
+                  <br>
+                  <br>
+                  <p>        </p>
+                  <input [(ngModel)]="farmerAlternateDistrict" type="text" class="form-control" 
+                  placeholder="Enter District" name="farmerAlternateDistrict"> </div>
+                <div class="form-inline"> <label>State</label>
+                  <br>
+                  <br>
+                  <p>         </p>
+                  <input [(ngModel)]="farmerAlternateState" type="text" class="form-control"
+                   placeholder="Enter State" name="farmerAlternateState"> </div>
+                <div class="form-inline"> <label>Pincode</label>
+                  <p>        </p>
+                  <input [(ngModel)]="farmerAlternatePincode" type="number" class="form-control"
+                   placeholder="Enter Pincode" name="farmerAlternatePincode"> </div>
+                <br>
+                <button type="submit"  class="btn btn-primary" (click)="updateFarmerAddress()">Update</button>
+              </form>
+            </div>
+          </div> -->
+<!--          
+          <div class="modal fade" tabindex="-1" id="loginModal"
+        data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Change Password</h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+               
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="inputUserName">Mobile No</label>
+                        <input [(ngModel)]="mobileNumber" class="form-control" placeholder="Enter mobile number"
+                                type="text"  id="inputUserName" name="mobileNumber"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Current Password</label>
+                        <input [(ngModel)]="currentPassword" class="form-control" placeholder="Enter current Password"
+                                type="password"  id="inputPassword" name="currentPassword" />
+                    </div>
+                    <div class="form-group">
+                            <label for="inputPassword">New Password</label>
+                            <input [(ngModel)]="newPassword" class="form-control" placeholder="Enter new Password"
+                                    type="password" id="inputPassword" name="newPassword" />
+                        </div>
+                        <div class="form-group">
+                                <label for="inputPassword">Re-enter new Password</label>
+                                <input [(ngModel)]="reenterNewPassword" class="form-control" placeholder="Re-enter New Password"
+                                        type="password" id="inputPassword" name="reenterNewPassword" />
+                            </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button (click)="onSubmit()" type="submit" class="btn btn-primary">Submit</button>
+                <button  type="button" class="btn btn-primary"
+                        data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+          <!-- <div class="row">
+            <div class="col-md-12 ">
+              <p class="lead text-uppercase"><b>Alternate Mobile Number</b></p>
+               <div class="row border p-3">
+                <div class="col-md-6 ">
+                  <form class="form-inline">
+                    <div class="input-group">
+                      <input [(ngModel)]="farmerAlternateNumber" type="number" class="form-control"
+                       placeholder="Enter Mobile Number" name="farmerAlternateMobile">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" (click)="updateFarmerMobile()">Update</button>
+                      </div>
+                    </div>
+                  </form>
+                </div> 
+                <div class="col-md-6">
+                <input type="checkbox" name="primarymobile" value="Mobile Number"> Set as Primary<br>
+                <button type="button" (click)="searchFarmer( <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+              </div>
+              </div> 
+            </div>
+            </div> -->
+            <!-- </div>
+            </div>
+            </div> -->
+   

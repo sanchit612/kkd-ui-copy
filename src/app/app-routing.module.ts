@@ -25,12 +25,13 @@ const routes: Routes = [
     { path: 'search/home', component:SearchResultComponent },
     { path: 'support', component:SupportComponent },
     { path: 'farmer', component:FarmerComponent },
-    { path: 'customer', component:CustomerComponent }
+    { path: 'customer', component:CustomerComponent },
+
   ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,{useHash:true}),
   ],
   exports: [ RouterModule ]
 })
