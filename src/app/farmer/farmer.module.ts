@@ -12,6 +12,7 @@ import { FarmerCurrentOrderComponent } from './component/farmer-dashboard/farmer
 import { FarmerPreviousOrderComponent } from './component/farmer-dashboard/farmer-previous-order/farmer-previous-order.component';
 import { FarmerViewProductComponent } from './component/farmer-dashboard/farmer-view-product/farmer-view-product.component';
 import { FarmerComponent } from './farmer.component';
+import { FarmerCommonHeaderComponent } from './component/farmer-common-header/farmer-common-header.component';
 
 
 
@@ -22,6 +23,6 @@ import { FarmerComponent } from './farmer.component';
     FarmerRoutingModule,
   ],
 
-  declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent],
+  declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, FarmerCommonHeaderComponent],
 })
 export class FarmerModule { }

@@ -13,6 +13,7 @@ import { CustomerCurrentOrderComponent } from './component/customer-my-account/c
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
 import { CustomerComponent } from './customer.component';
 import { FormsModule } from '@angular/forms';
+import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
 
-  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent]
+  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, CustomerCommonHeaderComponent]
 })
 export class CustomerModule { }
