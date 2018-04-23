@@ -24,6 +24,12 @@ import {CustomerHeaderService} from './customer/services/customer-header.service
 import { FarmerHeaderComponent } from './farmer/component/farmer-header/farmer-header.component';
 import {FarmerHeaderService} from './farmer/services/farmer-header/farmer-header.service';
 import { FarmerMyAccountComponent } from './farmer/component/farmer-my-account/farmer-my-account.component';
+import { CustomerAuthenticationService } from './customer/services/customer-authentication.service';
+import {CustomerMyAccountComponent} from './customer/component/customer-my-account/customer-my-account.component';
+import{CustomerCurrentOrderComponent} from './customer/component/customer-my-account/customer-current-order/customer-current-order.component';
+import{CustomerAddressBookComponent} from './customer/component/customer-my-account/customer-address-book/customer-address-book.component';
+import {CustomerPreviousOrderComponent} from './customer/component/customer-my-account/customer-previous-order/customer-previous-order.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +48,11 @@ import { FarmerMyAccountComponent } from './farmer/component/farmer-my-account/f
     CommonHeaderComponent,
     CustomerHeaderComponent,
     FarmerHeaderComponent,
-    FarmerMyAccountComponent
+    FarmerMyAccountComponent,
+    CustomerMyAccountComponent,
+    CustomerCurrentOrderComponent,
+    CustomerAddressBookComponent,
+    CustomerPreviousOrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +63,7 @@ import { FarmerMyAccountComponent } from './farmer/component/farmer-my-account/f
     HttpModule
   ],
 
-  providers: [],
+  providers: [CustomerAuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
