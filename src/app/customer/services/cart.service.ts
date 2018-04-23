@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {CartConfig} from '../configs/cart.config'
+import {CartConfig} from '../config/cart.config'
 import 'rxjs/add/operator/map';
 
 @Injectable()

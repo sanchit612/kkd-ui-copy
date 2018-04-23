@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FarmerHeaderService } from '../../service/farmer-header.service';
+import { FarmerHeaderService } from '../../services/farmer-header/farmer-header.service';
 @Component({
   selector: 'app-farmer-header',
   templateUrl: './farmer-header.component.html',
@@ -11,7 +11,7 @@ export class FarmerHeaderComponent implements OnInit {
   @Output() success = new EventEmitter<any>();
  	public gotFarmerName: string="kkdFarm1001";
  	public farmerName : string;
-  
+
 
    constructor(private farmerHeaderService : FarmerHeaderService) { }
 

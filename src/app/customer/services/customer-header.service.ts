@@ -3,7 +3,7 @@
  import { Observable } from 'rxjs/Observable';
  import 'rxjs/add/operator/map';
 
- import { App } from '../config/app.config'; 
+ import { App } from '../config/app.config';
 
 @Injectable()
 export class CustomerHeaderService {
@@ -22,4 +22,3 @@ export class CustomerHeaderService {
       return Observable.throw(error.statusText);
     }
   }
- 

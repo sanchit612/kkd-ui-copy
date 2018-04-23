@@ -3,7 +3,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { App } from '../config/app.config'; 
+import { App } from '../../config/app.config';
 
 @Injectable()
 export class FarmerHeaderService {
@@ -27,9 +27,9 @@ export class FarmerHeaderService {
     updateFarmerMobile(searchedFarmer,updatedInfo){
       return this.http.put(App.alternateMobileMapping+searchedFarmer,updatedInfo,{headers: this.headers})
       .map(data => data.json(),
-      (error: any)=>this.handleError(error)); 
+      (error: any)=>this.handleError(error));
     }
-    
+
     private handleError(error: Response){
       return Observable.throw(error.statusText);
     }
