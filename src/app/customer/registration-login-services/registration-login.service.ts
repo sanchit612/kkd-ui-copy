@@ -29,6 +29,20 @@ export class RegistrationLoginService {
 			(error: any)=>this.handleError(error));
 	}
 
+	generateOtp(mobileNo) {
+		debugger
+		return this.http.get(LoginRegistration.otp_generate+mobileNo)
+		.map(data => data.json(),
+			(error: any)=>this.handleError(error));
+	}
+
+	verifyOtp(otpData) {
+		debugger
+		return this.http.post(LoginRegistration.otp_verify,otpData, {headers: this.headers})
+		.map(data => data.json(),
+			(error: any)=>this.handleError(error));
+	}
+
 	private handleError(error: Response){
 		return Observable.throw(error.statusText);
 }

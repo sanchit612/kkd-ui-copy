@@ -9,7 +9,7 @@ import { CartService } from "../../services/cart.service";
 })
 export class CustomerMyCartComponent implements OnInit {
   constructor(private cartService: CartService) {}
-  private items = [];
+  public items = [];
   x: number;
 
   @Input() kkdCustId:string;

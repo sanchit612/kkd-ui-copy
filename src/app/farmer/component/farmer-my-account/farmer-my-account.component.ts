@@ -41,10 +41,10 @@ export class FarmerMyAccountComponent implements OnInit {
 
    constructor(private farmerHeaderService : FarmerHeaderService,
               ) {
-               }            
-                         
+               }
+
   ngOnInit() {
-    
+
 
   }
   // Function to get farmer name and make service call to get farmer name from app
@@ -79,7 +79,7 @@ export class FarmerMyAccountComponent implements OnInit {
 
     this.farmerHeaderService.updateFarmerAddress(this.farmerMobileNumber, this.farmer)
     .subscribe((res)=>{
-      
+
     },(error)=>{
     });
   }
@@ -95,9 +95,7 @@ export class FarmerMyAccountComponent implements OnInit {
   //  updateFarmerMobile(searchedFarmer,updatedInfo){
   //     return this.http.put(App.alternateMobileMapping+searchedFarmer,updatedInfo,{headers: this.headers})
   //     .map(data => data.json(),
-  //     (error: any)=>this.handleError(error)); 
+  //     (error: any)=>this.handleError(error));
   //   }
 
 }
-
-  

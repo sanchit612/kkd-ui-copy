@@ -1,5 +1,5 @@
 <app-customer-header></app-customer-header>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 6rem; margin-bottom: 1rem">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <form [formGroup]="rForm" (ngSubmit)="loginCustomer(rForm.value)">
@@ -32,7 +32,7 @@
          </div>
        </div>
      </div>
-     <a href="customer/forgetPassword">Forgot password?</a>
+     <a routerLink="/customer/forgetPassword">Forgot password?</a>
      <br>
      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login</button>
      <button type="submit" class="btn btn-primary" routerLink="/customer/register">Register</button>

@@ -8,11 +8,11 @@
   providers:[CustomerHeaderService]
 })
 export class CustomerHeaderComponent implements OnInit {
- 
+
   @Output() success = new EventEmitter<any>();
  	public searchedCustomer: string="KKDCUST1000";
  	public customerName : string;
-  
+
 
    constructor(private customerHeaderService : CustomerHeaderService) { }
 

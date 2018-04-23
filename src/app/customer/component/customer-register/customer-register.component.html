@@ -1,5 +1,5 @@
 <app-customer-header></app-customer-header>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 6rem ; margin-bottom: 1rem">
 	<div class="card" style="width: 18rem;">
 		<div class="card-body">
 			<form [formGroup]="rForm" (ngSubmit)="registerCustomer(rForm.value)">
@@ -15,7 +15,8 @@
               </div>
               </div>
               <label for="exampleInputName2">Last Name</label>
-            <input class="form-control" type="text" id="FirstName">
+						<input class="form-control" type="text" id="LastName">
+						
 					<label for="exampleInputEmail1">Mobile Number</label>
 					<input class="form-control" type="text" id="mobileNo" formControlName="mobileNo">
 					<div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
@@ -56,8 +57,29 @@
 						</div>
 					</div>
 				</div>
-        <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Verify OTP</button> 
+
+				<button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Send OTP</button>
 			</form>
 		</div>
 	</div>
 </div>
+
+<div *ngIf="hideVar2">
+		<div class="container-fluid">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<form [formGroup]="otpForm" (ngSubmit)="verifyOtp(otpForm.value)">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Enter OTP</label>
+							<input class="form-control" type="text" id="otp" formControlName="otp">
+							<div class="alert" *ngIf=" otpForm.controls['otp'].touched && otpForm.controls['otp'].hasError('required')">
+								OTP is required!  
+							</div>
+							<br>
+						</div>
+						<button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!otpForm.valid">Verify OTP</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
