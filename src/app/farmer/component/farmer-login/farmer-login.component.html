@@ -1,0 +1,58 @@
+<app-farmer-header></app-farmer-header>
+<p>
+  <a routerLink="/farmer/authenticationAndAuthorization">Not A User!Register</a>
+</p>
+
+<div class="container-fluid">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <form [formGroup]="rForm" (ngSubmit)="loginFarmer(rForm.value)">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Mobile Number</label>
+          <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
+          <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
+            <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
+            Less than 10 digits 
+            </div>
+            <div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
+             More than 10 digits 
+           </div>
+           <div *ngIf="rForm.controls['mobileNo'].hasError('required')">
+             Mobile Number is required!  
+           </div>
+         </div>
+         <br>
+         <label for="exampleInputPassword1">Password</label>
+         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+         <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
+          <div *ngIf="rForm.controls['password'].hasError('minlength')" >
+            Less than 6 digits 
+          </div>
+          <div *ngIf="rForm.controls['password'].hasError('maxlength')">
+           More than 12 digits 
+         </div>
+         <div *ngIf="rForm.controls['password'].hasError('required')">
+           Password is required!  
+         </div>
+       </div>
+     </div>
+     <a href="farmer/forgetPassword">Forgot password?</a>
+     <br>
+     <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
+   </form>
+ </div>
+</div>
+</div>
+
+ <!-- <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert-msg">
+              <div *ngIf="rForm.controls['password'].hasError('minlength')" >
+                Less than 8 digits 
+              </div>
+              <div *ngIf="rForm.controls['password'].hasError('maxlength')">
+               More than 20 digits 
+              </div>
+              <div *ngIf="rForm.controls['password'].hasError('required')">
+               Password is required!  
+              </div>
+            </div> -->
+
