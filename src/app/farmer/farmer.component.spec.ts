@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AadhaarPageComponent } from './aadhaar-page.component';
+import { FarmerComponent } from './farmer.component';
 
-describe('AadhaarPageComponent', () => {
-  let component: AadhaarPageComponent;
-  let fixture: ComponentFixture<AadhaarPageComponent>;
+describe('FarmerComponent', () => {
+  let component: FarmerComponent;
+  let fixture: ComponentFixture<FarmerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AadhaarPageComponent ]
+      declarations: [ FarmerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AadhaarPageComponent);
+    fixture = TestBed.createComponent(FarmerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

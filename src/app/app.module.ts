@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -13,7 +14,13 @@ import { SupportComponent } from './shared/support/support.component';
 import { AboutUsComponent } from './shared/about-us/about-us.component';
 import { PoliciesComponent } from './shared/policies/policies.component';
 import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
+<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
+=======
+import { AppRoutingModule } from './/app-routing.module';
+import { CustomerModule } from './customer/customer.module';
+import { FarmerModule } from './farmer/farmer.module';
+>>>>>>> 90646016b12337f3b1358addacb3ba22c9760535
 
 
 @NgModule({
@@ -32,7 +39,10 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CustomerModule,
+    FarmerModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
