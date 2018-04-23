@@ -14,19 +14,11 @@ import { SupportComponent } from './shared/support/support.component';
 import { AboutUsComponent } from './shared/about-us/about-us.component';
 import { PoliciesComponent } from './shared/policies/policies.component';
 import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
-<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
-=======
-import { AppRoutingModule } from './/app-routing.module';
 import { CustomerModule } from './customer/customer.module';
 import { FarmerModule } from './farmer/farmer.module';
-<<<<<<< HEAD
->>>>>>> 90646016b12337f3b1358addacb3ba22c9760535
-
-=======
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
->>>>>>> df0b1748768f4a8738565a920413120bc79e09ad
 
 @NgModule({
   declarations: [
