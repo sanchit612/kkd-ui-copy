@@ -1,0 +1,20 @@
+{
+"aadhaarData":[ {
+    "id": "123456789999",
+    "aadhaarNo": "123456789999",
+    "dateOfBirth": "2018-04-23",
+    "fatherName": "akash",
+    "firstName": "string",
+    "gender": "male",
+    "lastName": "v",
+    "mobileNumber": "9468075105",
+    "permanentAddress": {
+      "addressLine": "aaaa",
+      "city": "aaa",
+      "district": "aaa",
+      "pincode": 13333,
+      "primary": false,
+      "state": "aaa"
+    },
+    "photoUrl": "etxcq4qiFNi5p0q71APw8MNzPPT"
+  }]}

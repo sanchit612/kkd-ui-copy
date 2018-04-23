@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { OrderService } from '../../../services/order-service/order.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { OrderService } from '../../../services/order-service/order.service';
   styleUrls: ['./farmer-previous-order.component.css'],
   providers:[OrderService]
 })
+
 export class FarmerPreviousOrderComponent implements OnInit {
 
   constructor(private orderService:OrderService) { }

@@ -9,8 +9,8 @@ import {CustomerAuthenticationService} from '../../../services/customer-authenti
 })
 export class CustomerPreviousOrderComponent implements OnInit {
 
-  private customerId : string ;
-  private previousOrders : any = [
+  public customerId : string ;
+  public previousOrders : any = [
   {
    "address": {
      "addressLine": "string",
@@ -82,7 +82,7 @@ export class CustomerPreviousOrderComponent implements OnInit {
    "validityOfOrder": "2018-04-20T10:59:42.039Z"
   }];
    constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
-   
+
    getdata(){
    this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
      console.log(results)
@@ -94,6 +94,5 @@ export class CustomerPreviousOrderComponent implements OnInit {
    ngOnInit() {
     this.customerId = CustomerAuthenticationService.cus;
      //this.getdata();
-      
+
    }}
- 

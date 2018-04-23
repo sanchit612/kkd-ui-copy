@@ -20,8 +20,6 @@ searchDetails(){
   )
 }
   
-
-
   ngOnInit() {
     this.searchDetails();
   }
