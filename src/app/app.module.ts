@@ -19,7 +19,7 @@ import { CustomerModule } from './customer/customer.module';
 import { FarmerModule } from './farmer/farmer.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
-<<<<<<< HEAD
+
 import { CustomerHeaderComponent } from './customer/component/customer-header/customer-header.component';
 import {CustomerHeaderService} from './customer/services/customer-header.service';
 import { FarmerHeaderComponent } from './farmer/component/farmer-header/farmer-header.component';
@@ -31,8 +31,6 @@ import{CustomerCurrentOrderComponent} from './customer/component/customer-my-acc
 import{CustomerAddressBookComponent} from './customer/component/customer-my-account/customer-address-book/customer-address-book.component';
 import {CustomerPreviousOrderComponent} from './customer/component/customer-my-account/customer-previous-order/customer-previous-order.component';
 
-=======
->>>>>>> f9879e006c6ed8b0cdba09d03c0c31a5d97ff62c
 
 @NgModule({
   declarations: [
@@ -48,7 +46,7 @@ import {CustomerPreviousOrderComponent} from './customer/component/customer-my-a
     PoliciesComponent,
     ConnectUsComponent,
     HomePageComponent,
-<<<<<<< HEAD
+
     CommonHeaderComponent,
     CustomerHeaderComponent,
     FarmerHeaderComponent,
@@ -57,9 +55,9 @@ import {CustomerPreviousOrderComponent} from './customer/component/customer-my-a
     CustomerCurrentOrderComponent,
     CustomerAddressBookComponent,
     CustomerPreviousOrderComponent,
-=======
+
     CommonHeaderComponent
->>>>>>> f9879e006c6ed8b0cdba09d03c0c31a5d97ff62c
+
   ],
   imports: [
     BrowserModule,
