@@ -20,18 +20,6 @@ import { FarmerModule } from './farmer/farmer.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 
-import { CustomerHeaderComponent } from './customer/component/customer-header/customer-header.component';
-import {CustomerHeaderService} from './customer/services/customer-header.service';
-import { FarmerHeaderComponent } from './farmer/component/farmer-header/farmer-header.component';
-import {FarmerHeaderService} from './farmer/services/farmer-header/farmer-header.service';
-import { FarmerMyAccountComponent } from './farmer/component/farmer-my-account/farmer-my-account.component';
-import { CustomerAuthenticationService } from './customer/services/customer-authentication.service';
-import {CustomerMyAccountComponent} from './customer/component/customer-my-account/customer-my-account.component';
-import{CustomerCurrentOrderComponent} from './customer/component/customer-my-account/customer-current-order/customer-current-order.component';
-import{CustomerAddressBookComponent} from './customer/component/customer-my-account/customer-address-book/customer-address-book.component';
-import {CustomerPreviousOrderComponent} from './customer/component/customer-my-account/customer-previous-order/customer-previous-order.component';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,18 +34,7 @@ import {CustomerPreviousOrderComponent} from './customer/component/customer-my-a
     PoliciesComponent,
     ConnectUsComponent,
     HomePageComponent,
-
-    CommonHeaderComponent,
-    CustomerHeaderComponent,
-    FarmerHeaderComponent,
-    FarmerMyAccountComponent,
-    CustomerMyAccountComponent,
-    CustomerCurrentOrderComponent,
-    CustomerAddressBookComponent,
-    CustomerPreviousOrderComponent,
-
     CommonHeaderComponent
-
   ],
   imports: [
     BrowserModule,
@@ -68,7 +45,7 @@ import {CustomerPreviousOrderComponent} from './customer/component/customer-my-a
     HttpModule
   ],
 
-  providers: [CustomerAuthenticationService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
