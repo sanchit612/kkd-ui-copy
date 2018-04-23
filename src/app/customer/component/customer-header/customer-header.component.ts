@@ -1,5 +1,5 @@
  import { Component, OnInit, Output, EventEmitter } from '@angular/core';
- import { CustomerHeaderService } from '../../service/customer-header.service';
+ import { CustomerHeaderService } from '../../services/customer-header.service';
 
 @Component({
   selector: 'app-customer-header',
