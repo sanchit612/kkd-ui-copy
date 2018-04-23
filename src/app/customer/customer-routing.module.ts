@@ -9,6 +9,7 @@ import { CustomerAddressBookComponent } from './component/customer-my-account/cu
 import { CustomerBankDetailsComponent } from './component/customer-my-account/customer-bank-details/customer-bank-details.component';
 import { CustomerCurrentOrderComponent } from './component/customer-my-account/customer-current-order/customer-current-order.component';
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
+import { ForgetPasswordComponent } from './component/forget-password/forget-password.component'
 
 const routes: Routes = [
     { path:'customer/login',component:CustomerLoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path:'customer/bankDetails',component:CustomerBankDetailsComponent },
     { path:'customer/currentOrder',component:CustomerCurrentOrderComponent },
     { path:'customer/previousOrder',component:CustomerPreviousOrderComponent },
+    { path:'customer/forgetPassword',component:ForgetPasswordComponent},
   ];
 
 @NgModule({

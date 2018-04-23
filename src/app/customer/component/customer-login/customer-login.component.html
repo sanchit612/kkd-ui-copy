@@ -1,6 +1,42 @@
 <app-customer-header></app-customer-header>
-<p>
-  customer-login works!
-  <a routerLink="/customer/homePage">homepage</a>
-  <a routerLink="/customer/register">Not A User!Register</a>
-</p>
+<div class="container-fluid">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <form [formGroup]="rForm" (ngSubmit)="loginCustomer(rForm.value)">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Mobile Number</label>
+          <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
+          <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
+            <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
+            Less than 10 digits 
+            </div>
+            <div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
+             More than 10 digits 
+           </div>
+           <div *ngIf="rForm.controls['mobileNo'].hasError('required')">
+             Mobile Number is required!  
+           </div>
+         </div>
+         <br>
+         <label for="exampleInputPassword1">Password</label>
+         <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+         <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
+          <div *ngIf="rForm.controls['password'].hasError('maxlength')">
+           More than 12 digits 
+         </div>
+         <div *ngIf="rForm.controls['password'].hasError('required')">
+           Password is required!  
+         </div>
+         <div *ngIf="rForm.controls['password'].hasError('pattern')">
+          Password Invalid (Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !
+         </div>
+       </div>
+     </div>
+     <a href="customer/forgetPassword">Forgot password?</a>
+     <br>
+     <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login</button>
+     <button type="submit" class="btn btn-primary" routerLink="/customer/register">Register</button>
+   </form>
+ </div>
+</div>
+</div>
