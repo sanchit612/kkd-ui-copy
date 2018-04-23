@@ -14,17 +14,11 @@ import { SupportComponent } from './shared/support/support.component';
 import { AboutUsComponent } from './shared/about-us/about-us.component';
 import { PoliciesComponent } from './shared/policies/policies.component';
 import { ConnectUsComponent } from './shared/connect-us/connect-us.component';
-import { AppRoutingModule } from './app-routing.module';
 import { AppRoutingModule } from './/app-routing.module';
 import { CustomerModule } from './customer/customer.module';
 import { FarmerModule } from './farmer/farmer.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
-import { CustomerHeaderComponent } from './customer/component/customer-header/customer-header.component';
-import {CustomerHeaderService} from './customer/service/customer-header.service';
-import { FarmerHeaderComponent } from './farmer/component/farmer-header/farmer-header.component';
-import {FarmerHeaderService} from './farmer/service/farmer-header.service';
-import { FarmerMyAccountComponent } from './farmer/component/farmer-my-account/farmer-my-account.component';
 
 @NgModule({
   declarations: [
@@ -40,10 +34,7 @@ import { FarmerMyAccountComponent } from './farmer/component/farmer-my-account/f
     PoliciesComponent,
     ConnectUsComponent,
     HomePageComponent,
-    CommonHeaderComponent,
-    CustomerHeaderComponent,
-    FarmerHeaderComponent,
-    FarmerMyAccountComponent
+    CommonHeaderComponent
   ],
   imports: [
     BrowserModule,

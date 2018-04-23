@@ -1,7 +1,7 @@
 //import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
-import { FarmerHeaderService } from '../../service/farmer-header.service';
+import { FarmerHeaderService } from '../../services/farmer-header/farmer-header.service';
 import { Farmer } from './farmer';
 
 @Component({

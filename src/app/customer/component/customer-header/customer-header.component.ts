@@ -1,5 +1,5 @@
  import { Component, OnInit, Output, EventEmitter } from '@angular/core';
- import { CustomerHeaderService } from '../../service/customer-header.service';
+ import { CustomerHeaderService } from '../../services/customer-header.service';
 
 @Component({
   selector: 'app-customer-header',
@@ -10,13 +10,14 @@
 export class CustomerHeaderComponent implements OnInit {
  
   @Output() success = new EventEmitter<any>();
- 	public searchedCustomer: string="kkdCust1001";
+ 	public searchedCustomer: string="KKDCUST1000";
  	public customerName : string;
   
 
    constructor(private customerHeaderService : CustomerHeaderService) { }
 
   ngOnInit() {
+    this.searchCustomer();
   }
 
   // Function to get customer name and make service call to get customer name from app
