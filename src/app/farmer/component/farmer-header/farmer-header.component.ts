@@ -9,13 +9,14 @@ import { FarmerHeaderService } from '../../services/farmer-header/farmer-header.
 export class FarmerHeaderComponent implements OnInit {
 
   @Output() success = new EventEmitter<any>();
- 	public gotFarmerName: string="kkdFarm1001";
+ 	public gotFarmerName: string="KKDFARM1000";
  	public farmerName : string;
 
 
    constructor(private farmerHeaderService : FarmerHeaderService) { }
 
   ngOnInit() {
+    this.searchFarmer();
   }
 
   // Function to get farmer name and make service call to get farmer name from app
