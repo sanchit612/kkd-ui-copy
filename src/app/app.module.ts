@@ -22,7 +22,7 @@ import { CommonHeaderComponent } from './shared/common-header/common-header.comp
 import { CustomerHeaderComponent } from './customer/component/customer-header/customer-header.component';
 import {CustomerHeaderService} from './customer/services/customer-header.service';
 import { FarmerHeaderComponent } from './farmer/component/farmer-header/farmer-header.component';
-import {FarmerHeaderService} from './farmer/services/farmer-header.service';
+import {FarmerHeaderService} from './farmer/services/farmer-header/farmer-header.service';
 import { FarmerMyAccountComponent } from './farmer/component/farmer-my-account/farmer-my-account.component';
 
 @NgModule({
