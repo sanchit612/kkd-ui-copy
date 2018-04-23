@@ -10,13 +10,14 @@
 export class CustomerHeaderComponent implements OnInit {
  
   @Output() success = new EventEmitter<any>();
- 	public searchedCustomer: string="kkdCust1001";
+ 	public searchedCustomer: string="KKDCUST1000";
  	public customerName : string;
   
 
    constructor(private customerHeaderService : CustomerHeaderService) { }
 
   ngOnInit() {
+    this.searchCustomer();
   }
 
   // Function to get customer name and make service call to get customer name from app
