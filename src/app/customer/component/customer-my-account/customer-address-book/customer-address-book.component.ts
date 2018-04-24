@@ -20,6 +20,7 @@ searchDetails(){
     () => console.log("Done")
   )
 }
+  
   ngOnInit() {
     this.searchDetails();
   }

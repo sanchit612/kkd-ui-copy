@@ -1,6 +1,7 @@
  import { Component, OnInit, Output, EventEmitter } from '@angular/core';
  import { CustomerHeaderService } from '../../services/customer-header.service';
 
+
 @Component({
   selector: 'app-customer-header',
   templateUrl: './customer-header.component.html',

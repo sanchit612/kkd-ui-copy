@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FarmerLoginComponent } from './component/farmer-login/farmer-login.component';
-import { FarmerRegisterComponent } from './component/farmer-register/farmer-register.component';
+
+import { FarmerRegisterComponent } from './component/farmer-authentication-authorization/farmer-register/farmer-register.component';
+
 import { FarmerDashboardComponent } from './component/farmer-dashboard/farmer-dashboard.component';
 import { FarmerAddProductComponent } from './component/farmer-dashboard/farmer-add-product/farmer-add-product.component';
 import { FarmerBankDetailsComponent } from './component/farmer-dashboard/farmer-bank-details/farmer-bank-details.component';

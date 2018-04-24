@@ -23,13 +23,11 @@ import { FarmerCommonHeaderComponent } from './component/farmer-common-header/fa
   imports: [
     CommonModule,
     FarmerRoutingModule,
-
     FormsModule,
     ReactiveFormsModule
   ],
 
   declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, AadhaarComponent, FarmerAuthenticationAuthorizationComponent, ForgetPasswordComponent,FarmerCommonHeaderComponent],
-
 
 })
 export class FarmerModule { }
