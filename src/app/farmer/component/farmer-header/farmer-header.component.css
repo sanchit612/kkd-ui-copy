@@ -4,3 +4,8 @@
 .welcome-farmer-font{
     color: cornsilk;
 }
+@media screen and (max-width: 767px) {
+    #myHeader {
+        text-align: center;
+    }
+}
