@@ -1,6 +1,6 @@
 <app-customer-header></app-customer-header>
 <div class="container-fluid previous-orders">
-  <h2 class="text-center"> My Previous Orders </h2>
+  <h2 class="text-center"> Previous Orders </h2>
   <div class="row previous-orders-body">
       
       <div class="col-md-4" *ngFor="let order of previousOrders">
@@ -9,9 +9,9 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item active">OrderId           :   {{order.orderId}}</li>
                   <li class="list-group-item">Product Name             :   {{order.name}} </li>                            
-                  <li class="list-group-item">Quantity                 :   {{order.quantity}}</li>                            
-                  <li class="list-group-item">Price                    :   {{order.totalAmount}}</li>
-                  <li class="list-group-item">Rating                   :   {{order.avgRating}}</li>
+                  <li class="list-group-item">Quantity(in Kg.)                 :   {{order.quantity}}</li>                            
+                  <li class="list-group-item">Price(in Rs.)                   :   {{order.totalAmount}}</li>
+                  <li class="list-group-item">Farmer-Rating                   :   {{order.avgRating}}</li>
                   <li class="list-group-item">OTP                      :   {{order.otp}} </li>
                 </ul>
               </div>
