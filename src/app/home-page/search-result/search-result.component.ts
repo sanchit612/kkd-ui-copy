@@ -17,7 +17,7 @@ export class SearchResultComponent implements OnInit {
 
 	 public searchItemName : String;
 	public itemList : any = [];
-
+	public flag=false;
 	constructor(private searchService : SearchService) { }
 
 	ngOnInit() {
@@ -27,6 +27,7 @@ export class SearchResultComponent implements OnInit {
 	set itemName(itemName : String){
 		this.searchItemName=itemName;
 		if(this.searchItemName){
+			this.flag=true;
 			this.searchService.searchItem(SearchConfig.apiUrl+this.searchItemName).subscribe((res)=>{
 				this.itemList=res;
 			},error=>this.handleError(error))
