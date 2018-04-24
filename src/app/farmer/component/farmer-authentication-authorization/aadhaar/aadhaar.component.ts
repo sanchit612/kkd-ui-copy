@@ -57,7 +57,7 @@ export class AadhaarComponent implements OnInit {
 				alert("wrong otp")
 			}
 		}, (err) =>{
-			alert("otp-service is down")
+			//alert("otp-service is down")
 		})
 	}
 
@@ -72,7 +72,7 @@ export class AadhaarComponent implements OnInit {
 			this.registrationService.generateOtp(this.mobileNo).subscribe((res) =>{
 			//sucessfully sended
 		}, (err) =>{
-			alert("otp-service is down")
+			//alert("otp-service is down")
 		})
 		}, (err) =>{
 				alert("aadhaar number not found..enter valid aadhaar")
