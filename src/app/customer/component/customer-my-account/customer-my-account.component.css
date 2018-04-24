@@ -1,6 +1,10 @@
 .title{
 
-    padding:30px 230px;
+    /* padding:60px 230px; */
+    padding-top: 60px;
+    padding-left: 230px;
+    /* padding-bottom: 50px;
+    padding-left: 80px; */
     color :#236AB9;
     
     }
@@ -12,7 +16,7 @@
         padding:10px 200px;
     }
     .change_password{
-        padding:50px 0px;
+        padding:40px 0px;
     }
     .change_password1{
         padding:70px 0px;
@@ -26,4 +30,8 @@
     }
     .bg{
         background-color: #F0F7D4;
+        padding:62px;
+    }
+    .main-body{
+        padding-top: 30px;
     }
