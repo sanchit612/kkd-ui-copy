@@ -11,7 +11,7 @@ import { Farmer } from './farmer';
   providers:[FarmerHeaderService]
 })
 export class FarmerMyAccountComponent implements OnInit {
-   public searchedFarmer: string="kkdFarm1001";
+   public searchedFarmerId: string="KKDFARM1000";
    public farmerPhoto:string;
    public farmerId: string
    public farmerName : string;
@@ -29,6 +29,10 @@ export class FarmerMyAccountComponent implements OnInit {
    public farmerAlternatePrimary: boolean;
    public farmerMobileNumber : string;
    public farmerAlternateNumber:number;
+  
+   public currentPassword:string;
+   public newPassword:string;
+   public reenterNewPassword:string;
 
    farmer : Farmer = {
     addressLine:this.farmerAlternateAddressLine,
@@ -45,11 +49,10 @@ export class FarmerMyAccountComponent implements OnInit {
 
   ngOnInit() {
 
-
   }
-  // Function to get farmer name and make service call to get farmer name from app
+  // Function to get farmer details by his KKDId and make service call to get farmer details from app
   searchFarmer(){
-    this.farmerHeaderService.getFarmerName(this.searchedFarmer)
+    this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
     .subscribe((res) =>{
       this.farmerPhoto=res.aadhaarData.photoUrl;
       this.farmerId=res.kkdFarmId;
@@ -61,14 +64,12 @@ export class FarmerMyAccountComponent implements OnInit {
       this.farmerState=res.aadhaarData.permanentAddress.state;
       this.farmerPrimary=res.aadhaarData.permanentAddress.primary;
       this.farmerMobileNumber=res.mobileNo;
-      // this.success.emit({
-      //   'farmerName':this.farmerName
-      // });
      },(error) =>{
 
     });
   }
-
+  /* Function to update farmer's alternate address by his KKDId 
+  and make service call to update farmer's alternate address from app */
   updateFarmerAddress(){
     this.farmer.addressLine=this.farmerAlternateAddressLine;
     this.farmer.city=this.farmerAlternateCity;
@@ -76,14 +77,18 @@ export class FarmerMyAccountComponent implements OnInit {
     this.farmer.state=this.farmerAlternateState;
     this.farmer.pincode=this.farmerAlternatePincode;
     this.farmer.primary=true;
-
+    if(this.farmer.addressLine==null || this.farmer.city==null || this.farmer.district==null
+      || this.farmer.state==null || this.farmer.pincode==null){
+        alert("please Enter Required Fields");
+        }
     this.farmerHeaderService.updateFarmerAddress(this.farmerMobileNumber, this.farmer)
     .subscribe((res)=>{
 
     },(error)=>{
     });
   }
-
+  /* Function to update farmer's mobile number by his KKDId 
+  and make service call to update farmer's mobile number from app */
   updateFarmerMobile(){
     this.farmerHeaderService.updateFarmerMobile(this.farmerId, this.farmerAlternateNumber)
     .subscribe((res)=>{
@@ -92,10 +97,36 @@ export class FarmerMyAccountComponent implements OnInit {
 
     });
   }
-  //  updateFarmerMobile(searchedFarmer,updatedInfo){
-  //     return this.http.put(App.alternateMobileMapping+searchedFarmer,updatedInfo,{headers: this.headers})
-  //     .map(data => data.json(),
-  //     (error: any)=>this.handleError(error));
-  //   }
+
+
+  resetPassword(){
+    if(this.newPassword == this.reenterNewPassword)
+    {
+    
+       this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+             .subscribe((res) =>{
+             console.log(res.password);
+             if(this.currentPassword == res.password){
+                   res.password = this.newPassword;
+                   this.farmerHeaderService.updateFarmerMobile(this.farmerId ,res )
+                   .subscribe((updatedInfo) =>{
+                     if(this.newPassword == updatedInfo.password){
+                       alert("Password changed successfully");
+                     }
+                    
+                     }, (error) =>{
+                
+                     })
+             }else{
+               alert("Incorrect current password");
+             }
+             }, (error) =>{
+             alert ("Mobile number not registered");
+             })
+          }
+    else{
+      alert("Re-enter the new password correctly");
+    }
+  }
 
 }

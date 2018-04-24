@@ -17,6 +17,18 @@ import { FarmerAuthenticationAuthorizationComponent } from './component/farmer-a
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 
 const routes: Routes = [
+<<<<<<< HEAD
+    { path:'farmer/login',component:FarmerLoginComponent },
+    { path:'farmer/register',component:FarmerRegisterComponent },
+    { path:'farmer/dashboard',component:FarmerDashboardComponent },
+    { path:'farmer/addProduct',component:FarmerAddProductComponent },
+    { path:'farmer/bankDetails',component:FarmerBankDetailsComponent },
+    { path:'farmer/currentOrder',component:FarmerCurrentOrderComponent },
+    { path:'farmer/previousOrder',component:FarmerPreviousOrderComponent },
+    { path:'farmer/viewProduct',component:FarmerViewProductComponent },
+    { path:'farmer/myaccount',component:FarmerMyAccountComponent },
+  ];
+=======
 { path:'farmer/login',component:FarmerLoginComponent },
 { path:'farmer/dashboard',component:FarmerDashboardComponent },
 { path:'farmer/addProduct',component:FarmerAddProductComponent },
@@ -29,6 +41,7 @@ const routes: Routes = [
 { path:'farmer/forgetPassword',component:ForgetPasswordComponent },
 ];
 
+>>>>>>> aca43bac10d98e8f2ede41b06ed7e5b00b146ff3
 
 @NgModule({
   imports: [
