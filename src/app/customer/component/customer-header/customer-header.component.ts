@@ -1,6 +1,7 @@
  import { Component, OnInit, Output, EventEmitter } from '@angular/core';
  import { CustomerHeaderService } from '../../services/customer-header.service';
 
+
 @Component({
   selector: 'app-customer-header',
   templateUrl: './customer-header.component.html',
@@ -8,11 +9,11 @@
   providers:[CustomerHeaderService]
 })
 export class CustomerHeaderComponent implements OnInit {
- 
+
   @Output() success = new EventEmitter<any>();
  	public searchedCustomer: string="KKDCUST1000";
  	public customerName : string;
-  
+
 
    constructor(private customerHeaderService : CustomerHeaderService) { }
 

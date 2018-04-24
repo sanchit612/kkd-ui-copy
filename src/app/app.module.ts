@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './home-page/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -19,32 +17,33 @@ import { CustomerModule } from './customer/customer.module';
 import { FarmerModule } from './farmer/farmer.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    BodyComponent,
-    SearchResultComponent,
-    SearchResultListComponent,
-    HelpComponent,
-    SupportComponent,
-    AboutUsComponent,
-    PoliciesComponent,
-    ConnectUsComponent,
-    HomePageComponent,
-    CommonHeaderComponent
+  AppComponent,
+  HeaderComponent,
+  FooterComponent,
+  BodyComponent,
+  SearchResultComponent,
+  SearchResultListComponent,
+  HelpComponent,
+  SupportComponent,
+  AboutUsComponent,
+  PoliciesComponent,
+  ConnectUsComponent,
+  HomePageComponent,
+  CommonHeaderComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CustomerModule,
-    FarmerModule,
-    FormsModule,
-    HttpModule
-  ],
-
+  BrowserModule,
+  AppRoutingModule,
+  CustomerModule,
+  FarmerModule,
+  FormsModule,
+  ReactiveFormsModule,
+  HttpModule,
+],
   providers: [],
   bootstrap: [AppComponent]
 })

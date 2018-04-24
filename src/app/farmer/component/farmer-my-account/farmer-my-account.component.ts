@@ -45,10 +45,9 @@ export class FarmerMyAccountComponent implements OnInit {
 
    constructor(private farmerHeaderService : FarmerHeaderService,
               ) {
-               }            
-                         
+               }
+
   ngOnInit() {
-    this.searchFarmer();
 
   }
   // Function to get farmer details by his KKDId and make service call to get farmer details from app
@@ -84,7 +83,7 @@ export class FarmerMyAccountComponent implements OnInit {
         }
     this.farmerHeaderService.updateFarmerAddress(this.farmerMobileNumber, this.farmer)
     .subscribe((res)=>{
-      
+
     },(error)=>{
     });
   }
@@ -98,6 +97,7 @@ export class FarmerMyAccountComponent implements OnInit {
 
     });
   }
+
 
   resetPassword(){
     if(this.newPassword == this.reenterNewPassword)
@@ -130,5 +130,3 @@ export class FarmerMyAccountComponent implements OnInit {
   }
 
 }
-
-  
