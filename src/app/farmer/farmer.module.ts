@@ -19,7 +19,6 @@ import { FarmerDashboardComponent } from './component/farmer-dashboard/farmer-da
 import { FarmerHeaderComponent } from './component/farmer-header/farmer-header.component';
 import { FarmerCommonHeaderComponent } from './component/farmer-common-header/farmer-common-header.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
