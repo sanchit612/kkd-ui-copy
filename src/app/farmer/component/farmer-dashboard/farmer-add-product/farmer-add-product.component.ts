@@ -19,7 +19,7 @@ public price: any;
 public bulkPrice: any;
 public quantity: any;
 public productName: any;
-public availability: boolean;
+public available: boolean;
 
  product : Product ={
  
@@ -30,7 +30,7 @@ public availability: boolean;
   price: 10,
   bulkOrderPrice: 8,
   quantity: 100,
-  availability: false
+  available: false
   }
 
  constructor(private pro: ProductService){
@@ -44,7 +44,7 @@ public availability: boolean;
 
   check(){
     alert(this.productName);
-    alert(this.availability);
+    alert(this.available);
     alert(this.description);
     alert(this.price);
     alert(this.bulkPrice);
@@ -56,12 +56,12 @@ public availability: boolean;
    this.product.bulkOrderPrice=this.bulkPrice;
    this.product.quantity=this.quantity;
    this.product.productName=this.productName;
-   this.product.availability=this.availability;
+   this.product.available=this.available;
    this.product.imageUrl="";
 
    this.pro.update(this.kkdFarmId, this.product)
     .subscribe((res)=>{
-      //console.log("-----------------gghvfghh--------0---");
+      console.log("-----------------gghvfghh--------0---");
       console.log(res);
     },(error)=>{
     });
