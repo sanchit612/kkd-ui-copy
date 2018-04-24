@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerLoginComponent } from './component/customer-login/customer-login.component';
@@ -12,16 +13,20 @@ import { CustomerBankDetailsComponent } from './component/customer-my-account/cu
 import { CustomerCurrentOrderComponent } from './component/customer-my-account/customer-current-order/customer-current-order.component';
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
 import { CustomerComponent } from './customer.component';
-import { FormsModule } from '@angular/forms';
+
+import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     CustomerRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
+  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent]
 
-  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, CustomerCommonHeaderComponent]
 })
 export class CustomerModule { }
