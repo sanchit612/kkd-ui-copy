@@ -14,6 +14,14 @@ export class FarmerViewProductService {
     )
   }
 
+  public deleteParticularProduct(url : any) {
+    //alert(url);
+      return this.http.delete(url)
+      .map(data => data.status,
+        error => this.handleError(error)
+      )
+  }
+
   private handleError(error) {
     console.log("Logging the error occured in the service");
   }
