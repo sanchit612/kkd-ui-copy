@@ -19,6 +19,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination'
+
 @NgModule({
   declarations: [
   AppComponent,
@@ -48,4 +49,5 @@ import { NgxPaginationModule } from 'ngx-pagination'
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
