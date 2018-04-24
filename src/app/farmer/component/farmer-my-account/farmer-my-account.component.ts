@@ -11,7 +11,7 @@ import { Farmer } from './farmer';
   providers:[FarmerHeaderService]
 })
 export class FarmerMyAccountComponent implements OnInit {
-   public searchedFarmerId: string="KKDFARM1000";
+   public searchedFarmerId: string="KKDFARM1001";
    public farmerPhoto:string;
    public farmerId: string
    public farmerName : string;
@@ -47,9 +47,6 @@ export class FarmerMyAccountComponent implements OnInit {
               ) {
                }
 
-  ngOnInit() {
-
-  }
   // Function to get farmer details by his KKDId and make service call to get farmer details from app
   searchFarmer(){
     this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
@@ -129,4 +126,7 @@ export class FarmerMyAccountComponent implements OnInit {
     }
   }
 
+  ngOnInit() {
+    this.searchFarmer();
+  }
 }
