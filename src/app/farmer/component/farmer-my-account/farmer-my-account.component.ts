@@ -11,7 +11,7 @@ import { Farmer } from './farmer';
   providers:[FarmerHeaderService]
 })
 export class FarmerMyAccountComponent implements OnInit {
-   public searchedFarmer: string="kkdFarm1001";
+   public searchedFarmer: string="KKDFARM1001";
    public farmerPhoto:string;
    public farmerId: string
    public farmerName : string;
