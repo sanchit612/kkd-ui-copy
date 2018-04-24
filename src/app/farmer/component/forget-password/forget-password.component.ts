@@ -92,8 +92,9 @@ export class ForgetPasswordComponent implements OnInit {
 
 			resetPasswordFarmer(post) {
 		//getting new credentials
+		debugger
 		var farmerNewCredentials={
-			'mobileNo':post.mobileNo,
+			'mobileNo':this.mobileNo,
 			'password':post.password
 		}
 		//calling the service to change the credentials
@@ -102,8 +103,9 @@ export class ForgetPasswordComponent implements OnInit {
 			//storing the token and farmer id
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
+			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
-			alert("conflict");
+			console.log(err)
 		})
 	}
 

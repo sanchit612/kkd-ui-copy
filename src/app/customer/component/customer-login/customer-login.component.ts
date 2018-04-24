@@ -35,8 +35,8 @@ export class CustomerLoginComponent implements OnInit {
 		this.registrationService.loginCustomer(customerCredentials).subscribe((res) =>{
 			alert("Successfully loggedin");
 			localStorage.setItem("token",res.results.token);
-			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
-			this.router.navigate(['/customer/dashboard']);
+			localStorage.setItem("kkdCustId",res.results.kkdCustId);
+			this.router.navigate(['/customer/homePage']);
 		}, (err) =>{
 			if(err.status=401){
 				alert("Invalid Credentials");
