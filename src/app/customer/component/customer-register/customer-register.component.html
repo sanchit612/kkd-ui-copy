@@ -1,6 +1,6 @@
 <app-customer-common-header></app-customer-common-header>
 <div *ngIf="!hideVar">
-	<div class="container-fluid" style="margin-top: 6rem ; margin-bottom: 1rem">
+	<div class="container-fluid" id="payal" style="margin-top: 6rem ; margin-bottom: 1rem">
 		<div class="card" style="width: 18rem;">
 			<div class="card-body">
 				<form [formGroup]="rForm" (ngSubmit)="sendOtp(rForm.value)">
