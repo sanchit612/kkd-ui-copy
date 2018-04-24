@@ -43,14 +43,13 @@ export class FarmerRegisterComponent implements OnInit {
 	//function to register a farmer
 	registerFarmer(post) {
 		var farmerToRegister={
-			'mobileNo':post.mobileNo,
+			'mobileNo':this.aadhaarDataRecievedByRegister.mobileNumber,
 			'password':post.password,
 			'aadhaarData':this.aadhaarDataRecievedByRegister,
 			'cities': post.cities
 		}
 		this.registrationService.addFarmer(farmerToRegister).subscribe((res) =>{
 			alert("Successfully registered");
-			alert(this.rForm.get('cities'));
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);

@@ -11,16 +11,11 @@
 				</div>
 				<div class="col-md-2">
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 drop">
 					<div class="dropdown show">
-						 
-						<!--<button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							Select product type
-							 class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-						</button>-->
 						
-						<select class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (change)="selectChangeHandler($event)">
-							<option value="select" class="dropdown-header">--select--</option>
+						<select (change)="selectChangeHandler($event)" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<option value="select" class="dropdown-header">--Select--</option>
 							 <option value="Onion" class="dropdown-item">Onion</option>
 							 <option value="Tomato" class="dropdown-item">Tomato</option>
 							 <option value="Brinjal" class="dropdown-item">Brinjal</option>
@@ -51,34 +46,34 @@
 							<label for="exampleInputPassword1">
 								Price
 							</label>
-							<input  [(ngModel)]="price" type="number" class="form-control" id="exampleInputPassword1" name="price">
+							<input  step="1" min="0" [(ngModel)]="price" type="number" class="form-control" id="exampleInputPassword1" name="price">
 						</div>
 						<div class="form-group">
 							 
 							<label for="exampleInputPassword1">
 								Bulk Order Price
 							</label>
-							<input  [(ngModel)]="bulkPrice" type="number" class="form-control" id="exampleInputPassword1" name="bulkPrice"> 
+							<input  step="1" min="0" [(ngModel)]="bulkPrice" type="number" class="form-control" id="exampleInputPassword1" name="bulkPrice"> 
 						</div>
 						<div class="form-group">
 							 
 							<label for="exampleInputPassword1">
 								Quantity
 							</label>
-							<input  [(ngModel)]="quantity" type="number" class="form-control" id="exampleInputPassword1" name="quantity">
+							<input step="1" min="0" [(ngModel)]="quantity" type="number" class="form-control" id="exampleInputPassword1" name="quantity">
 						</div>
 						<div class="form-group">
 							 
 							<label for="exampleInputFile">
 								Upload an image
 							</label>
-							<input type="file" class="form-control-file" id="exampleInputFile">
+							<input type="file" (change)="onFileSelected($event)" class="form-control-file" id="exampleInputFile">
 							
 						</div>
 						<div class="checkbox">
 							 
 							<label>
-								<input type="checkbox" name="isAvailable" [(ngModel)]="availability">In stock
+								<input type="checkbox" name="isAvailable" [(ngModel)]="available">In stock
 							</label>
 						</div> 
 						<button type="submit" (click)="check()" class="btn btn-primary">
