@@ -17,8 +17,4 @@ export class HomePageComponent implements OnInit {
   public setDataFromChild(event){
     this.searchInput=event.search;
   }
-
-
-
-
 }

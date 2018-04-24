@@ -21,8 +21,6 @@ searchDetails(){
   )
 }
   
-
-
   ngOnInit() {
     this.searchDetails();
   }

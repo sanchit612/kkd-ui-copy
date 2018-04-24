@@ -11,7 +11,7 @@ export class FarmerHeaderComponent implements OnInit {
   @Output() success = new EventEmitter<any>();
  	public gotFarmerName: string="KKDFARM1000";
  	public farmerName : string;
-  
+
 
    constructor(private farmerHeaderService : FarmerHeaderService) { }
 

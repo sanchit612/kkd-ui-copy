@@ -26,7 +26,7 @@ const routes: Routes = [
     { path: 'support', component:SupportComponent },
     { path: 'farmer', component:FarmerComponent },
     { path: 'customer', component:CustomerComponent },
-    
+
   ];
 
 @NgModule({

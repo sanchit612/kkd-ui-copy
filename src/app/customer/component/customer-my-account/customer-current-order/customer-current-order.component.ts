@@ -7,8 +7,8 @@ import {CustomerAuthenticationService} from '../../../services/customer-authenti
   providers:[CustomerAuthenticationService],
 })
 export class CustomerCurrentOrderComponent implements OnInit {
- private customerId : string ;
- private currentOrders : any = [
+ public customerId : string ;
+ public currentOrders : any = [
  {
   "address": {
     "addressLine": "string",
@@ -80,7 +80,7 @@ export class CustomerCurrentOrderComponent implements OnInit {
   "validityOfOrder": "2018-04-20T10:59:42.039Z"
  }];
   constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
-  
+
   getdata(){
   this.customerAuthenticationService.getCurrentOrders(this.customerId).subscribe(results=>{
     console.log(results)
@@ -92,7 +92,5 @@ export class CustomerCurrentOrderComponent implements OnInit {
   ngOnInit() {
    this.customerId = CustomerAuthenticationService.cus;
     //this.getdata();
-     
+
   }}
-
-
