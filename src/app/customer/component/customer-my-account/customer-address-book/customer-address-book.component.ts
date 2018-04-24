@@ -3,7 +3,8 @@ import {CustomerAuthenticationService} from '../../../services/customer-authenti
 @Component({
   selector: 'app-customer-address-book',
   templateUrl: './customer-address-book.component.html',
-  styleUrls: ['./customer-address-book.component.css']
+  styleUrls: ['./customer-address-book.component.css'],
+  providers:[CustomerAuthenticationService],
 })
 export class CustomerAddressBookComponent implements OnInit {
   details:any[];

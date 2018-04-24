@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerLoginComponent } from './component/customer-login/customer-login.component';
@@ -16,6 +17,7 @@ import { CustomerComponent } from './customer.component';
   imports: [
     CommonModule,
     CustomerRoutingModule,
+    FormsModule
   ],
 
   declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent]
