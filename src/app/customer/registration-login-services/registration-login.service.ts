@@ -8,8 +8,8 @@ import { LoginRegistration } from '../config/LoginRegistration.config';
 @Injectable()
 export class RegistrationLoginService {
 
-  constructor(private http : Http) { }
-  private headers = new Headers({ 'Content-Type': 'application/json'});
+	constructor(private http : Http) { }
+	private headers = new Headers({ 'Content-Type': 'application/json'});
 
 	addCustomer(customerToRegister) {
 		return this.http.post(LoginRegistration.registration_api, customerToRegister, {headers: this.headers})
@@ -30,14 +30,12 @@ export class RegistrationLoginService {
 	}
 
 	generateOtp(mobileNo) {
-		debugger
 		return this.http.get(LoginRegistration.otp_generate+mobileNo)
 		.map(data => data.json(),
 			(error: any)=>this.handleError(error));
 	}
 
 	verifyOtp(otpData) {
-		debugger
 		return this.http.post(LoginRegistration.otp_verify,otpData, {headers: this.headers})
 		.map(data => data.json(),
 			(error: any)=>this.handleError(error));
@@ -45,5 +43,5 @@ export class RegistrationLoginService {
 
 	private handleError(error: Response){
 		return Observable.throw(error.statusText);
-}
+	}
 }

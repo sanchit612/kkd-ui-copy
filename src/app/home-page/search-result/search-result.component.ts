@@ -27,18 +27,20 @@ export class SearchResultComponent implements OnInit {
 	set itemName(itemName : String){
 		this.searchItemName=itemName;
 		if(this.searchItemName){
-			this.searchService.searchItem(SearchConfig.apiUrl).subscribe((res)=>{
+			this.searchService.searchItem(SearchConfig.apiUrl+this.searchItemName).subscribe((res)=>{
 				this.itemList=res;
 			},error=>this.handleError(error))
+			//this.itemList=this.searchService.searchItem(SearchConfig.apiUrl);
 		}
 		
 	}
 
-	storeItem(){
-		this.searchService.searchItem(SearchConfig.apiUrl).subscribe((res)=>{
-			this.itemList=res;
-		},error=>this.handleError(error))
-	}
+	// storeItem(){
+	// 	this.searchService.searchItem(SearchConfig.apiUrl).subscribe((res)=>{
+	// 		this.itemList=res;
+	// 	},error=>this.handleError(error))
+	// 	this.itemList=this.searchService.searchItem(SearchConfig.apiUrl);
+	// }
 
 	private handleError(error) {
 		console.log("Logging the error occured in the service");

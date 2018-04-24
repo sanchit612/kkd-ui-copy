@@ -52,7 +52,6 @@ export class ForgetPasswordComponent implements OnInit {
 	
 
 	sendOtp(post) {
-		alert(post.mobileNo)
 		this.mobileNo=post.mobileNo;
 		this.hideVar=true;
 		this.hideVar2=true;
@@ -66,7 +65,6 @@ export class ForgetPasswordComponent implements OnInit {
 	}
 
 	verifyOtp(post) {
-		alert(post.otp)
 		var otpData={
 			'mobileNo':this.mobileNo,
 			'otp':post.otp
@@ -93,15 +91,15 @@ export class ForgetPasswordComponent implements OnInit {
 
 					resetPasswordCustomer(post) {
 						var customerNewCredentials={
-							'mobileNo':post.mobileNo,
+							'mobileNo':this.mobileNo,
 							'password':post.password,
 						}
 
-						console.log(customerNewCredentials)
 						this.registrationService.forgetPassword(customerNewCredentials).subscribe((res) =>{
 							alert("Successfully changed");
 							localStorage.setItem("token",res.results.token);
 							localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
+							this.router.navigate(['/customer/homePage']);
 						}, (err) =>{
 							alert("conflict");
 						})

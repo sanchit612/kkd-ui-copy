@@ -11,16 +11,11 @@
 				</div>
 				<div class="col-md-2">
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 drop">
 					<div class="dropdown show">
-						 
-						<!--<button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							Select product type
-							 class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-						</button>-->
 						
-						<select class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (change)="selectChangeHandler($event)">
-							<option value="select" class="dropdown-header">--select--</option>
+						<select (change)="selectChangeHandler($event)" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<option value="select" class="dropdown-header">--Select--</option>
 							 <option value="Onion" class="dropdown-item">Onion</option>
 							 <option value="Tomato" class="dropdown-item">Tomato</option>
 							 <option value="Brinjal" class="dropdown-item">Brinjal</option>
@@ -72,13 +67,13 @@
 							<label for="exampleInputFile">
 								Upload an image
 							</label>
-							<input type="file" class="form-control-file" id="exampleInputFile">
+							<input type="file" (change)="onFileSelected($event)" class="form-control-file" id="exampleInputFile">
 							
 						</div>
 						<div class="checkbox">
 							 
 							<label>
-								<input type="checkbox" name="isAvailable" [(ngModel)]="availability">In stock
+								<input type="checkbox" name="isAvailable" [(ngModel)]="available">In stock
 							</label>
 						</div> 
 						<button type="submit" (click)="check()" class="btn btn-primary">
