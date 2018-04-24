@@ -46,3 +46,8 @@ body {
 .card{
     margin: 0 auto;
 }
+.cardmargin
+{
+    margin-top: 9rem;
+     margin-bottom: 5rem;
+}

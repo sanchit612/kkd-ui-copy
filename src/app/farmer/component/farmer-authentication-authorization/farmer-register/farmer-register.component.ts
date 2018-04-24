@@ -50,7 +50,6 @@ export class FarmerRegisterComponent implements OnInit {
 		}
 		this.registrationService.addFarmer(farmerToRegister).subscribe((res) =>{
 			alert("Successfully registered");
-			alert(this.rForm.get('cities'));
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);

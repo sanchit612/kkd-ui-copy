@@ -70,7 +70,6 @@ export class CustomerRegisterComponent implements OnInit {
 			'mobileNo':this.mobileNo,
 			'otp':post.otp
 		}
-		debugger
 		this.registrationService.verifyOtp(otpData).subscribe((res) =>{
 			//response will be true or false if true redirect to customer dashboard else invalid otp
 			if(res==true){
