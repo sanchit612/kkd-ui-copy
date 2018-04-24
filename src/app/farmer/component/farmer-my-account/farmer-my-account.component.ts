@@ -11,7 +11,7 @@ import { Farmer } from './farmer';
   providers:[FarmerHeaderService]
 })
 export class FarmerMyAccountComponent implements OnInit {
-   public searchedFarmerId: string="KKDFARM1000";
+   public searchedFarmer: string="KKDFARM1001";
    public farmerPhoto:string;
    public farmerId: string
    public farmerName : string;
@@ -29,7 +29,7 @@ export class FarmerMyAccountComponent implements OnInit {
    public farmerAlternatePrimary: boolean;
    public farmerMobileNumber : string;
    public farmerAlternateNumber:number;
-  
+
    public currentPassword:string;
    public newPassword:string;
    public reenterNewPassword:string;
@@ -68,7 +68,7 @@ export class FarmerMyAccountComponent implements OnInit {
 
     });
   }
-  /* Function to update farmer's alternate address by his KKDId 
+  /* Function to update farmer's alternate address by his KKDId
   and make service call to update farmer's alternate address from app */
   updateFarmerAddress(){
     this.farmer.addressLine=this.farmerAlternateAddressLine;
@@ -87,7 +87,7 @@ export class FarmerMyAccountComponent implements OnInit {
     },(error)=>{
     });
   }
-  /* Function to update farmer's mobile number by his KKDId 
+  /* Function to update farmer's mobile number by his KKDId
   and make service call to update farmer's mobile number from app */
   updateFarmerMobile(){
     this.farmerHeaderService.updateFarmerMobile(this.farmerId, this.farmerAlternateNumber)
@@ -102,7 +102,7 @@ export class FarmerMyAccountComponent implements OnInit {
   resetPassword(){
     if(this.newPassword == this.reenterNewPassword)
     {
-    
+
        this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
              .subscribe((res) =>{
              console.log(res.password);
@@ -113,9 +113,9 @@ export class FarmerMyAccountComponent implements OnInit {
                      if(this.newPassword == updatedInfo.password){
                        alert("Password changed successfully");
                      }
-                    
+
                      }, (error) =>{
-                
+
                      })
              }else{
                alert("Incorrect current password");
