@@ -11,7 +11,6 @@ import { FarmerPreviousOrderComponent } from './component/farmer-dashboard/farme
 import { FarmerViewProductComponent } from './component/farmer-dashboard/farmer-view-product/farmer-view-product.component';
 import { FarmerComponent } from './farmer.component';
 
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AadhaarComponent } from './component/farmer-authentication-authorization/aadhaar/aadhaar.component';
 import { FarmerAuthenticationAuthorizationComponent } from './component/farmer-authentication-authorization/farmer-authentication-authorization.component';
@@ -19,8 +18,6 @@ import { ForgetPasswordComponent } from './component/forget-password/forget-pass
 import { FarmerDashboardComponent } from './component/farmer-dashboard/farmer-dashboard.component';
 import { FarmerHeaderComponent } from './component/farmer-header/farmer-header.component';
 import { FarmerCommonHeaderComponent } from './component/farmer-common-header/farmer-common-header.component';
-
-
 
 @NgModule({
   imports: [
