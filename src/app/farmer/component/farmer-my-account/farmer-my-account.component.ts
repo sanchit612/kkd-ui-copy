@@ -12,7 +12,7 @@ import { Farmer } from './farmer';
 })
 export class FarmerMyAccountComponent implements OnInit {
 
-   public searchedFarmer: string="KKDFARM1001";
+   public searchedFarmerId: string="KKDFARM1001";
    public farmerPhoto:string;
    public farmerId: string
    public farmerName : string;
