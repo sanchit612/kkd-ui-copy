@@ -43,7 +43,7 @@ export class FarmerRegisterComponent implements OnInit {
 	//function to register a farmer
 	registerFarmer(post) {
 		var farmerToRegister={
-			'mobileNo':post.mobileNo,
+			'mobileNo':this.aadhaarDataRecievedByRegister.mobileNumber,
 			'password':post.password,
 			'aadhaarData':this.aadhaarDataRecievedByRegister,
 			'cities': post.cities
