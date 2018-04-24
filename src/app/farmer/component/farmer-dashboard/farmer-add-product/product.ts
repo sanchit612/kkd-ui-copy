@@ -14,6 +14,6 @@ description: any;
 price: any;
 bulkOrderPrice:any;
 quantity: any;
-availability: any;
+available: any;
 
 }
