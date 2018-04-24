@@ -24,7 +24,7 @@ export class RegistrationLoginService {
 	}
 
 	forgetPassword(customerCredentials) {
-		return this.http.put(LoginRegistration.forgetpassword_api,customerCredentials)
+		return this.http.put(LoginRegistration.forgetpassword_api,customerCredentials, {headers: this.headers})
 		.map(data => data.json(),
 			(error: any)=>this.handleError(error));
 	}
