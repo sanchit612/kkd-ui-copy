@@ -4,20 +4,38 @@
 	 <div class="row">
 	    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 d-flex align-items-stretch" *ngFor="let order of orderList" >
         <div class="card my-3 ml-5" *ngIf="order.orderType=='current'">
-            <div class="card-body">
-              <h5 class="card-title one">{{order.orderId}}</h5>
-                <div id="scroll" class="card-text rubic">{{order.name}}
-                </div>
-                <p class="card-text"><small class="text-muted">{{order.quantity}}</small></p>
-            </div>
-						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal1">
-						  Accept
-						</button>
-						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
-						  Decline
-						</button>
+						<div class="card-body text-center">
+					    <h4 class="card-title">OrderId :<strong>{{order.orderId}}</strong></h4>
+					    <hr>
+					    <div class="text-area">
+					      <p class="card-text"><b>Name : </b>{{order.name}}</p>
+					      <p class="card-text"><b>Customer Name : </b>{{order.name}}</p>
+					      <p class="card-text"><b>Address : </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
+					      <p class="card-text"><b>Quantity : </b>{{order.quantity}}</p>
+					      <p class="card-text"><b>Amount : </b>{{order.price}}</p>
+					    </div>
+							<div *ngIf="order.farmerStatus==null">
+
+								<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal1">
+									Accept
+								</button>
+
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+									Decline
+								</button>
+
+							</div>
+							<div *ngIf="order.farmerStatus=='Accept'">
+								<p class="card-text"><b>Validity Of Order : </b>{{order.validityOfOrder}}</p>
+								<p class="card-text"><b>Quantity : </b>{{order.mobileNo}}</p>
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+									Delivered
+								</button>
+							</div>
+					  </div>
+
+
+
           </div>
       </div>
     </div>
@@ -45,7 +63,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" value="Submit" data-dismiss="modal">
       </div>
     </div>
   </div>
@@ -66,8 +84,54 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- deliver Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enter OTP here</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+				<div class="form-group col-md-4">
+	      <label for="inputOtp">OTP</label>
+	      <input type="text" class="form-control" id="inputOtp">
+	    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#exampleModal4">CONFIRMS</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Rating Modal -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Rate the Order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+				<div class="rating">
+					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+				</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
