@@ -43,3 +43,7 @@ body {
     background:#e8e8e8;
     font-family: 'Muli';
 }
+
+.card{
+    margin: 0 auto;
+}
