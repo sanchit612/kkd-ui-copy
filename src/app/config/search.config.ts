@@ -1,3 +1,3 @@
 export class SearchConfig{
-    public static apiUrl="http://localhost:8108/rating/customer";
+    public static apiUrl="http://10.151.61.151:9001/search-key/gurgaon/tamatar";
 }
