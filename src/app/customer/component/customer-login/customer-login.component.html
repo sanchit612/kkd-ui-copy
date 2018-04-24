@@ -1,4 +1,4 @@
-<app-customer-header></app-customer-header>
+<app-customer-common-header></app-customer-common-header>
 <div class="container-fluid" style="margin-top: 6rem; margin-bottom: 1rem">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
@@ -8,13 +8,13 @@
           <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
           <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
             <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
-              Less than 10 digits 
+              Less than 10 digits
             </div>
             <div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
-             More than 10 digits 
+             More than 10 digits
            </div>
            <div *ngIf="rForm.controls['mobileNo'].hasError('required')">
-             Mobile Number is required!  
+             Mobile Number is required!
            </div>
          </div>
          <br>
@@ -22,10 +22,10 @@
          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
          <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
           <div *ngIf="rForm.controls['password'].hasError('maxlength')">
-           More than 12 digits 
+           More than 12 digits
          </div>
          <div *ngIf="rForm.controls['password'].hasError('required')">
-           Password is required!  
+           Password is required!
          </div>
          <div *ngIf="rForm.controls['password'].hasError('pattern')">
           Password Invalid (Atleast one lowercase, uppercase, specialcharacter, digit, minLength 6) !
