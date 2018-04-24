@@ -1,7 +1,6 @@
+<!--The content below is only a placeholder and can be replaced.-->
 <app-farmer-header></app-farmer-header>
-
-
-    <div class="container-fluid">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
 			<h3 class="text-center">
@@ -13,14 +12,19 @@
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-4">
-					<div class="dropdown">
+					<div class="dropdown show">
 						 
-						<button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+						<!--<button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 							Select product type
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							 <a class="dropdown-item " href="#">Onion</a> <a class="dropdown-item" href="#">Tomato</a> <a class="dropdown-item" href="#">Brinjal</a>
-						</div>
+							 class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+						</button>-->
+						
+						<select class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (change)="selectChangeHandler($event)">
+							<option value="select" class="dropdown-header">--select--</option>
+							 <option value="Onion" class="dropdown-item">Onion</option>
+							 <option value="Tomato" class="dropdown-item">Tomato</option>
+							 <option value="Brinjal" class="dropdown-item">Brinjal</option>
+						</select>
 						
 					</div>
 				</div>
@@ -39,7 +43,7 @@
 							<label for="exampleInputEmail1">
 								Description
 							</label>
-							<input type="text" class="form-control" id="exampleInputEmail1">
+							<input [(ngModel)]="description" type="text" class="form-control" id="exampleInputEmail1" name="description">
 						</div>
 						
 						<div class="form-group">
@@ -47,21 +51,21 @@
 							<label for="exampleInputPassword1">
 								Price
 							</label>
-							<input type="number" class="form-control" id="exampleInputPassword1">
+							<input  [(ngModel)]="price" type="number" class="form-control" id="exampleInputPassword1" name="price">
 						</div>
 						<div class="form-group">
 							 
 							<label for="exampleInputPassword1">
 								Bulk Order Price
 							</label>
-							<input type="number" class="form-control" id="exampleInputPassword1">
+							<input  [(ngModel)]="bulkPrice" type="number" class="form-control" id="exampleInputPassword1" name="bulkPrice"> 
 						</div>
 						<div class="form-group">
 							 
 							<label for="exampleInputPassword1">
 								Quantity
 							</label>
-							<input type="number" class="form-control" id="exampleInputPassword1">
+							<input  [(ngModel)]="quantity" type="number" class="form-control" id="exampleInputPassword1" name="quantity">
 						</div>
 						<div class="form-group">
 							 
@@ -74,10 +78,10 @@
 						<div class="checkbox">
 							 
 							<label>
-								<input type="checkbox">In stock
+								<input type="checkbox" name="isAvailable" [(ngModel)]="availability">In stock
 							</label>
 						</div> 
-						<button type="submit" class="btn btn-primary">
+						<button type="submit" (click)="check()" class="btn btn-primary">
 							Submit
 						</button>
 					</form>

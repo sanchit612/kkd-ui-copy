@@ -9,7 +9,7 @@ import { FarmerHeaderService } from '../../services/farmer-header/farmer-header.
 export class FarmerHeaderComponent implements OnInit {
 
   @Output() success = new EventEmitter<any>();
- 	public gotFarmerName: string="KKDFARM1000";
+ 	public gotFarmerName: string="KKDFARM1001";
  	public farmerName : string;
 
 
