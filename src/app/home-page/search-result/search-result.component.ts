@@ -17,7 +17,7 @@ export class SearchResultComponent implements OnInit {
 
 	 public searchItemName : String;
 	public itemList : any = [];
-
+	public flag=false;
 	constructor(private searchService : SearchService) { }
 
 	ngOnInit() {
@@ -27,20 +27,21 @@ export class SearchResultComponent implements OnInit {
 	set itemName(itemName : String){
 		this.searchItemName=itemName;
 		if(this.searchItemName){
-			// this.searchService.searchItem(SearchConfig.apiUrl).subscribe((res)=>{
-			// 	this.itemList=res;
-			// },error=>this.handleError(error))
-			this.itemList=this.searchService.searchItem(SearchConfig.apiUrl);
+			this.flag=true;
+			this.searchService.searchItem(SearchConfig.apiUrl+this.searchItemName).subscribe((res)=>{
+				this.itemList=res;
+			},error=>this.handleError(error))
+			//this.itemList=this.searchService.searchItem(SearchConfig.apiUrl);
 		}
 		
 	}
 
-	storeItem(){
-		// this.searchService.searchItem(SearchConfig.apiUrl).subscribe((res)=>{
-		// 	this.itemList=res;
-		// },error=>this.handleError(error))
-		this.itemList=this.searchService.searchItem(SearchConfig.apiUrl);
-	}
+	// storeItem(){
+	// 	this.searchService.searchItem(SearchConfig.apiUrl).subscribe((res)=>{
+	// 		this.itemList=res;
+	// 	},error=>this.handleError(error))
+	// 	this.itemList=this.searchService.searchItem(SearchConfig.apiUrl);
+	// }
 
 	private handleError(error) {
 		console.log("Logging the error occured in the service");

@@ -1,6 +1,6 @@
 <app-customer-common-header></app-customer-common-header>
 <div *ngIf="!hideVar">
-	<div class="container-fluid" id="payal" style="margin-top: 6rem ; margin-bottom: 1rem">
+	<div class="container-fluid cardmargin">
 		<div class="card" style="width: 18rem;">
 			<div class="card-body">
 				<form [formGroup]="rForm" (ngSubmit)="sendOtp(rForm.value)">
@@ -15,7 +15,6 @@
 								First Name is required!
 							</div>
 						</div>
-						<br>
 						<label for="exampleInputName2">Last Name</label>
 						<input class="form-control" type="text" id="LastName">
 
@@ -32,7 +31,6 @@
 								Mobile Number is required!
 							</div>
 						</div>
-						<br>
 						<label for="exampleInputPassword1">Password</label>
 						<input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 						<div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
