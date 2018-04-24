@@ -1,4 +1,36 @@
 <app-farmer-header></app-farmer-header>
-<p>
-  farmer-view-product works!
-</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-lg-4">
+      <div class="card shadow p-3 mb-5">
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="../../../../assets/images/tomatoes.jpg" alt="Search Result Image">
+        </div>
+        <!-- Card content -->
+        <div class="card-body text-center">
+          <!-- Title -->
+          <h4 class="card-title">
+            <strong>Tomatoes</strong>
+          </h4>
+          <hr>
+          <!-- Text -->
+          <div class="text-area">
+            <p class="card-text">
+              <b>Name: </b>{{product.productId}}</p>
+            <p class="card-text">
+              <b>Price: </b>{{product.kkdFarmId}}</p>
+            <p class="card-text">
+              <b>Location: </b>{{product.productName}}</p>
+            <p class="card-text">
+              <b>Ratings: </b>{{product.description}}</p>
+            <p class="card-text">
+              <b>Review: </b>{{product.price}}</p>
+          </div>
+          <button type="button" class="btn btn-success">Add to Bag</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
