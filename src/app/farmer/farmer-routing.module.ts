@@ -25,7 +25,7 @@ const routes: Routes = [
 { path:'farmer/currentOrder',component:FarmerCurrentOrderComponent },
 { path:'farmer/previousOrder',component:FarmerPreviousOrderComponent },
 { path:'farmer/viewProduct',component:FarmerViewProductComponent },
-{ path:'farmer/myaccount',component:FarmerMyAccountComponent },
+{ path:'farmer/myAccount',component:FarmerMyAccountComponent },
 { path:'farmer/authenticationAndAuthorization',component:FarmerAuthenticationAuthorizationComponent },
 { path:'farmer/forgetPassword',component:ForgetPasswordComponent },
 ];
