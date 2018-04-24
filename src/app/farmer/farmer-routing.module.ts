@@ -20,7 +20,7 @@ const routes: Routes = [
     { path:'farmer/currentOrder',component:FarmerCurrentOrderComponent },
     { path:'farmer/previousOrder',component:FarmerPreviousOrderComponent },
     { path:'farmer/viewProduct',component:FarmerViewProductComponent },
-    { path:'farmer/myAccount',component:FarmerMyAccountComponent },
+    { path:'farmer/myaccount',component:FarmerMyAccountComponent },
   ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { FarmerCurrentOrderComponent } from './component/farmer-dashboard/farmer
 import { FarmerPreviousOrderComponent } from './component/farmer-dashboard/farmer-previous-order/farmer-previous-order.component';
 import { FarmerViewProductComponent } from './component/farmer-dashboard/farmer-view-product/farmer-view-product.component';
 import { FarmerComponent } from './farmer.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,7 @@ import { FarmerComponent } from './farmer.component';
   imports: [
     CommonModule,
     FarmerRoutingModule,
+    FormsModule
   ],
 
   declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent],

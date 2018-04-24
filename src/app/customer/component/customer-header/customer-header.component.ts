@@ -25,10 +25,6 @@ export class CustomerHeaderComponent implements OnInit {
    	this.customerHeaderService.searchCustomer(this.searchedCustomer)
    	.subscribe((res) =>{
        this.customerName=res.firstName;
-       console.log(res.firstName);
-   		this.success.emit({
-   			'customerName':this.customerName
-   		});
     	},(error) =>{
 
    	});
