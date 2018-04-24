@@ -1,6 +1,6 @@
 <app-farmer-header></app-farmer-header>
 <div *ngIf="!hideVar">
-  <div class="container-fluid">
+  <div class="container-fluid" style="width: 18rem; margin-top: 6rem ; margin-bottom: 1rem">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <form [formGroup]="rForm" (ngSubmit)="sendOtp(rForm.value)">
@@ -28,7 +28,7 @@
 
 
 <div *ngIf="hideVar">
-  <div class="container-fluid">
+  <div class="container-fluid" style="width: 18rem; margin-top: 6rem ; margin-bottom: 1rem">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <form [formGroup]="otpForm" (ngSubmit)="verifyOtp(otpForm.value)">

@@ -1,9 +1,5 @@
 <app-farmer-common-header></app-farmer-common-header>
-<p>
-  <a routerLink="/farmer/authenticationAndAuthorization">Not A User!Register</a>
-</p>
-
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 6rem ; margin-bottom: 1rem">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <form [formGroup]="rForm" (ngSubmit)="loginFarmer(rForm.value)">
@@ -12,7 +8,7 @@
           <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
           <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
             <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
-            Less than 10 digits
+              Less than 10 digits
             </div>
             <div *ngIf="rForm.controls['mobileNo'].hasError('maxlength')">
              More than 10 digits
@@ -38,7 +34,8 @@
      </div>
      <a href="/farmer/forgetPassword">Forgot password?</a>
      <br>
-     <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
+     <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login</button>
+     <button type="submit" class="btn btn-primary" routerLink="/farmer/authenticationAndAuthorization">Register</button>
    </form>
  </div>
 </div>

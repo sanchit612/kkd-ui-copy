@@ -37,7 +37,6 @@ export class AadhaarComponent implements OnInit {
 	sendOtp(post) {
 		//call otp service to generate a otp corresponding to aadhaar number else error as aadhaar not found
 		this.aadhaarNo=post.aadhaarNo;
-		this.hideVar=true;
 		this.getAadhaarData(post);
 	}
 
@@ -66,6 +65,8 @@ export class AadhaarComponent implements OnInit {
 		//call aadhaar service to get aadhaar data
 		this.registrationService.addhaarData(post.aadhaarNo).subscribe((res) =>{
 			this.aadhaarData=res;
+			//go to otp page
+			this.hideVar=true;
 			//extract mobile number from aadhaar data and call otp service
 			this.mobileNo=this.aadhaarData.mobileNumber;
 			this.registrationService.generateOtp(this.mobileNo).subscribe((res) =>{

@@ -54,7 +54,6 @@ export class ForgetPasswordComponent implements OnInit {
 	
 
 	sendOtp(post) {
-		alert(post.mobileNo)
 		this.mobileNo=post.mobileNo;
 		this.hideVar=true;
 		this.hideVar2=true;
@@ -73,9 +72,8 @@ export class ForgetPasswordComponent implements OnInit {
 			'mobileNo':this.mobileNo,
 			'otp':post.otp
 		}
-		//call otp service and send this otp, in response it will send mobile no back if exists else error
-		//if response mobile no==mobileNo then go for reset else error
-		this.registrationService.verifyOtp(otpData).subscribe((res) =>{
+				//call otp service to verify the otp if true then show update password card
+				this.registrationService.verifyOtp(otpData).subscribe((res) =>{
 			//response will be true or false if true move else error
 			if(res==true){
 				//show card to enter new password
@@ -87,12 +85,12 @@ export class ForgetPasswordComponent implements OnInit {
 				alert("wrong otp")
 			}
 		}, (err) =>{
-				alert("Server down")
+			alert("Server down")
 		})
-	}
+			}
 
 
-	resetPasswordFarmer(post) {
+			resetPasswordFarmer(post) {
 		//getting new credentials
 		var farmerNewCredentials={
 			'mobileNo':post.mobileNo,

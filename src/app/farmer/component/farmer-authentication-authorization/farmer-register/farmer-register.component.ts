@@ -2,7 +2,6 @@ import { Component, OnInit,Input } from '@angular/core';
 import { RegistrationLoginService } from '../../../services/registration-login-service/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
 	selector: 'app-farmer-register',
 	templateUrl: './farmer-register.component.html',
@@ -56,7 +55,7 @@ export class FarmerRegisterComponent implements OnInit {
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
-			console.log(err);
+			alert("already registered")
 		})
 	}
 }
