@@ -8,27 +8,34 @@ import{UserDetails} from '../../config/user-details.config';
   providers:[CustomerAuthenticationService],
 })
 export class CustomerMyAccountComponent implements OnInit {
-  public mobileNumber: string;
-  public currentPassword: string;
-  public newPassword: string;
-  public reenterNewPassword: string;
+  public mobileNumber:string="";
+  public currentPassword: string="";
+  public newPassword: string="";
+  public reenterNewPassword: string="";
   public userDetails ={};
  
   constructor(private customerAuthenticationService :CustomerAuthenticationService) { }
 
   ngOnInit() {
     this.customerAuthenticationService.changeCustomerId('kkdcust3001');
+    //localStorage.getItem("kkdCustId");
   }
   
   
   
   onSubmit(){
-    if(this.newPassword == this.reenterNewPassword)
+    
+   
+    var regularExpression  = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
+    if(this.currentPassword.length && this.newPassword.length && this.reenterNewPassword.length ){
+    if(regularExpression.test(this.newPassword)){
+      if(this.newPassword == this.reenterNewPassword)
     {
     
       this.customerAuthenticationService.getUserDetails(this.mobileNumber)
             .subscribe((res) =>{this.userDetails = res;
-            //console.log(res.password);
+            if(!(res == null)){
             if(this.currentPassword == res.password){
                   res.password = this.newPassword;
                   this.customerAuthenticationService.updatePassword(res.kkdCustId ,res )
@@ -38,10 +45,12 @@ export class CustomerMyAccountComponent implements OnInit {
                     }
                     
                     }, (error) =>{
-                
+                      alert ("Mobile number not registered");
                     })
             }else{
               alert("Incorrect current password");
+            }}else{
+              alert ("Mobile number not registered");
             }
             }, (error) =>{
             alert ("Mobile number not registered");
@@ -49,13 +58,27 @@ export class CustomerMyAccountComponent implements OnInit {
           }
     else{
       alert("Re-enter the new password correctly");
+    }}
+    else{
+      alert("New password must contain at least one number and one uppercase"+ 
+      "and one lowercase and one special case, and at least 8 or more characters");
+    }}
+    else{
+      alert("Please fill all the fields");
+    }}
+    else{
+      alert("Enter a valid mobile number");
     }
   }
+  
 
   validateUser(){
+    if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
+    if(this.currentPassword.length){
     this.customerAuthenticationService.getUserDetails(this.mobileNumber)
     .subscribe((res) =>{this.userDetails = res;
     //console.log(res.password);
+    if(!(res == null)){
     if(this.currentPassword == res.password){
       this.customerAuthenticationService.deleteProfile(res.kkdCustId)
             .subscribe((status) =>{
@@ -67,7 +90,13 @@ export class CustomerMyAccountComponent implements OnInit {
       }
       else{
         alert("Incorrect Password");
+      }}else{
+        alert ("Mobile number not registered");
       }
     })
+  }else{
+    alert ("Password field cannot be empty");
+  }}else{
+    alert("Enter a valid mobile number");
   }
-}
+}}

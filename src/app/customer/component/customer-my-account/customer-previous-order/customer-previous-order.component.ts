@@ -10,77 +10,7 @@ import {CustomerAuthenticationService} from '../../../services/customer-authenti
 export class CustomerPreviousOrderComponent implements OnInit {
 
   public customerId : string ;
-  public previousOrders : any = [
-  {
-   "address": {
-     "addressLine": "string",
-     "city": "string",
-     "district": "string",
-     "pincode": 0,
-     "state": "string"
-   },
-   "avgRating": 0,
-   "expectedDate": "2018-04-20",
-   "expectedTime": {
-     "hour": "string",
-     "minute": "string",
-     "nano": 0,
-     "second": "string"
-   },
-   "farmerStatus": "string",
-   "kkdCustId": "string",
-   "kkdFarmId": "string",
-   "mobileNo": "string",
-   "name": "previous1",
-   "orderDeclineReason": "string",
-   "orderId": "string",
-   "orderPlacingDate": "2018-04-20",
-   "orderReceivingDate": "2018-04-20",
-   "orderStatus": "string",
-   "orderType": "string",
-   "otp": "string",
-   "otpVerified": false,
-   "productId": "string",
-   "quantity": 0,
-   "totalAmount": 0,
-   "transactionId": "string",
-   "validityOfOrder": "2018-04-20T10:59:42.039Z"
-  },
-  {
-   "address": {
-     "addressLine": "string",
-     "city": "string",
-     "district": "string",
-     "pincode": 0,
-     "state": "string"
-   },
-   "avgRating": 0,
-   "expectedDate": "2018-04-20",
-   "expectedTime": {
-     "hour": "string",
-     "minute": "string",
-     "nano": 0,
-     "second": "string"
-   },
-   "farmerStatus": "string",
-   "kkdCustId": "string",
-   "kkdFarmId": "string",
-   "mobileNo": "string",
-   "name": "previous2",
-   "orderDeclineReason": "string",
-   "orderId": "string",
-   "orderPlacingDate": "2018-04-20",
-   "orderReceivingDate": "2018-04-20",
-   "orderStatus": "string",
-   "orderType": "string",
-   "otp": "string",
-   "otpVerified": false,
-   "productId": "string",
-   "quantity": 0,
-   "totalAmount": 0,
-   "transactionId": "string",
-   "validityOfOrder": "2018-04-20T10:59:42.039Z"
-  }];
+  public previousOrders : any = [];
    constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
 
    getdata(){
@@ -93,6 +23,6 @@ export class CustomerPreviousOrderComponent implements OnInit {
  }
    ngOnInit() {
     this.customerId = CustomerAuthenticationService.cus;
-     //this.getdata();
+     this.getdata();
 
    }}
