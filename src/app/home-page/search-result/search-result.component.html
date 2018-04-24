@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <div *ngFor="let items of itemList" class="col-lg-4">
+    <div *ngFor="let items of itemList | paginate: {itemsPerPage:5,currentPage:p}" class="col-lg-4">
       <app-search-result-list [item]="items"></app-search-result-list>
     </div>
   </div>
+  <pagination-controls (pageChange)="p=$event"></pagination-controls>
 </div>
