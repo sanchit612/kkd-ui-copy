@@ -1,7 +1,45 @@
 <div class="container">
   <div class="row">
-    <div *ngFor="let items of itemList" class="col-lg-4">
+    <div *ngFor="let items of itemList | paginate: {itemsPerPage:6,currentPage:p}" class="col-lg-4">
       <app-search-result-list [item]="items"></app-search-result-list>
     </div>
+  </div>
+
+  <div *ngIf="!flag" >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card shadow p-2">
+            <img class="card-img-top" src="../../../assets/Body/card1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">Our Aim</h3><hr>
+              <p class="card-text">To connect rural farms with the nearby areas so that both the farmers and consumers get benefitted leading to their mutual benefit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow p-2">
+            <img class="card-img-top" src="../../../assets/Body/card2.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">Our Offerings</h3><hr>
+              <p class="card-text">The best quality products straight from farm to the consumer so that you never need to question the freshness of the food you eat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow p-2" >
+            <img class="card-img-top" src="../../../assets/Body/card3.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">Our Prize</h3><hr>
+              <p class="card-text">Nothing makes us more happy than seeing the farmer of our country grow and pave a way to their economical development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="flag">
+  <pagination-controls (pageChange)="p=$event"></pagination-controls>
   </div>
 </div>

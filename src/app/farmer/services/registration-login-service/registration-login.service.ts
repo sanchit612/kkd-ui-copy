@@ -24,7 +24,8 @@ export class RegistrationLoginService {
 	}
 
 	forgetPassword(farmerNewCredentials) {
-		return this.http.put(RegistrationLogin.forgetpassword_api,farmerNewCredentials)
+		debugger
+		return this.http.put(RegistrationLogin.forgetpassword_api,farmerNewCredentials, {headers: this.headers})
 		.map(data => data.json(),
 			(error: any)=>this.handleError(error));
 	}
@@ -36,14 +37,12 @@ export class RegistrationLoginService {
 	}
 
 	generateOtp(mobileNo) {
-		debugger
 		return this.http.get(RegistrationLogin.otp_generate+mobileNo)
 		.map(data => data.json(),
 			(error: any)=>this.handleError(error));
 	}
 
 	verifyOtp(otpData) {
-		debugger
 		return this.http.post(RegistrationLogin.otp_verify,otpData, {headers: this.headers})
 		.map(data => data.json(),
 			(error: any)=>this.handleError(error));

@@ -18,6 +18,7 @@ export class CustomerRegisterComponent implements OnInit {
 	confirmPassword:String;
 	hideVar:boolean=false;
 	customerToRegister;
+	otpForm: FormGroup;
 
 	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) {
 		this.rForm = fb.group({
@@ -26,6 +27,10 @@ export class CustomerRegisterComponent implements OnInit {
 			'password': [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12), Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$")])],
 			'confirmPassword' : ['',[Validators.required]],
 		},{validator: this.checkIfMatchingPasswords});
+
+		this.otpForm = fb.group({
+			'otp' : [null, Validators.required],
+		});
 	}
 
 	ngOnInit() {
@@ -65,21 +70,17 @@ export class CustomerRegisterComponent implements OnInit {
 			'mobileNo':this.mobileNo,
 			'otp':post.otp
 		}
-
 		this.registrationService.verifyOtp(otpData).subscribe((res) =>{
 			//response will be true or false if true redirect to customer dashboard else invalid otp
 			if(res==true){
 				//save customer details to db
 				this.registrationService.addCustomer(this.customerToRegister).subscribe((res) =>{
-					alert("Successfully registered");
 					localStorage.setItem("token",res.results.token);
 					localStorage.setItem("kkdCustId",res.results.kkdCustId);
-					this.router.navigate(['/customer/dashboard']);
+					this.router.navigate(['customer/homePage']);
 				}, (err) =>{
 						alert("Bad Request")
 				})
-				//redirect to dashboard
-				this.router.navigate(['/customer/dashboard']);
 			}
 			else{
 				alert("wrong otp");
