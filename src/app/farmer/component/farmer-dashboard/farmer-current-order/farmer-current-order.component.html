@@ -1,4 +1,74 @@
 <app-farmer-header></app-farmer-header>
-<p>
-  farmer-current-order works!
-</p>
+
+<div class="container-section">
+	 <div class="row">
+	    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 d-flex align-items-stretch" *ngFor="let order of orderList" >
+        <div class="card my-3 ml-5" *ngIf="order.orderType=='current'">
+            <div class="card-body">
+              <h5 class="card-title one">{{order.orderId}}</h5>
+                <div id="scroll" class="card-text rubic">{{order.name}}
+                </div>
+                <p class="card-text"><small class="text-muted">{{order.quantity}}</small></p>
+            </div>
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal1">
+						  Accept
+						</button>
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+						  Decline
+						</button>
+          </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<!-- Accept Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enter Delivery Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+				<form >
+  				Enter delivery date and time:
+  				<input type="date" name="deliveryInfo">
+					<input id="time" type="time">
+				</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Decline Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+>>>>>>> aca43bac10d98e8f2ede41b06ed7e5b00b146ff3

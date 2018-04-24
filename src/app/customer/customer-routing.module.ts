@@ -11,6 +11,7 @@ import { CustomerCurrentOrderComponent } from './component/customer-my-account/c
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component'
 
+
 const routes: Routes = [
     { path:'customer/login',component:CustomerLoginComponent },
     { path:'customer/register',component:CustomerRegisterComponent },
@@ -21,7 +22,9 @@ const routes: Routes = [
     { path:'customer/bankDetails',component:CustomerBankDetailsComponent },
     { path:'customer/currentOrder',component:CustomerCurrentOrderComponent },
     { path:'customer/previousOrder',component:CustomerPreviousOrderComponent },
+
     { path:'customer/forgetPassword',component:ForgetPasswordComponent},
+
   ];
 
 @NgModule({

@@ -4,14 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-forget-password',
-  templateUrl: './forget-password.component.html',
-  styleUrls: ['./forget-password.component.css'],
-  providers:[ RegistrationLoginService ]
+	selector: 'app-forget-password',
+	templateUrl: './forget-password.component.html',
+	styleUrls: ['./forget-password.component.css'],
+	providers:[ RegistrationLoginService ]
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  newPasswordForm: FormGroup;
+	newPasswordForm: FormGroup;
 	numberForm: FormGroup;
 	otpForm: FormGroup;
 	post:any;   
@@ -67,15 +67,12 @@ export class ForgetPasswordComponent implements OnInit {
 
 	verifyOtp(post) {
 		alert(post.otp)
-		/*this.hideVar2=false;
-		this.hideVar3=true;*/
 		var otpData={
 			'mobileNo':this.mobileNo,
 			'otp':post.otp
 		}
-			//call otp service and send this otp, in response it will send mobile no back if exists else error
-		//if response mobile no==mobileNo then go for reset else error
-		this.registrationService.verifyOtp(otpData).subscribe((res) =>{
+						//call otp service to verify the otp if true then show update password card
+						this.registrationService.verifyOtp(otpData).subscribe((res) =>{
 			//response will be true or false if true move else error
 			if(res==true){
 				this.hideVar2=false;
@@ -92,21 +89,21 @@ export class ForgetPasswordComponent implements OnInit {
 				alert("Server down")
 			}
 		})
-	}
+					}
 
-	resetPasswordCustomer(post) {
-		var customerNewCredentials={
-			'mobileNo':post.mobileNo,
-			'password':post.password,
-		}
-	
-		console.log(customerNewCredentials)
-		this.registrationService.forgetPassword(customerNewCredentials).subscribe((res) =>{
-			alert("Successfully changed");
-			localStorage.setItem("token",res.results.token);
-			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
-		}, (err) =>{
-			alert("conflict");
-		})
-	}
-}
+					resetPasswordCustomer(post) {
+						var customerNewCredentials={
+							'mobileNo':post.mobileNo,
+							'password':post.password,
+						}
+
+						console.log(customerNewCredentials)
+						this.registrationService.forgetPassword(customerNewCredentials).subscribe((res) =>{
+							alert("Successfully changed");
+							localStorage.setItem("token",res.results.token);
+							localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
+						}, (err) =>{
+							alert("conflict");
+						})
+					}
+				}

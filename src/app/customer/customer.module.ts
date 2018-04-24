@@ -14,6 +14,8 @@ import { CustomerPreviousOrderComponent } from './component/customer-my-account/
 import { CustomerComponent } from './customer.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
+
 @NgModule({
   imports: [
     CommonModule,

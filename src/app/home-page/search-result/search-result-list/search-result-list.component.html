@@ -1,3 +1,22 @@
-<p>
-  search-result-list works!
-</p>
+
+<div class="card shadow p-3 mb-5">
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="../../../../assets/images/tomatoes.jpg" alt="Search Result Image">
+  </div>
+  <!-- Card content -->
+  <div class="card-body text-center">
+    <!-- Title -->
+    <h4 class="card-title"><strong>Tomatoes</strong></h4>
+    <hr>
+    <!-- Text -->
+    <div class="text-area">
+      <p class="card-text"><b>Name: </b>{{item.kkdCustId}}</p>
+      <p class="card-text"><b>Price: </b>{{item.kkdFarmId}}</p>
+      <p class="card-text"><b>Location: </b>{{item.orderId}}</p>
+      <p class="card-text"><b>Ratings: </b>{{item.rating}}</p>
+      <p class="card-text"><b>Review: </b>{{item.review}}</p>
+    </div>    
+    <button type="button" class="btn btn-success">Add to Bag</button>
+  </div>
+</div>

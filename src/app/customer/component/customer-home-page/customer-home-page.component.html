@@ -3,7 +3,39 @@
 <a routerLink="/customer/myAccount">myAccount</a>
 <a routerLink="/customer/myCart">mycart</a>
 <a routerLink="/home">LOGOUT</a>
+<<<<<<< HEAD
 
 <p>
   customer-home-page works!
 </p>
+=======
+<div class="dropdown">
+  <label>Sort By</label>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Relevance
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" (click)="sortBy('priceLH')">Price: Low to High</a>
+    <a class="dropdown-item" (click)="sortBy('priceHL')">Price: High to Low</a>
+    <a class="dropdown-item" (click)="sortBy('quantityLH')">Quantity: Low to High</a>
+    <a class="dropdown-item" (click)="sortBy('quantityHL')">Quantity: High to Low</a>
+    <a class="dropdown-item" (click)="sortBy('distance')">Distance</a>
+    <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
+  </div>
+</div>
+<div class="container">
+  <div class="card-deck">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let i of products">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">price:{{i.price}} Ratings: {{i.avgRating}}</p>
+            <p class="card-text"><small class="text-muted">distance:{{i.distance}} Quantity: {{i.quantity}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+>>>>>>> aca43bac10d98e8f2ede41b06ed7e5b00b146ff3
