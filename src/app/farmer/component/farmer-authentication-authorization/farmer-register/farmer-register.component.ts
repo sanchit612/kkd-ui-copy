@@ -56,7 +56,7 @@ export class FarmerRegisterComponent implements OnInit {
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
-			console.log(err);
+			alert("already registered")
 		})
 	}
 }
