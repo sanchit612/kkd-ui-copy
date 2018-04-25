@@ -5,8 +5,8 @@
       <div class="card-body">
         <form [formGroup]="rForm" (ngSubmit)="sendOtp(rForm.value)">
           <div class="form-group">
-            <label for="exampleInputEmail1">Aadhaar Number</label>
-            <input class="form-control" type="text" formControlName="aadhaarNo" placeholder="Aadhaar Number">
+            <label for="aadhaarNo">Aadhaar Number</label>
+            <input id ="aadhaarNo" class="form-control" type="text" formControlName="aadhaarNo" placeholder="Aadhaar Number">
             <div *ngIf="rForm.controls['aadhaarNo'].touched && rForm.controls['aadhaarNo'].invalid" class="alert">
               <div *ngIf="rForm.controls['aadhaarNo'].hasError('minlength')" >
                 Less than 12 digits 
