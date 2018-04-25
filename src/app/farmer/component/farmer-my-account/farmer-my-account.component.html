@@ -1,41 +1,42 @@
 <app-farmer-header></app-farmer-header>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4 farmer-details" id="first">
-        <div class="container">
-          <div class="card" style="width:300px">
-            <img class="card-img-top farmer-image " src="../../../../assets/images/farmer.jpg" alt="Card image" style="width:100%">
-            <div class="card-body">
-              <h4 class="card-title">{{farmerId}}</h4>
-              <p class="card-text">
-              <strong>{{farmerAddressLine}}</strong><br />{{farmerCity}} {{farmerDistrict}}<br />{{farmerState}} {{farmerPincode}} <br/>
-              </p><hr>
-              <p class="card-text" [hidden]="IsHidden">
-              <strong>{{farmerAlternateAddressLine}}</strong><br />{{farmerAlternateCity}} {{farmerAlternateDistrict}}<br />{{farmerAlternateState}} {{farmerAlternatePincode}} <br/>
-              </p>
-                </div>
+<div class="home">
+  <div class="container-fluid display-table">
+    <div class="row display-table-row">
+      <div class="col-sm-4 hidden-xs display-table-cell v-align box" id="navigation">
+        <div class="navi">
+          <ul>
+            <li><a data-target="#updateAddressModal" data-toggle="modal">Add Address</a></li>
+            <li><a data-target="#updatePasswordModal" data-toggle="modal">Change Password</a></li>
+            <li><a data-target="#updateMobileModal" data-toggle="modal">Alternate Mobile</a></li>
+            <li><a data-target="#deleteProfileModal" data-toggle="modal">Delete Profile</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-8 display-table-cell v-align">
+             
+              <div class="card-body" style="width: 200px; margin-left:50px">
+                <img class="card-img-top farmer-image" src="../../../../assets/images/farmer.jpg" alt="Card image" style="width:100%">
+                <h5 class="card-title">{{farmerId}}</h5>
+                <p class="card-text">
+                <strong>{{farmerAddressLine}}</strong><br />{{farmerCity}} {{farmerDistrict}}<br />{{farmerState}} {{farmerPincode}} <br/>
+                </p><hr>
+                <p class="card-text" [hidden]="IsHidden">
+                <strong>{{farmerAlternateAddressLine}}</strong><br />{{farmerAlternateCity}} {{farmerAlternateDistrict}}<br />{{farmerAlternateState}} {{farmerAlternatePincode}} <br/>
+                </p>
               </div>
-      </div>
+       
+        </div>
     </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-4 farmer-details" id="second">
-        <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#updateAddressModal" data-toggle="modal">Add Address</button>
-        </div>
-        <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#updatePasswordModal" data-toggle="modal">Change Password</button>
-        </div>
-        <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#updateMobileModal" data-toggle="modal">Alternate Mobile</button>
-        </div>
-        <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#deleteProfileModal" data-toggle="modal">Delete Profile</button>
-        </div>
-      </div>
-      
-  </div>
-</div>
+  </div> 
+</div>   
+
+
+
+  
+  
+
+
+  
 <div class="modal fade" tabindex="-1" id="updateAddressModal" data-keyboard="false" data-backdrop="static">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -50,27 +51,27 @@
           <div class="form-group">
             <label for="inputAddressLine">Address Line</label>
             <input [(ngModel)]="farmerAlternateAddressLine" type="text" class="form-control"
-              placeholder="Enter Address" name="farmerAlternateAddressLine">
+              placeholder="Enter Address" id="inputAddressLine" name="farmerAlternateAddressLine">
           </div>
           <div class="form-group">
             <label for="inputCity">City</label>                                     
             <input [(ngModel)]="farmerAlternateCity" type="text" class="form-control"
-              placeholder="Enter City" name="farmerAlternateCity">
+              placeholder="Enter City" id="inputCity" name="farmerAlternateCity">
           </div>
           <div class="form-group">         
             <label for="inputDistrict">District</label>
             <input [(ngModel)]="farmerAlternateDistrict" type="text" class="form-control" 
-              placeholder="Enter District" name="farmerAlternateDistrict">
+              placeholder="Enter District" id="inputDistrict" name="farmerAlternateDistrict">
           </div>
           <div class="form-group">
             <label for="inputState">State</label>                
             <input [(ngModel)]="farmerAlternateState" type="text" class="form-control"
-              placeholder="Enter State" name="farmerAlternateState">
+              placeholder="Enter State" id="inputState" name="farmerAlternateState">
           </div>
           <div class="form-group">
             <label for="inputPincode">Pincode</label>           
             <input [(ngModel)]="farmerAlternatePincode" type="number" pattern="[0-9]" class="form-control"
-              step="1" placeholder="Enter Pincode" name="farmerAlternatePincode">
+              step="1" placeholder="Enter Pincode" id="inputPincode" name="farmerAlternatePincode">
           </div>
         </form>
       </div>
