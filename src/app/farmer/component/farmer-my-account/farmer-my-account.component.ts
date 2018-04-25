@@ -12,7 +12,7 @@ import { Farmer } from './farmer';
 })
 export class FarmerMyAccountComponent implements OnInit {
 
-   public searchedFarmerId: string="KKDFARM1002";
+   public searchedFarmerId: string="KKDFARM1000";
    public farmerPhoto:string;
    public farmerId: string
    public farmerName : string;
@@ -36,7 +36,14 @@ export class FarmerMyAccountComponent implements OnInit {
    public newPassword:string;
    public reenterNewPassword:string;
    IsHidden= true;
-   farmer : Farmer;
+   farmer : Farmer={
+    addressLine:"grain market",
+    city: "kaithal",
+    district: "kaithal",    
+    state: "haryana",
+    pincode:136026, 
+    primary:false
+   };
 
    constructor(private farmerHeaderService : FarmerHeaderService,
               ) {
