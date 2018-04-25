@@ -1,76 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from '../../services/search.service';
 
 @Component({
   selector: 'app-customer-home-page',
   templateUrl: './customer-home-page.component.html',
-  styleUrls: ['./customer-home-page.component.css']
+  styleUrls: ['./customer-home-page.component.css'],
+  providers:[SearchService]
 })
 export class CustomerHomePageComponent implements OnInit {
 
-  constructor() { }
-
+  public searchInput:string
+  constructor(private searchService: SearchService) { }
   ngOnInit() {
+    this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
+      console.log(data);
+      this.products=data;
+    },
+    (err)=> console.log("in component"+err));
   }
-
-  public products = [
-    {
-      name: "Onion",
-      city: "Gurgaon",
-      price: 10,
-      avgRating: 4.0,
-      quantity: 10,
-      distance: 10
-    },
-    {
-      name: "Onion",
-      city: "Noida",
-      price: 15,
-      avgRating: 4.8,
-      quantity: 12,
-      distance: 6
-    },
-    {
-      name: "Onion",
-      city: "Noida",
-      price: 4,
-      avgRating: 4.6,
-      quantity: 19,
-      distance: 2
-    },
-    {
-      name: "Onion",
-      city: "Gurgaon",
-      price: 67,
-      avgRating: 4.1,
-      quantity: 3,
-      distance: 22
-    },
-    {
-      name: "Onion",
-      city: "Delhi",
-      price: 130,
-      avgRating: 4.2,
-      quantity: 6,
-      distance: 20
-    },
-    {
-      name: "Onion",
-      city: "Delhi",
-      price: 188,
-      avgRating: 4.3,
-      quantity: 15,
-      distance: 14
-    },
-    {
-      name: "Onion",
-      city: "Delhi",
-      price: 14,
-      avgRating: 4.5,
-      quantity: 8,
-      distance: 12
-    }
-  ];
-
+  products:Array<any>
   sorters = {
     byPrice: function(firstProduct, secondProduct) {
       return firstProduct.price - secondProduct.price;
@@ -118,4 +66,27 @@ export class CustomerHomePageComponent implements OnInit {
     }
   }
 
+  searchProduct(){
+    this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
+      console.log(data);
+      this.products=data;
+    },
+    (err)=> console.log("in component"+err));
+  }
+  myOnFinishPrice(event){
+    this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
+      console.log(data);
+      this.products=data.filter((product)=>product.price>=event.from&& product.price<=event.to);
+    },
+    (err)=> console.log("in component"+err));
+    console.log("from:"+event.from+"  to:"+event.to);
+  }
+  myOnFinishQuantity(event){
+    this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
+      console.log(data);
+      this.products=data.filter((product)=>product.price>=event.from&& product.price<=event.to);
+    },
+    (err)=> console.log("in component"+err));
+    console.log("from:"+event.from+"  to:"+event.to);
+  }
 }

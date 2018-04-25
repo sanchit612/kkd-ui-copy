@@ -1,14 +1,23 @@
 <app-farmer-header></app-farmer-header>
-<div class="container-fluid">
+<div class="container-section">
 	 <div class="row">
 	    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 d-flex align-items-stretch" *ngFor="let order of orderList" >
-        <div class="card my-3" *ngIf="order.orderType=='previous'">
-            <div class="card-body">
-              <h5 class="card-title one">{{order.orderId}}</h5>
-                <div id="scroll" class="card-text rubic">{{order.name}}
-                </div>
-                <p class="card-text"><small class="text-muted">{{order.quantity}}</small></p>
-            </div>
+        <div class="card my-3 ml-5">
+						<div class="card-body text-center">
+					    <h4 class="card-title">OrderId :<strong>{{order.orderId}}</strong></h4>
+					    <hr>
+					    <div class="text-area text-left">
+					      <p class="card-text"><b>customer Id: </b>{{order.kkdCustId}}</p>
+					      <p class="card-text"><b>Customer Name : </b>{{order.name}}</p>
+					      <p class="card-text"><b>Address : </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
+					      <p class="card-text"><b>Quantity : </b>{{order.quantity}}</p>
+					      <p class="card-text"><b>Amount : </b>{{order.price}}</p>
+								<p class="card-text"><b>Order Status : </b>{{order.orderStatus}}</p>
+								<div *ngIf="order.orderStatus=='delivered'">
+									<p class="card-text"><b>Delivery Date : </b>{{order.orderReceivingDate}}</p>
+								</div>
+							</div>
+					  </div>
           </div>
       </div>
     </div>

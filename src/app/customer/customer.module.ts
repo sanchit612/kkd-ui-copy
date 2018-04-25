@@ -13,10 +13,10 @@ import { CustomerBankDetailsComponent } from './component/customer-my-account/cu
 import { CustomerCurrentOrderComponent } from './component/customer-my-account/customer-current-order/customer-current-order.component';
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
 import { CustomerComponent } from './customer.component';
-
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgxPaginationModule } from 'ngx-pagination'
+import { IonRangeSliderModule } from "ng2-ion-range-slider";
 import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
 
 @NgModule({
@@ -24,7 +24,9 @@ import { CustomerCommonHeaderComponent } from './component/customer-common-heade
     CommonModule,
     CustomerRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    IonRangeSliderModule
   ],
   declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent]
 
