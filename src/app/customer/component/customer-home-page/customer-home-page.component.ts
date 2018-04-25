@@ -9,7 +9,8 @@ import {SearchService} from '../../services/search.service';
 })
 export class CustomerHomePageComponent implements OnInit {
 
-  public searchInput:string
+  public searchInput:string;
+  public products:Array<any>=[];
   constructor(private searchService: SearchService) { }
   ngOnInit() {
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
@@ -18,7 +19,7 @@ export class CustomerHomePageComponent implements OnInit {
     },
     (err)=> console.log("in component"+err));
   }
-  products:Array<any>
+
   sorters = {
     byPrice: function(firstProduct, secondProduct) {
       return firstProduct.price - secondProduct.price;
