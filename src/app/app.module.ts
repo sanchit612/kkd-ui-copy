@@ -18,7 +18,7 @@ import { FarmerModule } from './farmer/farmer.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 import { HttpModule } from '@angular/http';
-import { NgxPaginationModule } from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
   FormsModule,
   ReactiveFormsModule,
   HttpModule,
-  NgxPaginationModule
+  NgxPaginationModule,
 ],
   providers: [],
   bootstrap: [AppComponent]

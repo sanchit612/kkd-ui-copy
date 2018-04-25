@@ -1,20 +1,19 @@
 <app-farmer-header></app-farmer-header>
 <div class="container">
   <div class="row">
-    <div *ngFor="let product of products | paginate: {itemsPerPage:6,currentPage:p}" class="col-lg-4">
+    <div *ngFor="let product of products | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
 
-      <div class="card shadow p-3 mb-5">
+      <div class="card shadow p-2 mb-3" style="height: 26rem;">
         <!-- Card image -->
-        <div class="view overlay">
+        <div class="view overlay zoom">
           <img class="card-img-top" src="{{product.imageUrl}}" alt="Product Image">
         </div>
         <!-- Card content -->
         <div class="card-body text-center">
           <!-- Title -->
-          <h4 class="card-title">
+          <h5 class="card-title">
             <strong>{{product.productName}}</strong>
-          </h4>
-          <hr>
+          </h5>
           <!-- Text -->
           <div class="text-area">
             <p class="card-text">
@@ -39,7 +38,6 @@
           </span>
         </div>
       </div>
-
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
