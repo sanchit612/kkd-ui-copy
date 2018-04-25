@@ -70,13 +70,15 @@
       <!-- filtered by Quantity-->
     </div>
     <!-- end of side bar-->
+    <div *ngIf="products[0]; then prod else empty"></div>
+      <ng-template #prod>
     <div class="col-md-9">
       <div class="container">
         <div class="row">
           <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
               <div class="card shadow p-3 mb-5">
                   <!-- Card image -->
-                  <div class="view overlay" style="width:100%;height:200px;">
+                  <div class="view overlay">
                     <img class="card-img-top" src={{item.imageUrl}} alt="Search Result Image">
                   </div>
                   <!-- Card content -->
@@ -92,15 +94,21 @@
                       <p class="card-text"><b>Quantity: </b>{{item.quantity}}</p>
                       <p class="card-text"><b>Description: </b>{{item.description}}</p>
                     </div>    
-                    <button type="button" class="btn btn-success">Add to Bag</button>
+                    <button type="button" class="btn btn-success" (click)="addToCart(item)">Add to Bag</button>
                   </div>
                 </div>
           </div>
         </div>
       </div>
       <!-- end of search results-->
-      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+      <pagination-controls (pageChange)="p=$event" *ngIf="products[0]"></pagination-controls>
     </div>
+      </ng-template>
+    <ng-template #empty>
+      <div class="col-md-9">
+        <img src="./../../../../assets/images/not-found.png" alt="no products found">
+      </div>
+    </ng-template>
   </div>
 </div>
 
