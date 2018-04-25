@@ -71,7 +71,10 @@ export class CustomerHomePageComponent implements OnInit {
       console.log(data);
       this.products=data;
     },
-    (err)=> console.log("in component"+err));
+    (err)=> {
+      console.log("in component"+err),
+      this.products=[];
+    });
   }
   myOnFinishPrice(event){
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
