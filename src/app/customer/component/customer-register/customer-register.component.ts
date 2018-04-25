@@ -87,5 +87,5 @@ export class CustomerRegisterComponent implements OnInit {
 			}
 		}, (err) =>{
 			alert("wrong otp");
-	}
+	})}
 }
