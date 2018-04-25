@@ -42,7 +42,8 @@
     display: table;
     padding: 0;
     height: 100%;
-    width: 100%;
+    width: 22%;
+    margin:0;
 }
 
 .display-table-row {
@@ -161,10 +162,6 @@ header {
     text-decoration: none;
 }
 
-.navi i {
-    margin-right: 15px;
-    color: #5584ff;
-}
 
 .navi .active a {
     background: black;
