@@ -76,7 +76,7 @@
           <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
               <div class="card shadow p-3 mb-5">
                   <!-- Card image -->
-                  <div class="view overlay" style="width:100%;height:200px;">
+                  <div class="view overlay">
                     <img class="card-img-top" src={{item.imageUrl}} alt="Search Result Image">
                   </div>
                   <!-- Card content -->
@@ -92,7 +92,7 @@
                       <p class="card-text"><b>Quantity: </b>{{item.quantity}}</p>
                       <p class="card-text"><b>Description: </b>{{item.description}}</p>
                     </div>    
-                    <button type="button" class="btn btn-success">Add to Bag</button>
+                    <button type="button" class="btn btn-success" (click)="addToCart(item)">Add to Bag</button>
                   </div>
                 </div>
           </div>
