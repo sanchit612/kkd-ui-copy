@@ -38,7 +38,7 @@ export class FarmerAddProductComponent implements OnInit {
   constructor(private productService: ProductService){
   }
 
-  selectChangeHandler (event: any){
+  selectChangeHandler (event){
     this.productName=event.target.value;
   }
 
@@ -70,7 +70,9 @@ export class FarmerAddProductComponent implements OnInit {
       .subscribe((res)=>{
         //console.log("-----------------gghvfghh--------0---");
         console.log(res);
+        alert("You have successfully added the product");
       },(error)=>{
+        alert("product not added");
       });
   }
 }
