@@ -6,31 +6,40 @@
   </div>
 </div>
 
-<form>
+<form [formGroup]="rForm" (ngSubmit)="submitIssue(rForm.value)">
 
-  <div class="form-group col-md-12">
-    <label for="inputTitle">Issue Title</label>
-    <input type="text" class="form-control" id="inputTitle" placeholder="Enter Issue Heading">
-  </div>
+    <div class="form-group">
 
-  <div class="form-group col-md-12">
-    <label for="inputDescription">Issue Description</label>
-    <input type="text" class="form-control" id="inputDescription" placeholder="Enter Issue Description">
-  </div>
+    <label for="issueTitle">Issue Title</label>
+    <input type="text" class="form-control" id="issueTitle" placeholder="Enter Issue Heading" formControlName="issueTitle">
+    <div *ngIf="rForm.controls['issueTitle'].touched && rForm.controls['issueTitle'].invalid" class="alert">
+            <div *ngIf="rForm.controls['issueTitle'].hasError('required')">
+                Title is required!
+            </div>
+        </div>
 
-  <div class="form-group col-md-12">
-      <label for="inputZip">E-mail</label>
-      <input type="text" class="form-control" id="inputEmail" placeholder="Enter your E-mail here">
-    </div>
+      <label for="issueDescription">Issue Description</label>
+      <input type="text" class="form-control" id="issueDescription" placeholder="Enter Issue Heading" formControlName="issueDescription">
+      <div *ngIf="rForm.controls['issueDescription'].touched && rForm.controls['issueDescription'].invalid" class="alert">
+            <div *ngIf="rForm.controls['issueDescription'].hasError('required')">
+              Description is required!
+            </div>
+        </div>
+
+        <label for="inputEmail">E-mail</label>
+        <input type="text" class="form-control" id="inputEmail" placeholder="Enter Issue Heading" formControlName="inputEmail">
+        <div *ngIf="rForm.controls['inputEmail'].touched && rForm.controls['issueDescription'].invalid" class="alert">
+                <div *ngIf="rForm.controls['inputEmail'].hasError('required')">
+                  Email is required!
+                </div>
+            </div>
   
-  <div class="form-group col-md-12">
-    <label for="inputScreenshot">Screenshot</label>
-    <br>
-    <input type="file" id="inputScreenshot">
-  </div>
+        <label for="inputScreenshot">Screenshot</label>
+        <input type="file" class="form-control" id="inputScreenshot">
+
+      </div>
   
-  <div class="form-group col-md-12">
-  <button type="submit" class="btn btn-primary">Submit Issue</button>
-    </div>
+    
+      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit Issue</button>
+   
 </form>
-

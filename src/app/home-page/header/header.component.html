@@ -7,18 +7,18 @@
      <div class="collapse navbar-collapse nav">
        <ul class="navbar-nav mr-auto">
          <li class="nav-item active">
-           <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+           <a class="nav-link" routerLink="/home"><i class="fas fa-home"></i> Home<span class="sr-only">(current)</span></a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/help">Help</a>
+           <a class="nav-link" routerLink="/help"><i class="fas fa-info-circle"></i> Help</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" routerLink="/support">Support</a>
+           <a class="nav-link" routerLink="/support"><i class="fas fa-phone-square"></i>  Support</a>
          </li>
        </ul>
        <form class="form-inline mt-2 mt-md-0">
          <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)='sendToParent()'>Search</button>
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)='sendToParent()'><i class="fas fa-search"></i></button>
        </form>
      </div>
      </div>
