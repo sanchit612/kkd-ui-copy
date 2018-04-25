@@ -19,6 +19,10 @@ import { FarmerAuthenticationAuthorizationComponent } from './component/farmer-a
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { FarmerCommonHeaderComponent } from './component/farmer-common-header/farmer-common-header.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FarmerAddAddressComponent } from './component/farmer-my-account/farmer-add-address/farmer-add-address.component';
+import { FarmerChangePasswordComponent } from './component/farmer-my-account/farmer-change-password/farmer-change-password.component';
+import { FarmerAlternateMobileComponent } from './component/farmer-my-account/farmer-alternate-mobile/farmer-alternate-mobile.component';
+import { FarmerDeleteProfileComponent } from './component/farmer-my-account/farmer-delete-profile/farmer-delete-profile.component';
 
 @NgModule({
   imports: [
@@ -29,7 +33,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
   ],
 
-  declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, AadhaarComponent, FarmerAuthenticationAuthorizationComponent, ForgetPasswordComponent,FarmerCommonHeaderComponent],
+  declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, AadhaarComponent, FarmerAuthenticationAuthorizationComponent, ForgetPasswordComponent,FarmerCommonHeaderComponent, FarmerAddAddressComponent, FarmerChangePasswordComponent, FarmerAlternateMobileComponent, FarmerDeleteProfileComponent],
 
 })
 export class FarmerModule { }
