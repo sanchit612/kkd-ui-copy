@@ -1,7 +1,8 @@
 <app-farmer-header></app-farmer-header>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6 farmer-details">
+      <div class="col-md-2"></div>
+      <div class="col-md-4 farmer-details" id="first">
         <div class="container">
           <div class="card" style="width:300px">
             <img class="card-img-top farmer-image " src="../../../../assets/images/farmer.jpg" alt="Card image" style="width:100%">
@@ -15,21 +16,24 @@
               </p>
                 </div>
               </div>
-      </div></div>
-      <div class="col-md-6 farmer-details">
+      </div>
+    </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4 farmer-details" id="second">
         <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary mainButtons_button" data-target="#updateAddressModal" data-toggle="modal">Add Address</button>
+          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#updateAddressModal" data-toggle="modal">Add Address</button>
         </div>
         <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary mainButtons_button" data-target="#updatePasswordModal" data-toggle="modal">Change Password</button>
+          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#updatePasswordModal" data-toggle="modal">Change Password</button>
         </div>
         <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary mainButtons_button" data-target="#updateMobileModal" data-toggle="modal">Alternate Mobile</button>
+          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#updateMobileModal" data-toggle="modal">Alternate Mobile</button>
         </div>
         <div class ="mainButtons">
-          <button type="submit" class="btn btn-primary mainButtons_button" data-target="#deleteProfileModal" data-toggle="modal">Delete Profile</button>
+          <button type="submit" class="btn btn-primary btn-block mainButtons_button" data-target="#deleteProfileModal" data-toggle="modal">Delete Profile</button>
         </div>
       </div>
+      
   </div>
 </div>
 <div class="modal fade" tabindex="-1" id="updateAddressModal" data-keyboard="false" data-backdrop="static">

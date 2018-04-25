@@ -4,12 +4,12 @@
       <app-search-result-list [item]="items"></app-search-result-list>
     </div>
   </div>
-
-  <div *ngIf="!flag">
+  <img src="../../../assets/Body/not-found.png" alt="No Result Found" *ngIf="!resultFlag && flag">
+  <div *ngIf="!flag && !resultFlag">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
-          <div class="card shadow p-2">
+          <div class="card shadow p-2 my-2">
             <img class="card-img-top" src="../../../assets/Body/card1.jpg" alt="Card image cap">
             <div class="card-body">
               <h3 class="card-title">Our Aim</h3>
@@ -20,23 +20,23 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card shadow p-2">
+          <div class="card shadow p-2 my-2">
             <img class="card-img-top" src="../../../assets/Body/card2.jpeg" alt="Card image cap">
             <div class="card-body">
-              <h3 class="card-title">Our Offerings</h3>
+              <h3 class="card-title">Our Offering</h3>
               <hr>
-              <p class="card-text">The best quality products straight from farm to the consumer so that you never need to question the freshness
-                of the food you eat.</p>
+              <p class="card-text"> best quality products straight from farm to consumer so that you never need to question freshness
+                of food you are eating.</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card shadow p-2">
+          <div class="card shadow p-2 my-2">
             <img class="card-img-top" src="../../../assets/Body/card3.jpg" alt="Card image cap">
             <div class="card-body">
               <h3 class="card-title">Our Prize</h3>
               <hr>
-              <p class="card-text">Nothing makes us more happy than seeing the farmer of our country grow and pave a way to their economical development.</p>
+              <p class="card-text">Nothing makes us more happy than seeing farmer of our country grow, pave a way to their economical development leading to developing India.</p>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
   </div>
   <div class="row">
     <div class="col-md-3"></div>
-    <div *ngIf="flag" class="justify-content-center col-md-8">
+    <div *ngIf="flag && resultFlag" class="justify-content-center col-md-8">
       <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </div>
     <div class="col-md-1"></div>
