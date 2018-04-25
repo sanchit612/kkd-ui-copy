@@ -113,10 +113,18 @@ export class CustomerHomePageComponent implements OnInit {
   }
 
   proceed(){
-    console.log(this.enteredQuant);
-    this.cartItem["quantity"]=this.enteredQuant;
+    console.log("original"+this.cartItem["quantity"]);
+    console.log("gduehdfikej"+this.enteredQuant);
+    if(this.cartItem["quantity"]>this.enteredQuant){
+      console.log(this.enteredQuant);
+      this.cartItem["quantity"]=this.enteredQuant;
     this.searchService.addToCart(this.cartItem).subscribe((data)=>{
       alert("added to bag")
     },err=> console.log(err));
+    }
+    else{
+      alert("No stocks Available for this much Qunatity")
+    }
+    
   }
 }
