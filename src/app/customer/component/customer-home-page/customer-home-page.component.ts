@@ -106,7 +106,6 @@ export class CustomerHomePageComponent implements OnInit {
     console.log(cartItem)
     this.searchService.addToCart(cartItem).subscribe((data)=>{
       alert("added to bag")
-    },
-  err=>console.log(err))
+    },err=> console.log(err))
   }
 }
