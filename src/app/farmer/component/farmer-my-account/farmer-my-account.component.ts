@@ -35,14 +35,14 @@ export class FarmerMyAccountComponent implements OnInit {
    public currentPassword:string;
    public newPassword:string;
    public reenterNewPassword:string;
-
-   farmer : Farmer = {
-    addressLine:this.farmerAlternateAddressLine,
-    city:this.farmerAlternateCity,
-    district:this.farmerAlternateDistrict,
-    state:this.farmerAlternateState,
-    pincode:this.farmerAlternatePincode,
-    primary:this.farmerAlternatePrimary,
+   IsHidden= true;
+   farmer : Farmer={
+    addressLine:"grain market",
+    city: "kaithal",
+    district: "kaithal",    
+    state: "haryana",
+    pincode:136026, 
+    primary:false
    };
 
    constructor(private farmerHeaderService : FarmerHeaderService,
@@ -68,6 +68,10 @@ export class FarmerMyAccountComponent implements OnInit {
 
     });
   }
+
+  onSelect(){
+  this.IsHidden= !this.IsHidden;
+  }
   /* Function to update farmer's alternate address by his KKDId
   and make service call to update farmer's alternate address from app */
   updateFarmerAddress(){
@@ -80,22 +84,29 @@ export class FarmerMyAccountComponent implements OnInit {
     if(this.farmer.addressLine==null || this.farmer.city==null || this.farmer.district==null
       || this.farmer.state==null || this.farmer.pincode==null){
         alert("please Enter Required Fields");
-        }
+        }else{
     this.farmerHeaderService.updateFarmerAddress(this.farmerMobileNumber, this.farmer)
     .subscribe((res)=>{
-
+      
     },(error)=>{
     });
+  }
   }
   /* Function to update farmer's mobile number by his KKDId
   and make service call to update farmer's mobile number from app */
   updateFarmerMobile(){
-    this.farmerHeaderService.updateFarmerMobile(this.farmerId, this.farmerAlternateNumber)
-    .subscribe((res)=>{
+    this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+             .subscribe((res) =>{
+                   res.alternateNo = this.farmerAlternateNumber;
+                   this.farmerHeaderService.updateFarmerMobile(this.farmerId,res)
+                   .subscribe((updatedInfo) =>{
+              
+                     }, (error) =>{
 
-    },(error)=>{
+                     });            
+             }, (error) =>{
 
-    });
+             });
   }
  /* Function to change farmer's password by his KKDId
   and make service call to change farmer's password from app */
@@ -104,7 +115,6 @@ export class FarmerMyAccountComponent implements OnInit {
     {
        this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
              .subscribe((res) =>{
-             console.log(res.password);
              if(this.currentPassword == res.password){
                    res.password = this.newPassword;
                    this.farmerHeaderService.updateFarmerMobile(this.farmerId ,res )

@@ -17,7 +17,7 @@ export class FarmerPreviousOrderComponent implements OnInit {
 
   ngOnInit() {
     //code to get the list of orders according to farmer id
-    this.orderService.getOrderListFromFarmerId("kkdfarm1001").subscribe((res) =>{
+    this.orderService.getPreviousOrderListFromFarmerId("kkdfarm1001").subscribe((res) =>{
       this.orderList = res;
       console.log(this.orderList);
     }, (error) =>{})

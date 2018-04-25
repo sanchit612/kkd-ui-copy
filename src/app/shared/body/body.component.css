@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
 .carousel {
    margin-bottom: 4rem;
  }
@@ -18,9 +20,14 @@
    left: 0;
    min-width: 100%;
    height: 32rem;
-   filter: brightness(70%);
-   -webkit-filter: brightness(70%);
-   -moz-filter: brightness(70%);
-   -o-filter: brightness(70%);
-   -ms-filter: brightness(70%);
+   filter: brightness(40%);
+   -webkit-filter: brightness(40%);
+   -moz-filter: brightness(40%);
+   -o-filter: brightness(40%);
+   -ms-filter: brightness(40%);
+ }
+
+ #carouselLine{
+   font-size: 1.03rem;
+   font-family: 'Ubuntu', sans-serif;
  }

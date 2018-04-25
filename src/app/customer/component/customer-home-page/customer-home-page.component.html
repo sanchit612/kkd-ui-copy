@@ -1,36 +1,109 @@
 <app-customer-header></app-customer-header>
 
-<a routerLink="/customer/myAccount">myAccount</a>
-<a routerLink="/customer/myCart">mycart</a>
-<a routerLink="/home">LOGOUT</a>
-
-<div class="dropdown">
-  <label>Sort By</label>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Relevance
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" (click)="sortBy('priceLH')">Price: Low to High</a>
-    <a class="dropdown-item" (click)="sortBy('priceHL')">Price: High to Low</a>
-    <a class="dropdown-item" (click)="sortBy('quantityLH')">Quantity: Low to High</a>
-    <a class="dropdown-item" (click)="sortBy('quantityHL')">Quantity: High to Low</a>
-    <a class="dropdown-item" (click)="sortBy('distance')">Distance</a>
-    <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <button>
+      <a routerLink="/customer/myAccount">My Account</a>
+    </button>
+    </div>
+    <div class="col-md-6">
+      <input  class="input-lg col-md-8" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
+      <button class="btn-primary" (click)='searchProduct()'>Search</button>
+    </div>
+    <div class="col-md-2">
+      <button><a routerLink="/customer/myCart">My Cart</a></button>
+    </div>
+    <div class="col-md-2">
+      <button><a routerLink="/home">Log Out</a></button>
+    </div>
   </div>
 </div>
-<div class="container">
-  <div class="card-deck">
-    <div class="row">
-      <div class="col-md-3" *ngFor="let i of products">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{i.name}}</h5>
-            <p class="card-text">price:{{i.price}} Ratings: {{i.avgRating}}</p>
-            <p class="card-text"><small class="text-muted">distance:{{i.distance}} Quantity: {{i.quantity}}</small></p>
+<!-- end of header for customer-->
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="dropdown">
+        <label>Sort By</label>
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Relevance
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="sortBy('priceLH')">Price: Low to High</a>
+          <a class="dropdown-item" (click)="sortBy('priceHL')">Price: High to Low</a>
+          <a class="dropdown-item" (click)="sortBy('quantityLH')">Quantity: Low to High</a>
+          <a class="dropdown-item" (click)="sortBy('quantityHL')">Quantity: High to Low</a>
+          <a class="dropdown-item" (click)="sortBy('distance')">Distance</a>
+          <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
+        </div>
+      </div>
+      <label class="my-2"><span>Filter By Price:</span></label>
+      <ion-range-slider #sliderElement
+        type="double"
+        min="0"
+        max="100"
+        from_shadow="true"
+        to_shadow="true"
+        grid="true"
+        grid_num="10"
+        prefix="Price: "
+        postfix=" Rs"
+        decorate_both="false"
+        (onFinish)="myOnFinishPrice($event)">
+      </ion-range-slider>
+      <!-- filtered by price-->
+      <br>
+      <label class="my-2"><span>Filter By Quantity:</span></label>
+      <ion-range-slider #sliderElement
+        type="double"
+        max="50"
+        min="0"
+        from_shadow="true"
+        to_shadow="true"
+        grid="true"
+        grid_num="5"
+        prefix="Quantity:"
+        postfix=" Kg"
+        decorate_both="false"
+        (onFinish)="myOnFinishQuantity($event)">
+      </ion-range-slider>
+      <!-- filtered by Quantity-->
+    </div>
+    <!-- end of side bar-->
+    <div class="col-md-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
+              <div class="card shadow p-3 mb-5">
+                  <!-- Card image -->
+                  <div class="view overlay">
+                    <img class="card-img-top" src={{item.imageUrl}} alt="Search Result Image">
+                  </div>
+                  <!-- Card content -->
+                  <div class="card-body text-center">
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>{{item.productName}}</strong></h4>
+                    <hr>
+                    <!-- Text -->
+                    <div class="text-area">
+                      <p class="card-text"><b>FarmerId: </b>{{item.kkdFarmId}}</p>
+                      <p class="card-text"><b>Price: </b>{{item.price}}</p>
+                      <p class="card-text"><b>Bulk Price: </b>{{item.bulkOrderPrice}}</p>
+                      <p class="card-text"><b>Quantity: </b>{{item.quantity}}</p>
+                      <p class="card-text"><b>Description: </b>{{item.description}}</p>
+                    </div>    
+                    <button type="button" class="btn btn-success" (click)="addToCart(item)">Add to Bag</button>
+                  </div>
+                </div>
           </div>
         </div>
       </div>
+      <!-- end of search results-->
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </div>
+  </div>
 </div>
+
+
 
 
