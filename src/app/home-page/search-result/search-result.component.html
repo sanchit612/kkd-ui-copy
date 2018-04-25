@@ -4,8 +4,8 @@
       <app-search-result-list [item]="items"></app-search-result-list>
     </div>
   </div>
-
-  <div *ngIf="!flag">
+  <img src="../../../assets/Body/not-found.png" alt="No Result Found" *ngIf="!resultFlag && flag">
+  <div *ngIf="!flag && !resultFlag">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
@@ -45,7 +45,7 @@
   </div>
   <div class="row">
     <div class="col-md-3"></div>
-    <div *ngIf="flag" class="justify-content-center col-md-8">
+    <div *ngIf="flag && resultFlag" class="justify-content-center col-md-8">
       <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </div>
     <div class="col-md-1"></div>
