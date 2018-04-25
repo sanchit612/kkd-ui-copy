@@ -93,23 +93,30 @@ export class CustomerHomePageComponent implements OnInit {
     (err)=> console.log("in component"+err));
     console.log("from:"+event.from+"  to:"+event.to);
   }
-
+  public cartItem={};
+  public enteredQuant:number;
   addToCart(item){
+    
 
-
-    let cartItem={
+    this.cartItem={
       "custId":"KKDCUST1000",
       "kkkdFarmID":item.kkdFarmId,
       "productName":item.productName,
       "productPrice":item.price,
       "farmerName":"Ram Singh",
       "quantity":item.quantity,
-      "productId":item.productId,
+      "productId":"KKDPROD101",
       "avgRating": 4.5
     };
-    console.log(cartItem)
-    this.searchService.addToCart(cartItem).subscribe((data)=>{
+    console.log(this.cartItem)
+    
+  }
+
+  proceed(){
+    console.log(this.enteredQuant);
+    this.cartItem["quantity"]=this.enteredQuant;
+    this.searchService.addToCart(this.cartItem).subscribe((data)=>{
       alert("added to bag")
-    },err=> console.log(err))
+    },err=> console.log(err));
   }
 }
