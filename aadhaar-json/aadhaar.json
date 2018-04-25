@@ -3,18 +3,18 @@
     "id": "123456789999",
     "aadhaarNo": "123456789999",
     "dateOfBirth": "2018-04-23",
-    "fatherName": "akash",
-    "firstName": "string",
+    "fatherName": "rajendra",
+    "firstName": "salman",
     "gender": "male",
-    "lastName": "v",
+    "lastName": "vina",
     "mobileNumber": "9468075105",
     "permanentAddress": {
-      "addressLine": "aaaa",
-      "city": "aaa",
-      "district": "aaa",
-      "pincode": 13333,
-      "primary": false,
-      "state": "aaa"
+      "addressLine": "45/19, abc nagar",
+      "city": "ambala",
+      "district": "xyz",
+      "pincode": 1333001,
+      "primary": true,
+      "state": "haryana"
     },
     "photoUrl": "etxcq4qiFNi5p0q71APw8MNzPPT"
   },
@@ -22,18 +22,18 @@
     "id": "987654321234",
     "aadhaarNo": "987654321234",
     "dateOfBirth": "2018-04-23",
-    "fatherName": "raam",
-    "firstName": "raam",
+    "fatherName": "mani",
+    "firstName": "raaju",
     "gender": "male",
     "lastName": "v",
-    "mobileNumber": "4564564564",
+    "mobileNumber": "9468075106",
     "permanentAddress": {
-      "addressLine": "aaaa",
-      "city": "aaa",
-      "district": "aaa",
-      "pincode": 13333,
+      "addressLine": "abc nagar",
+      "city": "gurgaon",
+      "district": "manh",
+      "pincode": 133008,
       "primary": false,
-      "state": "aaa"
+      "state": "haryana"
     },
     "photoUrl": "etxcq4qiFNi5p0q71APw8MNzPPT"
   },
@@ -42,17 +42,17 @@
     "aadhaarNo": "445657898789",
     "dateOfBirth": "2018-04-23",
     "fatherName": "sham",
-    "firstName": "sham",
+    "firstName": "maan",
     "gender": "male",
     "lastName": "v",
     "mobileNumber": "7896321458",
     "permanentAddress": {
-      "addressLine": "aaaa",
-      "city": "aaa",
+      "addressLine": "12 gandhi nagar",
+      "city": "manaa",
       "district": "aaa",
-      "pincode": 13333,
+      "pincode": 133999,
       "primary": false,
-      "state": "aaa"
+      "state": "haryana"
     },
     "photoUrl": "etxcq4qiFNi5p0q71APw8MNzPPT"
   }]}
