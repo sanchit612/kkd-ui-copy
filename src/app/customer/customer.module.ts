@@ -16,7 +16,7 @@ import { CustomerComponent } from './customer.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination'
-import { IonRangeSliderModule } from "ng2-ion-range-slider";
+import { IonRangeSliderModule } from 'ng2-ion-range-slider';
 import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
 
 @NgModule({
