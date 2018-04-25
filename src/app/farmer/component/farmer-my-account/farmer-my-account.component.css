@@ -1,13 +1,14 @@
-   .mainButtons{
-        padding:30px 0px;
-        
-    }
-    .mainButtons_button{
-    border-radius: 5px;
-    width:215px; 
-    }
+.mainButtons{
+  padding:30px 0px;
+  }
+.mainButtons_button{
+  border-radius: 5px;
+  width:215px; 
+  }
 .farmer-details{
-    padding-left:200px;
-    padding-top : 30px;
-}
-
+  padding-left:200px;
+  padding-top : 30px;
+  }
+.farmer-image{
+  height:200px;
+  }
