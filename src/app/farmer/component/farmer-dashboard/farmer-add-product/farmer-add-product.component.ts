@@ -12,7 +12,7 @@ import { ProductService } from './product.service';
 export class FarmerAddProductComponent implements OnInit {
 
 
-  public kkdFarmId: any="KKDFARM1000";
+  public kkdFarmId: any="KKDFARM1001";
   public imageUrl:any;
   public description: any;
   public price: any;
@@ -45,7 +45,7 @@ export class FarmerAddProductComponent implements OnInit {
   onFileSelected(event){
 		console.log(event);
 		//this.imageUrl=String(event.target.files[0]);
-		this.imageUrl="";
+		this.imageUrl="http://www.allwhitebackground.com/onion.html";
   }
 
   check(){
@@ -57,7 +57,7 @@ export class FarmerAddProductComponent implements OnInit {
     // alert(this.quantity);
     // alert(this.imageUrl);
       
-
+    this.product.kkdFarmId=this.kkdFarmId;
     this.product.description=this.description;
     this.product.price=this.price;
     this.product.bulkOrderPrice=this.bulkPrice;
