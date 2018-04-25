@@ -79,14 +79,13 @@ export class CustomerRegisterComponent implements OnInit {
 					localStorage.setItem("kkdCustId",res.results.kkdCustId);
 					this.router.navigate(['customer/homePage']);
 				}, (err) =>{
-						alert("Bad Request")
+						alert("Already registered")
 				})
 			}
 			else{
 				alert("wrong otp");
 			}
 		}, (err) =>{
-			alert("otp service not working");
-		})
+			alert("wrong otp");
 	}
 }
