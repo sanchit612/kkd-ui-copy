@@ -3,17 +3,19 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">
+      <button>
       <a routerLink="/customer/myAccount">My Account</a>
+    </button>
     </div>
     <div class="col-md-6">
-      <input  class="input-lg" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
-      <button (click)='searchProduct()'>Search</button>
+      <input  class="input-lg col-md-8" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
+      <button class="btn-primary" (click)='searchProduct()'>Search</button>
     </div>
     <div class="col-md-2">
-      <a routerLink="/customer/myCart">My Cart</a>
+      <button><a routerLink="/customer/myCart">My Cart</a></button>
     </div>
     <div class="col-md-2">
-      <a routerLink="/home">Log Out</a>
+      <button><a routerLink="/home">Log Out</a></button>
     </div>
   </div>
 </div>
@@ -23,7 +25,7 @@
     <div class="col-md-3">
       <div class="dropdown">
         <label>Sort By</label>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Relevance
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -35,9 +37,10 @@
           <a class="dropdown-item" (click)="sortBy('popularity')">Popular</a>
         </div>
       </div>
-      <label><span>Filter By Price:</span></label>
+      <label class="my-2"><span>Filter By Price:</span></label>
       <ion-range-slider #sliderElement
         type="double"
+        min="0"
         max="100"
         from_shadow="true"
         to_shadow="true"
@@ -50,29 +53,30 @@
       </ion-range-slider>
       <!-- filtered by price-->
       <br>
-      <label><span>Filter By Distance:</span></label>
+      <label class="my-2"><span>Filter By Quantity:</span></label>
       <ion-range-slider #sliderElement
         type="double"
         max="50"
+        min="0"
         from_shadow="true"
         to_shadow="true"
         grid="true"
         grid_num="5"
-        prefix="Distance:"
-        postfix=" KM"
+        prefix="Quantity:"
+        postfix=" Kg"
         decorate_both="false"
-        (onFinish)="myOnFinishDistance($event)">
+        (onFinish)="myOnFinishQuantity($event)">
       </ion-range-slider>
-      <!-- filtered by Distance-->
+      <!-- filtered by Quantity-->
     </div>
     <!-- end of side bar-->
     <div class="col-md-9">
       <div class="container">
         <div class="row">
-          <div class="col-md-4" *ngFor="let i of products | paginate:{itemsPerPage:6,currentPage:p}">
+          <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
               <div class="card shadow p-3 mb-5">
                   <!-- Card image -->
-                  <div class="view overlay">
+                  <div class="view overlay" style="width:100%;height:200px;">
                     <img class="card-img-top" src={{item.imageUrl}} alt="Search Result Image">
                   </div>
                   <!-- Card content -->
