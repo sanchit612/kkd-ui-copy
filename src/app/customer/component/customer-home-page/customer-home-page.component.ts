@@ -9,7 +9,8 @@ import {SearchService} from '../../services/search.service';
 })
 export class CustomerHomePageComponent implements OnInit {
 
-  public searchInput:string
+  public searchInput:string;
+  public products:Array<any>=[];
   constructor(private searchService: SearchService) { }
   ngOnInit() {
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
@@ -18,7 +19,7 @@ export class CustomerHomePageComponent implements OnInit {
     },
     (err)=> console.log("in component"+err));
   }
-  products:Array<any>
+
   sorters = {
     byPrice: function(firstProduct, secondProduct) {
       return firstProduct.price - secondProduct.price;
@@ -71,7 +72,10 @@ export class CustomerHomePageComponent implements OnInit {
       console.log(data);
       this.products=data;
     },
-    (err)=> console.log("in component"+err));
+    (err)=> {
+      console.log("in component"+err),
+      this.products=[];
+    });
   }
   myOnFinishPrice(event){
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
@@ -89,23 +93,38 @@ export class CustomerHomePageComponent implements OnInit {
     (err)=> console.log("in component"+err));
     console.log("from:"+event.from+"  to:"+event.to);
   }
-
+  public cartItem={};
+  public enteredQuant:number;
   addToCart(item){
+    
 
-
-    let cartItem={
+    this.cartItem={
       "custId":"KKDCUST1000",
       "kkkdFarmID":item.kkdFarmId,
       "productName":item.productName,
       "productPrice":item.price,
       "farmerName":"Ram Singh",
       "quantity":item.quantity,
-      "productId":item.productId,
+      "productId":"KKDPROD101",
       "avgRating": 4.5
     };
-    console.log(cartItem)
-    this.searchService.addToCart(cartItem).subscribe((data)=>{
+    console.log(this.cartItem)
+    
+  }
+
+  proceed(){
+    console.log("original"+this.cartItem["quantity"]);
+    console.log("gduehdfikej"+this.enteredQuant);
+    if(this.cartItem["quantity"]>this.enteredQuant){
+      console.log(this.enteredQuant);
+      this.cartItem["quantity"]=this.enteredQuant;
+    this.searchService.addToCart(this.cartItem).subscribe((data)=>{
       alert("added to bag")
-    },err=> console.log(err))
+    },err=> console.log(err));
+    }
+    else{
+      alert("No stocks Available for this much Qunatity")
+    }
+    
   }
 }

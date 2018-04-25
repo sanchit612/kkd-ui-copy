@@ -27,6 +27,8 @@ export class SearchService {
 
   addToCart(cartItem){
     return this.http.post(CartConfig.addToCart,cartItem,{headers: this.headers}).
-  map(data=> data,err=> err.json());
+  map(data=> {
+    data
+  console.log("success")},err=> err.json());
   }
 }
