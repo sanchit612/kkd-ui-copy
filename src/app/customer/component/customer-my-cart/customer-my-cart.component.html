@@ -12,7 +12,7 @@
                                 <h5>Shopping Cart</h5>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary btn-sm" routerLink="/customer/homePage">
+                                <button type="button" class="btn btn-primary btn-sm" routerLink="/customer/homePage"> 
                                     <span><i class="fas fa-shopping-cart"></i></span> Continue shopping
                                 </button>
                             </div>
@@ -34,7 +34,7 @@
                                         <h6><strong>₹{{item.productPrice}} <span class="text-muted">x</span></strong></h6>
                                     </div>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control input-sm" value="{{item.quantity}}" readonly>
+                                    <span>Quantity:<strong>{{item.quantity}} Kg</strong></span>
                                     </div>
                                     <div class="col-sm-2">
                                         <button type="button" class="btn btn-link btn-xs" (click)="deleteItem(item,ind)">
