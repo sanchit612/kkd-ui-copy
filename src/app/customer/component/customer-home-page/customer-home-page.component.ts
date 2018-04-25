@@ -67,7 +67,11 @@ export class CustomerHomePageComponent implements OnInit {
   }
 
   searchProduct(){
-    alert(this.searchInput);
+    this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
+      console.log(data);
+      this.products=data;
+    },
+    (err)=> console.log("in component"+err));
   }
   myOnFinishPrice(event){
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
@@ -77,7 +81,7 @@ export class CustomerHomePageComponent implements OnInit {
     (err)=> console.log("in component"+err));
     console.log("from:"+event.from+"  to:"+event.to);
   }
-  myOnFinishDistance(event){
+  myOnFinishQuantity(event){
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
       console.log(data);
       this.products=data.filter((product)=>product.price>=event.from&& product.price<=event.to);

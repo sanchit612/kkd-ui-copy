@@ -44,8 +44,9 @@ body {
     font-family: 'Muli';
 }
 
-.card{
+.cardwidth{
     margin: 0 auto;
+    width: 18rem;
 }
 
 .cardmargin

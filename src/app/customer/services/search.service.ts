@@ -9,8 +9,16 @@ export class SearchService {
   constructor(private http:Http) { }
 
   getAllProducts(searchQuery:string){
-    console.log(SearchConfig.searchProducts);
-    return this.http.get(SearchConfig.searchProducts).
+    let url:string;
+    console.log("search by"+searchQuery);
+    if(searchQuery!=undefined){
+      url=SearchConfig.searchSpecificProducts+searchQuery;
+    }
+    else{
+      url=SearchConfig.searchProducts;
+    }
+    console.log(url);
+    return this.http.get(url).
     map((data)=> data.json(),
   (err)=> console.log("in service"+err))
   }
