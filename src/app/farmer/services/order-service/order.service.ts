@@ -39,9 +39,6 @@ export class OrderService {
     (error: any)=>this.handleError(error));
   }
 
-  //
-
-
   //Error handler
   private handleError(error: Response){
      return Observable.throw(error.statusText);
