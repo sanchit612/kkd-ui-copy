@@ -19,6 +19,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ReactiveFormsModule,
   HttpModule,
   NgxPaginationModule,
+  SweetAlert2Module,
+  SweetAlert2Module.forRoot({
+    buttonsStyling: false,
+    customClass: 'modal-content',
+    confirmButtonClass: 'btn btn-primary',
+    cancelButtonClass: 'btn'
+})
 ],
   providers: [],
   bootstrap: [AppComponent]
