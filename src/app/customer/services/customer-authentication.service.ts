@@ -66,8 +66,8 @@ export class CustomerAuthenticationService {
         error=>this.handleError(error));
         }
 
-getDetails(){
-   return this.http.get(UserDetails.customerAddressBookUrl)
+getDetails(customerId){
+   return this.http.get(UserDetails.customerAddressBookUrl+customerId)
    .map(res => res.json());
  }
   }
