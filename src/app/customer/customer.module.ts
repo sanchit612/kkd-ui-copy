@@ -19,6 +19,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
 import { IonRangeSliderModule } from 'ng2-ion-range-slider';
 import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -26,7 +27,7 @@ import { CustomerCommonHeaderComponent } from './component/customer-common-heade
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    IonRangeSliderModule
+    IonRangeSliderModule,
   ],
   declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent]
 

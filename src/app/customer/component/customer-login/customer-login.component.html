@@ -4,7 +4,7 @@
     <div class="card-body">
       <form [formGroup]="rForm" (ngSubmit)="loginCustomer(rForm.value)">
         <div class="form-group">
-          <label for="exampleInputEmail1">Mobile Number</label>
+          <label for="exampleInputEmail1">Mobile Number*</label>
           <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
           <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
             <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
@@ -18,7 +18,7 @@
            </div>
          </div>
          <br>
-         <label for="exampleInputPassword1">Password</label>
+         <label for="exampleInputPassword1">Password*</label>
          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
          <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
           <div *ngIf="rForm.controls['password'].hasError('maxlength')">
@@ -39,4 +39,20 @@
   </form>
 </div>
 </div>
+</div>
+<!-- Small modal -->
+
+<div data-toggle="modal" data-target=".bd-example-modal-sm" #myModal></div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><b>Invalid Credentials!</b></h5>
+              <p class="card-text">Try Login Again....</p>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+    </div>
+  </div>
 </div>
