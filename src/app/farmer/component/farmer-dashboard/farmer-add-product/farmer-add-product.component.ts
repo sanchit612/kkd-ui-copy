@@ -12,7 +12,7 @@ import { ProductService } from './product.service';
 export class FarmerAddProductComponent implements OnInit {
 
 
-  public kkdFarmId: any="KKDFARM1000";
+  public kkdFarmId: any="KKDFARM1002";
   public imageUrl:any;
   public description: any;
   public price: any;
@@ -38,14 +38,14 @@ export class FarmerAddProductComponent implements OnInit {
   constructor(private productService: ProductService){
   }
 
-  selectChangeHandler (event: any){
+  selectChangeHandler (event){
     this.productName=event.target.value;
   }
 
   onFileSelected(event){
 		console.log(event);
 		//this.imageUrl=String(event.target.files[0]);
-		this.imageUrl="";
+		this.imageUrl="https://upload.wikimedia.org/wikipedia/commons/f/f0/Onions_%282272516704%29.jpg";
   }
 
   check(){
@@ -57,7 +57,7 @@ export class FarmerAddProductComponent implements OnInit {
     // alert(this.quantity);
     // alert(this.imageUrl);
       
-
+    this.product.kkdFarmId=this.kkdFarmId;
     this.product.description=this.description;
     this.product.price=this.price;
     this.product.bulkOrderPrice=this.bulkPrice;
@@ -70,7 +70,9 @@ export class FarmerAddProductComponent implements OnInit {
       .subscribe((res)=>{
         //console.log("-----------------gghvfghh--------0---");
         console.log(res);
+        alert("You have successfully added the product");
       },(error)=>{
+        alert("product not added");
       });
   }
 }

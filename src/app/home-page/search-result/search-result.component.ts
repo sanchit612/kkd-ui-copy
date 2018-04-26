@@ -18,6 +18,7 @@ export class SearchResultComponent implements OnInit {
 	 public searchItemName : String;
 	public itemList : any = [];
 	public flag=false;
+	public resultFlag=false;
 	constructor(private searchService : SearchService) { }
 
 	ngOnInit() {
@@ -27,11 +28,21 @@ export class SearchResultComponent implements OnInit {
 	set itemName(itemName : String){
 		this.searchItemName=itemName;
 		if(this.searchItemName){
-			this.flag=true;
+			this.itemList=null;	
+			this.flag=false;		
 			this.searchService.searchItem(SearchConfig.apiUrl+this.searchItemName).subscribe((res)=>{
 				this.itemList=res;
-			},error=>this.handleError(error))
-			//this.itemList=this.searchService.searchItem(SearchConfig.apiUrl);
+				this.resultFlag=true;
+				console.log(this.itemList);
+				if(this.itemList==null){
+					console.log("List empty");
+					this.flag=false;
+					alert("No Result Found");
+				}
+				else{
+					this.flag=true;
+				}
+			},error=>this.handleError(error))		
 		}
 		
 	}
@@ -44,6 +55,11 @@ export class SearchResultComponent implements OnInit {
 	// }
 
 	private handleError(error) {
-		console.log("Logging the error occured in the service");
+		console.log("Logging the error occured in the component");
+		//alert("No Result Found");
+		this.flag=true;
+		this.resultFlag=false;
+		console.log(this.resultFlag);
+		console.log(this.flag)
 	}
 }
