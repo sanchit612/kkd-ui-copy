@@ -4,15 +4,15 @@
   <div class="row previous-orders-body">
       
       <div class="col-md-4" *ngFor="let order of previousOrders">
-           <div class="card" >
-              <div class="card-body">
-                <ul class="list-group list-group-flush">
+           <div class="card previous-orders-card" >
+              <div class="card-body ">
+                <ul class="list-group list-group-flush ">
                   <li class="list-group-item active">OrderId           :   {{order.orderId}}</li>
-                  <li class="list-group-item">Product Name             :   {{order.name}} </li>                            
-                  <li class="list-group-item">Quantity(in Kg.)                 :   {{order.quantity}}</li>                            
-                  <li class="list-group-item">Price(in Rs.)                   :   {{order.totalAmount}}</li>
-                  <li class="list-group-item">Farmer-Rating                   :   {{order.avgRating}}</li>
-                  <li class="list-group-item">OTP                      :   {{order.otp}} </li>
+                  <li class="list-group-item previous-orders-card">Product Name             :   {{order.name}} </li>                            
+                  <li class="list-group-item previous-orders-card">Quantity(in Kg.)                 :   {{order.quantity}}</li>                            
+                  <li class="list-group-item previous-orders-card">Price(in Rs.)                   :   {{order.totalAmount}}</li>
+                  <li class="list-group-item previous-orders-card">Farmer-Rating                   :   {{order.avgRating}}</li>
+                  <li class="list-group-item previous-orders-card">OTP                      :   {{order.otp}} </li>
                 </ul>
               </div>
             </div>

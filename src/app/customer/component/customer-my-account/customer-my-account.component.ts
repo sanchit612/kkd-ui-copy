@@ -14,11 +14,12 @@ export class CustomerMyAccountComponent implements OnInit {
   public reenterNewPassword: string="";
   public userDetails ={};
  
+
   constructor(private customerAuthenticationService :CustomerAuthenticationService) { }
 
   ngOnInit() {
-    this.customerAuthenticationService.changeCustomerId('kkdcust3001');
-    //localStorage.getItem("kkdCustId");
+    
+   
   }
   
   
@@ -61,7 +62,7 @@ export class CustomerMyAccountComponent implements OnInit {
     }}
     else{
       alert("New password must contain at least one number and one uppercase"+ 
-      "and one lowercase and one special case, and at least 8 or more characters");
+      " and one lowercase and one special case, and at least 8 characters");
     }}
     else{
       alert("Please fill all the fields");
@@ -99,4 +100,8 @@ export class CustomerMyAccountComponent implements OnInit {
   }}else{
     alert("Enter a valid mobile number");
   }
-}}
+}
+
+
+ 
+}
