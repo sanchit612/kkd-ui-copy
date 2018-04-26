@@ -14,6 +14,7 @@ export class FarmerViewProductComponent implements OnInit {
 
   public products : any = [];
   public productId : any;
+  public id : any;
 
   public getProducts() {
     this.farmerViewProductService.getAllProducts(viewProductServiceUrl.viewProductUrl).subscribe((res)=>{
@@ -31,6 +32,10 @@ export class FarmerViewProductComponent implements OnInit {
     this.farmerViewProductService.deleteParticularProduct(viewProductServiceUrl.deleteProductUrl+this.productId).subscribe((res)=>{
       this.ngOnInit();
     },error=>this.handleError(error))
+  }
+
+  public updateId(id : any) {
+    this.id = id;
   }
  
   ngOnInit() {
