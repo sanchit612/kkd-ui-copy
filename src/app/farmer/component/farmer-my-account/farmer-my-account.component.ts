@@ -12,7 +12,7 @@ import { Farmer } from './farmer';
 })
 export class FarmerMyAccountComponent implements OnInit {
 
-   public searchedFarmerId: string="KKDFARM1001";
+   public searchedFarmerId: string="KKDFARM1000";
    public farmerPhoto:string;
    public farmerId: string;
    public farmerName : string;
@@ -23,13 +23,9 @@ export class FarmerMyAccountComponent implements OnInit {
    public farmerState: string;
    public farmerPrimary: boolean;
    public farmerMobileNumber : string;
-   public farmerAlternateNumber:number;
    public delete:boolean=false;
 
-   constructor(private farmerHeaderService : FarmerHeaderService,
-              ) {
-                this.delete=false;
-               }
+   constructor(private farmerHeaderService : FarmerHeaderService,) { }
 
   // Function to get farmer details by his KKDId and make service call to get farmer details from app
   searchFarmer(){
@@ -38,6 +34,7 @@ export class FarmerMyAccountComponent implements OnInit {
       this.farmerPhoto=res.aadhaarData.photoUrl;
       this.farmerId=res.kkdFarmId;
       this.farmerName=res.aadhaarData.firstName;
+      this.farmerPhoto=res.aadhaarData.photoUrl;
       this.farmerPincode=res.aadhaarData.permanentAddress.pincode;
       this.farmerAddressLine=res.aadhaarData.permanentAddress.addressLine;
       this.farmerCity=res.aadhaarData.permanentAddress.city;

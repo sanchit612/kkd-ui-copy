@@ -21,7 +21,6 @@ const routes: Routes = [
     { path: 'policies', component:PoliciesComponent  },
     { path: 'help', component:HelpComponent  },
     { path: 'about', component:AboutUsComponent  },
-    { path: 'connect', component:ConnectUsComponent  },
     { path: 'search/home', component:SearchResultComponent },
     { path: 'support', component:SupportComponent },
     { path: 'farmer', component:FarmerComponent },
