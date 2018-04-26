@@ -15,7 +15,7 @@ export class CustomerPreviousOrderComponent implements OnInit {
 
    getdata(){
    this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
-     console.log(results)
+     console.log("results"+results)
    this.previousOrders=results;
    },error=> {
      console.log(error);
