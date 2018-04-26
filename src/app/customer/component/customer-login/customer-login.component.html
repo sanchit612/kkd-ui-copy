@@ -3,12 +3,12 @@
     <div class="container">
       <h1>Login Customer</h1>
     </div>
-<div class="container-fluid cardmargin">
+<div class="container-fluid">
   <div class="card shadow cardwidth">
     <div class="card-body">
       <form [formGroup]="rForm" (ngSubmit)="loginCustomer(rForm.value)">
         <div class="form-group">
-            <div class = "form-comp">
+            <div class = "form-comp-top">
                 <div class = "name"><label for="exampleInputEmail1">Mobile Number*</label></div>
           <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
           <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
@@ -23,7 +23,6 @@
            </div>
          </div>
          </div>
-         <br>
          <div class = "form-comp">
             <div class = "name"> <label for="exampleInputPassword1">Password*</label></div>
          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
@@ -41,7 +40,6 @@
     </div>
     </div>
     <a routerLink="/customer/forgetPassword">Forgot password?</a>
-    <br>
     <div class = "form-comp-button">
     <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login</button>
     <button type="submit" class="btn btn-primary" routerLink="/customer/register">Register</button>
