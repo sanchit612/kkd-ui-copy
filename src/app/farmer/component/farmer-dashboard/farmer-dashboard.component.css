@@ -37,13 +37,14 @@
 
 #navigation {
     padding: 0;
+    min-width: 16rem;
 }
 
 .display-table {
     display: table;
     padding: 0;
     height: 100%;
-    width: 22%;
+    width: 30%;
     margin:0;
 }
 
