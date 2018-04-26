@@ -23,6 +23,7 @@ import { FarmerAddAddressComponent } from './component/farmer-my-account/farmer-
 import { FarmerChangePasswordComponent } from './component/farmer-my-account/farmer-change-password/farmer-change-password.component';
 import { FarmerAlternateMobileComponent } from './component/farmer-my-account/farmer-alternate-mobile/farmer-alternate-mobile.component';
 import { FarmerDeleteProfileComponent } from './component/farmer-my-account/farmer-delete-profile/farmer-delete-profile.component';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 @NgModule({
   imports: [
@@ -31,6 +32,13 @@ import { FarmerDeleteProfileComponent } from './component/farmer-my-account/farm
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    SweetAlert2Module,
+    SweetAlert2Module.forRoot({
+      buttonsStyling: false,
+      customClass: 'modal-content',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn'
+  })
   ],
 
   declarations: [FarmerLoginComponent, FarmerRegisterComponent,FarmerDashboardComponent, FarmerHeaderComponent, FarmerMyAccountComponent, FarmerAddProductComponent, FarmerBankDetailsComponent, FarmerCurrentOrderComponent, FarmerPreviousOrderComponent, FarmerViewProductComponent, FarmerComponent, AadhaarComponent, FarmerAuthenticationAuthorizationComponent, ForgetPasswordComponent,FarmerCommonHeaderComponent, FarmerAddAddressComponent, FarmerChangePasswordComponent, FarmerAlternateMobileComponent, FarmerDeleteProfileComponent],
