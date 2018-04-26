@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
-import { Farmer } from '.././farmer';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -13,7 +12,6 @@ export class FarmerAddAddressComponent implements OnInit {
 
   public searchedFarmerId: string="KKDFARM1000";
   public farmerMobileNumber : string;
-  IsHidden= true;
   rForm: FormGroup;
   public details;
   constructor(private farmerHeaderService : FarmerHeaderService,private fb: FormBuilder) {
@@ -25,9 +23,6 @@ export class FarmerAddAddressComponent implements OnInit {
       pincode : [null, Validators.compose([Validators.required])]
   })
    }
-  onSelect(){
-  this.IsHidden= !this.IsHidden;
-  }
   updateFarmerAddress(post){
     this.details = {
       "addressLine" : post.addressLine,

@@ -19,6 +19,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CustomerAddAddressComponent } from './src/app/customer/component/customer-my-account/customer-address-book/customer-add-address/customer-add-address.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
-  CommonHeaderComponent
+  CommonHeaderComponent,
+  CustomerAddAddressComponent
   ],
   imports: [
   BrowserModule,
