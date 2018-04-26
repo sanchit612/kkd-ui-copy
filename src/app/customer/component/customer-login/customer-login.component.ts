@@ -1,4 +1,4 @@
-import { Component, OnInit ,Output, EventEmitter , Input} from '@angular/core';
+import { Component, OnInit ,Output, EventEmitter , Input,ViewChild} from '@angular/core';
 import { RegistrationLoginService } from '../../registration-login-services/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   providers:[RegistrationLoginService],
 })
 export class CustomerLoginComponent implements OnInit {
+	@ViewChild('myModal') myModal;
 	rForm: FormGroup;
 	post:any;   
 	mobileNo:String;
@@ -38,11 +39,11 @@ export class CustomerLoginComponent implements OnInit {
 			localStorage.setItem("kkdCustId",res.results.kkdCustId);
 			this.router.navigate(['/customer/homePage']);
 		}, (err) =>{
-			if(err.status=401){
-				alert("Invalid Credentials");
+			if(err.status==401){
+				this.myModal.nativeElement.click();
 			}
 			else{
-				alert("Server down")
+				alert("Server down");
 			}
 		})
 	}
