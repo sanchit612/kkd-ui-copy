@@ -14,7 +14,8 @@ export class FarmerViewProductComponent implements OnInit {
 
   public products : any = [];
   public productId : any;
-  public id : any;
+  public prod : any = [];
+  //public id : any;
 
   public getProducts() {
     this.farmerViewProductService.getAllProducts(viewProductServiceUrl.viewProductUrl).subscribe((res)=>{
@@ -35,7 +36,13 @@ export class FarmerViewProductComponent implements OnInit {
   }
 
   public updateId(id : any) {
-    this.id = id;
+    for (var i=0; i < this.products.length; i++) {
+      if (this.products[i].productId === id) {
+        this.prod = this.products[i];
+          console.log(this.products[i]);
+         // return this.products[i];
+      }
+  }
   }
  
   ngOnInit() {

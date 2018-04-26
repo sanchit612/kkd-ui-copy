@@ -2,75 +2,51 @@
 <div *ngIf="items[0]; then carts else empty"></div>
 <ng-template #carts>
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <h5>Shopping Cart</h5>
-                            </div>
-                            <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary btn-sm" routerLink="/customer/homePage"> 
-                                    <span><i class="fas fa-shopping-cart"></i></span> Continue shopping
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+    <div class="cart-dropdown-container">
+        <div class="row">
+                <div class="text-left col-md-6">Your Cart <i class="fas fa-shopping-cart"></i> ({{items.length}} Items)</div>
+                <div class="text-right col-md-6">
+                    <button type="button" class="btn btn-success btn-sm" routerLink="/customer/homePage"> 
+                       <span><i class="fas fa-shopping-cart"></i></span> Continue shopping
+                    </button>
                 </div>
-                <div class="panel-body mt-5">
-                    <div *ngFor="let item of items; let ind=index">
-                    	<div class="row">
-                            <div class="col-sm-2">
-                                <img class="img-responsive" src="http://placehold.it/100x70">
-                            </div>
-                            <div class="col-sm-4">
-                                <h4 class="product-name"><strong>{{item.productName}}</strong></h4><h4><small>sold by <strong>{{item.farmerName}}</strong></small></h4>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="col-sm-6 text-right">
-                                        <h6><strong>₹{{item.productPrice}} <span class="text-muted">x</span></strong></h6>
-                                    </div>
-                                    <div class="col-sm-4">
-                                    <span>Quantity:<strong>{{item.quantity}} Kg</strong></span>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <button type="button" class="btn btn-link btn-xs" (click)="deleteItem(item,ind)">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
+        </div>
+        <table class="table table-hover">
+          <tbody>
+                <tr *ngFor="let item of items; let ind=index">
+                    <td class="text-left ml-4"><a href="#"><img src="http://placehold.it/100x70" alt="{{item.productName}}.png" title="{{item.productName}}"></a></td>
+                    <td class="text-left"><a href="#">{{item.productName}}</a>
+                        <div><small>Qty: {{item.quantity}} Kg</small></div></td>
+                    <td class="text-right">₹{{item.productPrice*item.quantity}}</td>
+                    <td class="text-center"><button class="btn btn-outline-danger"(click)="deleteItem(item,ind)" title="Remove" class="btn btn-link"><i class="fas fa-trash-alt"></i></button></td>
+                </tr>
+          </tbody>  
+        </table>
+        <div class="row">
+            <div class="col-md-6">
 
-                </div>
-                <div class="panel-footer">
-                    <div class="row text-center">
-                        <div class="col-sm-9">
-                            <h4 class="text-right">Total <strong>₹{{x}}</strong></h4>
-                        </div>
-                        <div class="col-sm-3">
-                            <button type="button" class="btn btn-success btn-block " (click)="checkout()">
-                                Checkout
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6"><strong>Total</strong></div>
+                    <div class="col-md-2">₹{{x}}</div>
+                    <div class="col-md-4">
+                            <button type="button" class="btn btn-success" (click)="checkout()">
+                                    <i class="fas fa-hand-point-right"></i>Place Order
                             </button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        
+      </div>
 </div>
 </ng-template>
-
 <ng-template #empty>
-    <div class="wishlist-header">
+    <div class="container">
+        <div class="h6">Your Cart (0 Items)</div>
+    </div>
+    <div class="cart-header">
         <img src="http://www.austeknis.com/cart_files/cart_pix/empty_cart.jpg" alt="empty wishlist" class="img-fluid">
-        <div class="wishlist-header-content d-flex align-items-center justify-content-center">
-          WISHLIST
-        </div>
-      </div>
+    </div>  
 </ng-template>
