@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination'
 import { IonRangeSliderModule } from 'ng2-ion-range-slider';
 import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
+import { CustomerAddAddressComponent } from './component/customer-my-account/customer-address-book/customer-add-address/customer-add-address.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { CustomerCommonHeaderComponent } from './component/customer-common-heade
     NgxPaginationModule,
     IonRangeSliderModule,
   ],
-  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent]
+  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent, CustomerAddAddressComponent]
 
 })
 export class CustomerModule { }

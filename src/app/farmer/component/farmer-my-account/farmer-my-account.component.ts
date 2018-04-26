@@ -1,8 +1,6 @@
 //import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-
 import { FarmerHeaderService } from '../../services/farmer-header/farmer-header.service';
-import { Farmer } from './farmer';
 
 @Component({
   selector: 'app-farmer-my-account',
@@ -23,7 +21,6 @@ export class FarmerMyAccountComponent implements OnInit {
    public farmerState: string;
    public farmerPrimary: boolean;
    public farmerMobileNumber : string;
-   public delete:boolean=false;
 
    constructor(private farmerHeaderService : FarmerHeaderService,) { }
 

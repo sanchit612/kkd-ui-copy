@@ -21,6 +21,7 @@ import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
+
 @NgModule({
   declarations: [
   AppComponent,
@@ -35,7 +36,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
-  CommonHeaderComponent
+  CommonHeaderComponent,
   ],
   imports: [
   BrowserModule,
