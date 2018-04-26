@@ -17,16 +17,23 @@
     animation: 2s alertAnim forwards;
 }
 
-button {
-    margin-top: 1rem;
+button{
     background-color : #a9c056 !important;
     border : none;
-
+    margin-top: 35px;
+    margin-bottom: 20px;
 }
-h1{
-    text-align : center;
-    font-style:italic;
-}
+h1 {
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 0 40px 0;
+    text-align: center;
+    margin: 0;
+    color: #4b5320;
+    font-size: 50px;
+    line-height: 42px;
+    text-shadow: 0 2px white, 0 3px #777;
+    }
 @keyframes alertAnim {
     from {
         opacity:0;
@@ -44,8 +51,8 @@ h1{
 }
 .cardmargin
 {
-    margin-top: 4rem;
-     margin-bottom: 4rem;
+    margin-top: 2rem;
+     margin-bottom: 3rem;
 }
 .display-4{
     color : white;
@@ -61,4 +68,16 @@ h1{
 button:hover {
     background-color: #c1ed23 !important;
     
+}
+.form-comp{
+    margin-top: 15px;
+}
+.form-comp-button{
+    margin-top: 8px;
+    text-align: center;
+    border-radius: 12px;
+}
+.name{
+    padding-left : 5px;
+    font-size : 18px;
 }
