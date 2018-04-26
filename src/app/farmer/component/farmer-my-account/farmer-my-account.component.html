@@ -5,10 +5,10 @@
       <div class="col-sm-4 hidden-xs display-table-cell v-align box" id="navigation">
         <div class="navi">
           <ul>
-            <li><a data-target="#updateAddressModal" data-toggle="modal">Add Address</a></li>
-            <li><a data-target="#updatePasswordModal" data-toggle="modal">Change Password</a></li>
-            <li><a data-target="#updateMobileModal" data-toggle="modal">Alternate Mobile</a></li>
-            <li><a data-target="#deleteProfileModal" data-toggle="modal">Delete Profile</a></li>
+            <li><a routerLink="/farmer/myAccount/addAddress">Add Address</a></li>
+            <li><a routerLink="/farmer/myAccount/changePassword">Change Password</a></li>
+            <li><a routerLink="/farmer/myAccount/alternateMobile">Alternate Mobile</a></li>
+            <li><a routerLink="/farmer/myAccount/deleteProfile">Delete Profile</a></li>
           </ul>
         </div>
       </div>
@@ -74,7 +74,7 @@
     </div>
   </div>
 </div> 
-<div class="modal fade" tabindex="-1" id="updatePasswordModal" data-keyboard="false" data-backdrop="static">
+<!-- <div class="modal fade" tabindex="-1" id="updatePasswordModal" data-keyboard="false" data-backdrop="static">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -108,7 +108,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <div class="modal fade" tabindex="-1" id="updateMobileModal" data-keyboard="false" data-backdrop="static">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -134,54 +134,6 @@
     </div>
   </div>
 </div>
-<div class="modal fade" tabindex="-1" id="deleteProfileModal" data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Delete Profile</h4>
-        <button type="button" class="close" data-dismiss="modal">
-          &times;
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="inputCurrentPassword">Password</label>
-            <input [(ngModel)]="currentPassword" class="form-control" placeholder="Enter current Password"
-              type="password"  name="currentPassword" />
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button (click)="deleteFarmerProfile()" type="submit" class="btn btn-primary" 
-          data-target="#ConfirmDeleteProfileModal" data-toggle="modal" data-dismiss="modal">Delete</button>
-          <button  type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div *ngIf="delete" class="modal fade" tabindex="-1" id="ConfirmDeleteProfileModal"data-keyboard="false" data-backdrop="static">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Confirm Action </h4>
-        <button type="button" class="close" data-dismiss="modal">
-          &times;
-        </button>           
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <h4>Are you surely want to delete your profile ? </h4>
-          </div>               
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button (click)="deleteFarmerProfile()" type="submit" class="btn btn-primary" data-target="#ConfirmDeleteProfileModal" data-toggle="modal">Delete</button>
-        <button  type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
  

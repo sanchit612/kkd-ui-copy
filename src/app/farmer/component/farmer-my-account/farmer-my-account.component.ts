@@ -108,58 +108,34 @@ export class FarmerMyAccountComponent implements OnInit {
 
              });
   }
- /* Function to change farmer's password by his KKDId
-  and make service call to change farmer's password from app */
-  resetPassword(){
-    if(this.newPassword == this.reenterNewPassword)
-    {
-       this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
-             .subscribe((res) =>{
-             if(this.currentPassword == res.password){
-                   res.password = this.newPassword;
-                   this.farmerHeaderService.updateFarmerMobile(this.farmerId ,res )
-                   .subscribe((updatedInfo) =>{
-                     if(this.newPassword == updatedInfo.password){
-                       alert("Password changed successfully");
-                     }
-                     }, (error) =>{
+//  /* Function to change farmer's password by his KKDId
+//   and make service call to change farmer's password from app */
+//   resetPassword(){
+//     if(this.newPassword == this.reenterNewPassword)
+//     {
+//        this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+//              .subscribe((res) =>{
+//              if(this.currentPassword == res.password){
+//                    res.password = this.newPassword;
+//                    this.farmerHeaderService.updateFarmerMobile(this.farmerId ,res )
+//                    .subscribe((updatedInfo) =>{
+//                      if(this.newPassword == updatedInfo.password){
+//                        alert("Password changed successfully");
+//                      }
+//                      }, (error) =>{
 
-                     })
-             }else{
-               alert("Incorrect current password");
-             }
-             }, (error) =>{
+//                      })
+//              }else{
+//                alert("Incorrect current password");
+//              }
+//              }, (error) =>{
 
-             })
-          }
-    else{
-      alert("Re-enter the new password correctly");
-    }
-  }
-/* Function to delete farmer's profile by his KKDId
-  and make service call to delete farmer's profile from app */
-  deleteFarmerProfile(){
-    this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
-    .subscribe((res) =>{
-      if(this.currentPassword == res.password){
-        alert("matched");
-        this.delete=true;
-        this.deletingProfile();
-      }      
-     },(error) =>{
-
-    });  
-  }
-  deletingProfile(){
-    if(this.delete==true){
-      this.farmerHeaderService.deleteFarmerProfile(this.searchedFarmerId).subscribe((data)=>{
-      },(err)=> console.log(err));
-    }
-    else{
-      alert("Incorrect current password");
-    }
-  }
-
+//              })
+//           }
+//     else{
+//       alert("Re-enter the new password correctly");
+//     }
+//   }
   ngOnInit() {
     this.searchFarmer();
   }
