@@ -1,10 +1,12 @@
 <app-farmer-common-header></app-farmer-common-header>
-<div class="container-fluid cardmargin">
-  <div class="card cardwidth">
+<h1> Login Farmer </h1>
+<div class="container-fluid">
+  <div class="card shadow cardwidth">
     <div class="card-body">
       <form [formGroup]="rForm" (ngSubmit)="loginFarmer(rForm.value)">
         <div class="form-group">
-          <label for="exampleInputEmail1">Mobile Number</label>
+            <div class = "form-comp-top">
+                <div class = "name"><label for="exampleInputEmail1">Mobile Number*</label></div>
           <input class="form-control" type="text" id="mobileNo" formControlName="mobileNo" placeholder="Mobile Number">
           <div *ngIf="rForm.controls['mobileNo'].touched && rForm.controls['mobileNo'].invalid" class="alert">
             <div *ngIf="rForm.controls['mobileNo'].hasError('minlength')" >
@@ -17,8 +19,9 @@
              Mobile Number is required!
            </div>
          </div>
-         <br>
-         <label for="exampleInputPassword1">Password</label>
+         </div>
+         <div class = "form-comp">
+            <div class = "name"><label for="exampleInputPassword1">Password*</label></div>
          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
          <div *ngIf="rForm.controls['password'].touched && rForm.controls['password'].invalid" class="alert">
           <div *ngIf="rForm.controls['password'].hasError('minlength')" >
@@ -32,11 +35,13 @@
          </div>
        </div>
      </div>
+     </div>
      <a routerLink="/farmer/forgetPassword">Forgot password?</a>
-     <br>
+     <div class = "form-comp-button">
      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Login</button>
      <button type="submit" class="btn btn-primary" routerLink="/farmer/authenticationAndAuthorization">Register</button>
-   </form>
+   </div>
+    </form>
  </div>
 </div>
 </div>
@@ -52,3 +57,5 @@
                Password is required!
               </div>
             </div> -->
+
+            
