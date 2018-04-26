@@ -8,13 +8,14 @@ import {CustomerAuthenticationService} from '../../../services/customer-authenti
 })
 export class CustomerAddressBookComponent implements OnInit {
   details:any[];
+  customerId:any;
   constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
   handleSuccess(data){
 this.details=data.addresses;
 console.log(data.addresses);
   }
 searchDetails(){
-  return this.customerAuthenticationService.getDetails().subscribe(
+  return this.customerAuthenticationService.getDetails(this.customerId).subscribe(
     data => this.handleSuccess(data),
     error=> console.log(error),
     () => console.log("Done")
@@ -22,6 +23,8 @@ searchDetails(){
 }
   
   ngOnInit() {
+    this.customerAuthenticationService.changeCustomerId("KKDCUST2004");
+    this.customerId=CustomerAuthenticationService.cus;
     this.searchDetails();
   }
 

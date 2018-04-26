@@ -1,23 +1,22 @@
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="title">My Orders</h1>
-  </div>
-</div>
 
+
+    <h1>My Orders</h1>
+  
 
 <div class="container-fluid current-orders bg">
   
   <div class="row current-orders-body">
-      
-      <div class="col-md-4" *ngFor="let order of currentOrders">
-           <div class="card" >
+    <div *ngFor="let order of previousOrders">
+
+      <div class="col-md-4" >
+           <div class="card shadow" >
               <div class="card-body">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item item-id ">OrderId           :   {{order.orderId}}</li>
+                  <li class="list-group-item item-id ">OrderId              :   {{order.orderId}}</li>
                   <li class="list-group-item item">Product Name             :   {{order.name}} </li>                            
-                  <li class="list-group-item item">Quantity                 :   {{order.quantity}}</li>                            
-                  <li class="list-group-item item">Price                    :   {{order.totalAmount}}</li>
+                  <li class="list-group-item item">Quantity(in Kg.)                 :   {{order.quantity}}</li>                            
+                  <li class="list-group-item item">Price(in Rs.)                    :   {{order.totalAmount}}</li>
                   <li class="list-group-item item">Rating                   :   {{order.avgRating}}</li>
                   <li class="list-group-item item">OTP                      :   {{order.otp}} </li>
                 </ul>
@@ -25,5 +24,5 @@
             </div>
           </div>
           </div>
-          </div> 
+          </div> </div>
   

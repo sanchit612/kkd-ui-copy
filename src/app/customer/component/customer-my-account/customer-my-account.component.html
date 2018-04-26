@@ -1,8 +1,224 @@
 <app-customer-header></app-customer-header>
-<!--The content below is only a placeholder and can be replaced.-->
+<br>
+<div class="container-fluid">
+  <h2>My Account</h2>
+  <ul class="nav nav-tabs nav-justified " id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">My Orders</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Previous Orders</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">Address Book</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">Change Password</a>
+  </li>
+  <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#settings1" role="tab" aria-controls="settings1">Delete Profile</a>
+      </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="home" role="tabpanel">
+        <app-customer-current-order></app-customer-current-order>
+  </div>
+  <div class="tab-pane " id="profile" role="tabpanel">
+        <app-customer-previous-order></app-customer-previous-order>
+  </div>
+  <div class="tab-pane " id="messages" role="tabpanel">
+        <app-customer-address-book></app-customer-address-book>
+  </div>
+  <div class="tab-pane " id="settings" role="tabpanel">
+        <h1> Change Password </h1>
+
+        <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
+            
+          <div class = "card shadow">
+            <div class="form-group">
+        
+            <div class = "form-comp-top">
+            <div class = "name"><label for="mobileNumber">Mobile No</label></div>
+            <input type="text"  class="form-control" id="mobileNumber" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumber">
+            <div *ngIf="rForm.controls['mobileNumber'].touched && rForm.controls['mobileNumber'].invalid" class="alert">
+                    <div *ngIf="rForm.controls['mobileNumber'].hasError('required')">
+                        Mobile Number is required!
+                    </div>
+                </div>
+              </div>
+        
+              <div class = "form-comp">
+                <div class = "name"><label for="currentPassword">Current Password</label></div>
+              <input  type="password" class="form-control" id="currentPassword" placeholder="Enter current Password" formControlName="currentPassword">
+              <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
+                    <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
+                      Password is required!
+                    </div>
+                </div>
+              </div>
+        
+                <div class = "form-comp">
+                  <div class = "name"><label for="newPassword">New Password</label></div>
+                <input  type="password" class="form-control" id="newPassword" placeholder="Enter new Password" formControlName="newPassword">
+                <div *ngIf="rForm.controls['newPassword'].touched && rForm.controls['newPassword'].invalid" class="alert">
+                        <div *ngIf="rForm.controls['newPassword'].hasError('required')">
+                          New Password is required!
+                        </div>
+                    </div>
+                  </div>
+        
+        
+                  <div class = "form-comp">
+                    <div class = "name"><label for="reenterNewPassword">Re-enter new Password</label></div>
+                  <input  type="password" class="form-control" id="reenterNewPassword" placeholder="Re-enter New Password" formControlName="reenterNewPassword">
+                  <div *ngIf="rForm.controls['reenterNewPassword'].touched && rForm.controls['reenterNewPassword'].invalid" class="alert">
+                          <div *ngIf="rForm.controls['reenterNewPassword'].hasError('required')">
+                            Re-entering the new Password is required!
+                          </div>
+                      </div>
+                    </div></div>
+        
+                    <div class = form-comp-button>
+        
+                        <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
+                     </div></div></form>
+  </div>
+ 
+        <div class="tab-pane" id="settings1" role="tabpanel">
+                <h1> Delete Profile </h1>
+
+                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
+                    
+                  <div class = "card shadow">
+                    <div class="form-group">
+                
+                    <div class = "form-comp-top">
+                    <div class = "name"><label for="mobileNumberDeleteProfile">Mobile No</label></div>
+                    <input type="text"  class="form-control" id="mobileNumberDeleteProfile" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumberDeleteProfile">
+                    <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].touched && rFormDeleteProfile.controls['mobileNumberDeleteProfile'].invalid" class="alert">
+                            <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].hasError('required')">
+                                Mobile Number is required!
+                            </div>
+                        </div>
+                      </div>
+                
+                      <div class = "form-comp">
+                        <div class = "name"><label for="currentPasswordDeleteProfile">Password</label></div>
+                      <input  type="password" class="form-control" id="currentPasswordDeleteProfile" placeholder="Enter your Password" formControlName="currentPasswordDeleteProfile">
+                      <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].touched && rFormDeleteProfile.controls['currentPasswordDeleteProfile'].invalid" class="alert">
+                            <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].hasError('required')">
+                              Password is required!
+                            </div>
+                        </div>
+                      </div></div>
+                
+                      <div class = form-comp-button>
+                
+                        <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">Submit</button>
+                     </div></div></form>
+        </div>
 
 
-<!-- <div class="container-fluid bg">
+<script>
+ 
+</script>
+</div></div>
+
+    
+
+    
+	
+<!-- <h1> Delete Profile </h1>
+
+<form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
+    
+  <div class = "card shadow">
+    <div class="form-group">
+
+    <div class = "form-comp-top">
+    <div class = "name"><label for="mobileNumberDeleteProfile">Mobile No</label></div>
+    <input type="text"  class="form-control" id="mobileNumberDeleteProfile" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumberDeleteProfile">
+    <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].touched && rFormDeleteProfile.controls['mobileNumberDeleteProfile'].invalid" class="alert">
+            <div *ngIf="rFormDeleteProfile.controls['mobileNumberDeleteProfile'].hasError('required')">
+                Mobile Number is required!
+            </div>
+        </div>
+      </div>
+
+      <div class = "form-comp">
+        <div class = "name"><label for="currentPasswordDeleteProfile">Password</label></div>
+      <input  type="password" class="form-control" id="currentPasswordDeleteProfile" placeholder="Enter your Password" formControlName="currentPasswordDeleteProfile">
+      <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].touched && rFormDeleteProfile.controls['currentPasswordDeleteProfile'].invalid" class="alert">
+            <div *ngIf="rFormDeleteProfile.controls['currentPasswordDeleteProfile'].hasError('required')">
+              Password is required!
+            </div>
+        </div>
+      </div></div>
+
+      <div class = form-comp-button>
+
+        <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">Submit</button>
+     </div></div></form>
+      -->
+
+
+<!-- <h1> Change Password </h1>
+
+<form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
+    
+  <div class = "card shadow">
+    <div class="form-group">
+
+    <div class = "form-comp-top">
+    <div class = "name"><label for="mobileNumber">Mobile No</label></div>
+    <input type="text"  class="form-control" id="mobileNumber" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumber">
+    <div *ngIf="rForm.controls['mobileNumber'].touched && rForm.controls['mobileNumber'].invalid" class="alert">
+            <div *ngIf="rForm.controls['mobileNumber'].hasError('required')">
+                Mobile Number is required!
+            </div>
+        </div>
+      </div>
+
+      <div class = "form-comp">
+        <div class = "name"><label for="currentPassword">Current Password</label></div>
+      <input  type="password" class="form-control" id="currentPassword" placeholder="Enter current Password" formControlName="currentPassword">
+      <div *ngIf="rForm.controls['currentPassword'].touched && rForm.controls['currentPassword'].invalid" class="alert">
+            <div *ngIf="rForm.controls['currentPassword'].hasError('required')">
+              Password is required!
+            </div>
+        </div>
+      </div>
+
+        <div class = "form-comp">
+          <div class = "name"><label for="newPassword">New Password</label></div>
+        <input  type="password" class="form-control" id="newPassword" placeholder="Enter new Password" formControlName="newPassword">
+        <div *ngIf="rForm.controls['newPassword'].touched && rForm.controls['newPassword'].invalid" class="alert">
+                <div *ngIf="rForm.controls['newPassword'].hasError('required')">
+                  New Password is required!
+                </div>
+            </div>
+          </div>
+
+
+          <div class = "form-comp">
+            <div class = "name"><label for="reenterNewPassword">Re-enter new Password</label></div>
+          <input  type="password" class="form-control" id="reenterNewPassword" placeholder="Re-enter New Password" formControlName="reenterNewPassword">
+          <div *ngIf="rForm.controls['reenterNewPassword'].touched && rForm.controls['reenterNewPassword'].invalid" class="alert">
+                  <div *ngIf="rForm.controls['reenterNewPassword'].hasError('required')">
+                    Re-entering the new Password is required!
+                  </div>
+              </div>
+            </div></div>
+
+            <div class = form-comp-button>
+
+                <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
+             </div></div></form>
+              -->
+<!--
+
+    <div class="container-fluid bg">
 	<div class="row">
     <div class="col-md-3">
     </div>
@@ -151,7 +367,7 @@
     </div>
 </div>
 </div>
-</div> -->
+</div>  -->
 
 
 <!-- <div class="container">
@@ -238,46 +454,3 @@
                         </div>
                     </div>
                 </div> -->
-
-
-                <p>Click on the buttons inside the tabbed menu:</p>
-
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<script>
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>

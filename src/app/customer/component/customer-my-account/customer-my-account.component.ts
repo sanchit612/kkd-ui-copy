@@ -1,6 +1,10 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import{CustomerAuthenticationService} from '../../services/customer-authentication.service';
 import{UserDetails} from '../../config/user-details.config';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-customer-my-account',
   templateUrl: './customer-my-account.component.html',
@@ -8,25 +12,46 @@ import{UserDetails} from '../../config/user-details.config';
   providers:[CustomerAuthenticationService],
 })
 export class CustomerMyAccountComponent implements OnInit {
+  post:any;
+  rForm: FormGroup;
+  rFormDeleteProfile : FormGroup;
   public mobileNumber:string="";
   public currentPassword: string="";
   public newPassword: string="";
   public reenterNewPassword: string="";
   public userDetails ={};
- 
+  public mobileNumberDeleteProfile : String="";
+  public currentPasswordDeleteProfile: string="";
 
-  constructor(private customerAuthenticationService :CustomerAuthenticationService) { }
+  constructor(private customerAuthenticationService :CustomerAuthenticationService,private fb: FormBuilder,public router: Router) { 
+    this.rForm = fb.group({
+    mobileNumber : [null, Validators.compose([Validators.required])],
+    currentPassword : [null, Validators.compose([Validators.required])],
+    newPassword : [null, Validators.compose([Validators.required])],
+    reenterNewPassword: [null, Validators.compose([Validators.required])],
+
+})
+   this.rFormDeleteProfile = fb.group({
+    mobileNumberDeleteProfile : [null, Validators.compose([Validators.required])],
+    currentPasswordDeleteProfile : [null, Validators.compose([Validators.required])],
+  
+
+})
+}
 
   ngOnInit() {
     
-   
+   this.customerAuthenticationService.changeCustomerId("kkdcust2000");
   }
   
   
   
-  onSubmit(){
+  onSubmit(post){
     
-   
+  this.mobileNumber=post.mobileNumber;
+  this.currentPassword=post.currentPassword;
+  this.newPassword=post.newPassword;
+  this.reenterNewPassword=post.reenterNewPassword;
     var regularExpression  = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
     if(this.currentPassword.length && this.newPassword.length && this.reenterNewPassword.length ){
@@ -73,20 +98,22 @@ export class CustomerMyAccountComponent implements OnInit {
   }
   
 
-  validateUser(){
-    if(!(isNaN(+this.mobileNumber)) && this.mobileNumber.length==10 ){
-    if(this.currentPassword.length){
-    this.customerAuthenticationService.getUserDetails(this.mobileNumber)
+  validateUser(post){
+    this.mobileNumberDeleteProfile=post.mobileNumberDeleteProfile;
+    this.currentPasswordDeleteProfile=post.currentPasswordDeleteProfile;
+    if(!(isNaN(+this.mobileNumberDeleteProfile)) && this.mobileNumberDeleteProfile.length==10 ){
+    if(this.currentPasswordDeleteProfile.length){
+    this.customerAuthenticationService.getUserDetails(this.mobileNumberDeleteProfile)
     .subscribe((res) =>{this.userDetails = res;
     //console.log(res.password);
     if(!(res == null)){
-    if(this.currentPassword == res.password){
+    if(this.currentPasswordDeleteProfile == res.password){
       this.customerAuthenticationService.deleteProfile(res.kkdCustId)
             .subscribe((status) =>{
                alert("Profile deleted successfully");
         
         }, (error) =>{
-    
+               alert("Internal Error : Can't delete right now")
         })
       }
       else{
