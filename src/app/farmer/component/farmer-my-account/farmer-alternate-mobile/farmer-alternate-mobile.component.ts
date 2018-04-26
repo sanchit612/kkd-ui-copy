@@ -25,7 +25,8 @@ export class FarmerAlternateMobileComponent implements OnInit {
              .subscribe((res) =>{
                    res.alternateNo = post.alternateMobileNumber;
                    this.farmerHeaderService.updateFarmerMobile(this.searchedFarmerId,res)
-                   .subscribe((updatedInfo) =>{            
+                   .subscribe((updatedInfo) =>{  
+                     alert("successfully updated");          
                      }, (error) =>{
                      });            
              }, (error) =>{
