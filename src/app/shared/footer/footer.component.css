@@ -102,3 +102,9 @@ footer {
         text-align: center;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .foot-logo {
+       margin: 0rem !important;
+    }
+}

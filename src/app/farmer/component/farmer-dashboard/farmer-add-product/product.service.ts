@@ -17,8 +17,8 @@ export class ProductService {
   }    
 
 
-  update(id,product){
-       return this.http.post(App.nameMapping+id,product,{headers: this.headers})
+  update(id,productSubmission){
+       return this.http.post(App.nameMapping+id,productSubmission,{headers: this.headers})
         .map(data => data.json(),
        (error: any)=>this.handleError(error)); 
       }

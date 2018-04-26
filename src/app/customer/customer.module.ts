@@ -9,7 +9,6 @@ import { CustomerMyCartComponent } from './component/customer-my-cart/customer-m
 import { CustomerHomePageComponent } from './component/customer-home-page/customer-home-page.component';
 import { CustomerMyAccountComponent } from './component/customer-my-account/customer-my-account.component';
 import { CustomerAddressBookComponent } from './component/customer-my-account/customer-address-book/customer-address-book.component';
-import { CustomerBankDetailsComponent } from './component/customer-my-account/customer-bank-details/customer-bank-details.component';
 import { CustomerCurrentOrderComponent } from './component/customer-my-account/customer-current-order/customer-current-order.component';
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
 import { CustomerComponent } from './customer.component';
@@ -19,6 +18,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
 import { IonRangeSliderModule } from 'ng2-ion-range-slider';
 import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -26,9 +26,9 @@ import { CustomerCommonHeaderComponent } from './component/customer-common-heade
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    IonRangeSliderModule
+    IonRangeSliderModule,
   ],
-  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerBankDetailsComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent]
+  declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent]
 
 })
 export class CustomerModule { }
