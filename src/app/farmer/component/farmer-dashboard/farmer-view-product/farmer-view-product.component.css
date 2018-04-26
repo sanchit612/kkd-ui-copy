@@ -6,15 +6,20 @@
 }
 
 .zoom:hover {
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
+    -ms-transform: scale(1.09); /* IE 9 */
+    -webkit-transform: scale(1.09); /* Safari 3-8 */
+    transform: scale(1.09); 
 }
 
 p {
     margin: 0em;
     font-size: 12px;
     text-align: left;
+    font-family: Roboto;
+}
+
+h5 {
+    font-family: Roboto;
 }
 
 hr {

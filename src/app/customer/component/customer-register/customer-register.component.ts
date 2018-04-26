@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 import { RegistrationLoginService } from '../../../customer/registration-login-services/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 	providers:[ RegistrationLoginService ]
 })
 export class CustomerRegisterComponent implements OnInit {
-
+	@ViewChild('myModal') myModal;
+	@ViewChild('myModal1') myModal1;
 	rForm: FormGroup;
 	post:any;   
 	mobileNo:String;
@@ -84,6 +85,7 @@ export class CustomerRegisterComponent implements OnInit {
 			}
 			else{
 				alert("wrong otp");
+				this.myModal1.nativeElement.click();
 			}
 		}, (err) =>{
 			alert("wrong otp");
