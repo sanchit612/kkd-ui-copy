@@ -3,15 +3,35 @@ form{
     margin : 0 auto;
 }
 
-h1{
+h1 {
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 0 40px 0;
+    text-align: center;
+    margin: 0;
+    color: #4b5320;
+    font-size: 50px;
+    line-height: 42px;
+    text-shadow: 0 2px white, 0 3px #777;
+    }
+
+/* h1{
     text-align : center;
-}
+    margin: 15px 0 0.5em 0;
+    padding-top: 10px;
+    color :#d84b6b;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;   
+    font-size: 50px;
+    line-height: 42px;
+    text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;   
+} */
 
 .jumbotron{
     background-color : #a9c056;
     margin-top : -15px;
-    height : 30px;
-    
+    height : 0px;    
 }
 
 .display-4{
@@ -22,7 +42,7 @@ h1{
 
 .form-group{
     font-style: roboto;
-    width : 500px;
+    width : 85%;
     margin : auto;
 }
 
@@ -52,11 +72,11 @@ h1{
 
 .name{
     padding-left : 5px;
-    font-size : 20px;
+    font-size : 18px;
 }
 
 .form-comp-button{
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: center;
     border-radius: 12px;
 }
