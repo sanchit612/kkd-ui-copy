@@ -49,6 +49,7 @@ export class FarmerAddProductComponent implements OnInit {
       price : [null, Validators.compose([Validators.required])],
       bulkOrderPrice : [null, Validators.compose([Validators.required])],
       quantity : [null, Validators.compose([Validators.required])],
+      available : ''
 
   })
 }
@@ -75,7 +76,8 @@ export class FarmerAddProductComponent implements OnInit {
 
   check(post){
     alert(this.productName);
-     alert(this.rForm.value.available);
+    alert(post.available);
+     //alert(this.rForm.get('available'));
      alert(post.description);
      alert(post.price);
     // alert(this.bulkPrice);
@@ -102,7 +104,7 @@ export class FarmerAddProductComponent implements OnInit {
 
     },(error) => {
       console.log(error)
-
+      alert("Product not added");
     });
 
 
