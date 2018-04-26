@@ -80,7 +80,7 @@ export class CustomerRegisterComponent implements OnInit {
 					localStorage.setItem("kkdCustId",res.results.kkdCustId);
 					this.router.navigate(['customer/homePage']);
 				}, (err) =>{
-					this.myModal.nativeElement.click();
+						alert("Already registered")
 				})
 			}
 			else{
@@ -88,7 +88,6 @@ export class CustomerRegisterComponent implements OnInit {
 				this.myModal1.nativeElement.click();
 			}
 		}, (err) =>{
-			this.myModal1.nativeElement.click();
-		})
-	}
+			alert("wrong otp");
+	})}
 }
