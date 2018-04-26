@@ -1,7 +1,7 @@
-  .farmer-image{
+@import url("//code.jquery.com/jquery-1.11.1.min.js");
+.farmer-image{
     height:200px;
   }
-  @import url("//code.jquery.com/jquery-1.11.1.min.js");
   /*Login Signup Page*/ 
   .header-top i {
       font-size: 18px;
@@ -21,6 +21,7 @@
   }  
   #navigation {
       background:#343a40;
+      min-width: 16rem;
   } 
   #navigation {
       padding: 0;
