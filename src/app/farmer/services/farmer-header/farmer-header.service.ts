@@ -26,7 +26,8 @@ export class FarmerHeaderService {
    // Function to update farmer's mobile number
     updateFarmerMobile(searchedFarmer,updatedInfo){
       return this.http.put(App.alternateMobileMapping+searchedFarmer,updatedInfo,{headers: this.headers})
-      .map(data => data.json(),
+      .map(data => 
+        data.json(),
       (error: any)=>this.handleError(error));
     }
      // Function to delete farmer's profile
