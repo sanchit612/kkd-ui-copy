@@ -74,7 +74,7 @@ export class FarmerAddProductComponent implements OnInit {
     this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
       console.log(res);
       swal({
-        position: 'top-end',
+        position: 'center',
         type: 'success',
         title: 'Your product has been added',
         showConfirmButton: false,
