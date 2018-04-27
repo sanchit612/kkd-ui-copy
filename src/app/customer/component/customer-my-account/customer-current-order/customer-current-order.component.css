@@ -1,17 +1,15 @@
-/* .current-orders{
-    background-color: #F0F7D4;
-} */
 
-.current-orders-body{
-    padding:30px;
-    
+
+
+.cards{
+    padding-top:30px;
 }
-
-/* .card{
+.card{
     background-color: #f9f9f9;
-    width : 600px;
+    width : 340px;
     margin : auto;
-} */
+   
+}
 .item{
     background-color: #f9f9f9;
     padding-left : 5px;
@@ -145,8 +143,3 @@ button:focus{
     border-color : #f9f9f9 !important;
 }
 
-.card{
-    background-color: #f9f9f9;
-    width : 600px;
-    margin : auto;
-}

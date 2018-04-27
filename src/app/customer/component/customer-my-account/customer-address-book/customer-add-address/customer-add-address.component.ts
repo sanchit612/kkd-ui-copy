@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   providers:[CustomerHeaderService]
 })
 export class CustomerAddAddressComponent implements OnInit {
-  public customerId:string="KKDCUST2004";
+  public customerId:string="KKDCUST2001";
   public customerMobileNumber : string;
   rForm: FormGroup;
   public details;

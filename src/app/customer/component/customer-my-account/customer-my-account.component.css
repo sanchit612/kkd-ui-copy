@@ -132,3 +132,6 @@ button:focus{
 .main-body{
     background-color: #FFFFFF;
 }
+.change-password{
+    padding-left:170px;
+}

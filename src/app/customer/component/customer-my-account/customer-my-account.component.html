@@ -31,7 +31,7 @@
   <div class="tab-pane " id="messages" role="tabpanel">
         <app-customer-address-book></app-customer-address-book>
   </div>
-  <div class="tab-pane " id="settings" role="tabpanel">
+  <div class="tab-pane change-password" id="settings" role="tabpanel">
         <h1> Change Password </h1>
 
         <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
@@ -86,10 +86,10 @@
                      </div></div></form>
   </div>
  
-        <div class="tab-pane" id="settings1" role="tabpanel">
+        <div class="tab-pane change-password" id="settings1" role="tabpanel">
                 <h1> Delete Profile </h1>
 
-                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
+                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
                     
                   <div class = "card shadow">
                     <div class="form-group">
