@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-//import { Product } from './product';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-import { ProductService } from './product.service';
 import swal from 'sweetalert2';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-farmer-add-product',
@@ -24,23 +22,10 @@ export class FarmerAddProductComponent implements OnInit {
   public quantity: any;
   public productName: any;
   public available: any;
-  public url:any;
   productSubmission;
 
   ngOnInit() {
   }
-
- /* product : Product ={
-    kkdFarmId: "kkdFarmId",
-    imageUrl: "imageUrl",
-    productName: "productName",
-    description: "red",
-    price: 10,
-    bulkOrderPrice: 8,
-    quantity: 100,
-    available: false
-  }*/
-
  
 
   constructor(private productService: ProductService,private fb: FormBuilder,public router: Router) { 
@@ -61,20 +46,25 @@ export class FarmerAddProductComponent implements OnInit {
 
   onFileSelected(event: any){
     console.log(event);
-    /*if (event.target.files && event.target.files[0]) {
+    if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
   
       reader.onload = (event:any) => {
-        this.url = event.target.result;
-      }
+        this.imageUrl = event.target.result      }
   
       reader.readAsDataURL(event.target.files[0]);
-    }*/
-		//this.imageUrl=String(event.target.files[0]);
-		this.imageUrl="https://upload.wikimedia.org/wikipedia/commons/f/f0/Onions_%282272516704%29.jpg";
+    }
   }
 
   check(post){
+    //alert(this.productName);
+    //alert(post.available);
+     //alert(this.rForm.get('available'));
+    // alert(post.description);
+     //alert(post.price);
+    // alert(this.bulkPrice);
+    // alert(this.quantity);
+     //alert(this.imageUrl);
 
     this.productSubmission = {
 

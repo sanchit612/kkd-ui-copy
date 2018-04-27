@@ -1,0 +1,56 @@
+<app-customer-header></app-customer-header>
+<h1>Add Alternate Address</h1> 
+  <form [formGroup]="rForm" (ngSubmit)="updateCustomerAddress(rForm.value)">    
+    <div class = "card">
+      <div class="form-group">
+      <div class = form-comp>
+      <div class = "name"><label for="addressLine">Address Line</label></div>
+      <input type="text" class="form-control" id="addressLine" placeholder="Enter Address Line" formControlName="addressLine">
+      <div *ngIf="rForm.controls['addressLine'].touched && rForm.controls['addressLine'].invalid" class="alert">
+        <div *ngIf="rForm.controls['addressLine'].hasError('required')">
+          Address Line is required!
+        </div>
+      </div>
+      </div>
+      <div class = form-comp>
+        <div class = "name"><label for="city">City</label></div>
+        <input type="text" class="form-control" id="city" placeholder="Enter Your City" formControlName="city">
+        <div *ngIf="rForm.controls['city'].touched && rForm.controls['city'].invalid" class="alert">
+          <div *ngIf="rForm.controls['city'].hasError('required')">
+            City is required!
+          </div>
+        </div>
+        </div>
+      <div class = form-comp>
+        <div class = "name"><label for="district">District</label></div>
+        <input type="text" class="form-control" id="district" placeholder="Enter Your District" formControlName="district">
+        <div *ngIf="rForm.controls['district'].touched && rForm.controls['district'].invalid" class="alert">
+          <div *ngIf="rForm.controls['district'].hasError('required')">
+            District is required!
+          </div>
+        </div>
+      </div>
+      <div class = form-comp>
+        <div class = "name"><label for="state">State</label></div>
+        <input type="text" class="form-control" id="state" placeholder="Enter Your State" formControlName="state">
+        <div *ngIf="rForm.controls['state'].touched && rForm.controls['state'].invalid" class="alert">
+          <div *ngIf="rForm.controls['state'].hasError('required')">
+            State is required!
+          </div>
+        </div>
+        </div>
+      <div class = form-comp>
+        <div class = "name"><label for="pincode">Pincode</label></div>
+        <input type="number" class="form-control" id="pincode" placeholder="Enter Your Pincode" formControlName="pincode">
+        <div *ngIf="rForm.controls['pincode'].touched && rForm.controls['pincode'].invalid" class="alert">
+          <div *ngIf="rForm.controls['pincode'].hasError('required')">
+            Pincode is required!
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class = form-comp-button>
+      <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid"><a routerLink="/customer/addressBook"> Update</a></button>
+      </div>
+    </div>
+  </form>
