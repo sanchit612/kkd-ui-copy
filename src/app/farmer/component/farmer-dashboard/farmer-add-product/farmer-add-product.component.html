@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-farmer-header></app-farmer-header>
+
 <!--<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -13,7 +13,7 @@
 				</div>
 				<div class="col-md-4 drop">
 					<div class="dropdown">
-						
+
 						<select (change)="selectChangeHandler($event)" class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
 							<option value="select" class="dropdown-header">--Select--</option>
 							 <option value="Onion" class="dropdown-item">Onion</option>
@@ -26,7 +26,7 @@
 							 <option value="Orange" class="dropdown-item">Orange</option>
 							 <option value="Lemon" class="dropdown-item">Lemon</option>
 						</select>
-						
+
 					</div>
 				</div>
 				<div class="col-md-3">
@@ -40,48 +40,48 @@
 				<div class="col-md-6">
 					<form role="form">
 						<div class="form-group">
-							 
+
 							<label>
 								Description
 							</label>
 							<textarea [(ngModel)]="description" type="text" class="form-control" id="exampleInputEmail1" name="description"></textarea>
 						</div>
-						
+
 						<div class="form-group">
-							 
+
 							<label>
 								Price
 							</label>
 							<input  step="1" min="0" [(ngModel)]="price" type="number" class="form-control" id="exampleInputPassword1" name="price">
 						</div>
 						<div class="form-group">
-							 
+
 							<label>
 								Bulk Order Price
 							</label>
-							<input  step="1" min="0" [(ngModel)]="bulkPrice" type="number" class="form-control" id="exampleInputPassword1" name="bulkPrice"> 
+							<input  step="1" min="0" [(ngModel)]="bulkPrice" type="number" class="form-control" id="exampleInputPassword1" name="bulkPrice">
 						</div>
 						<div class="form-group">
-							 
+
 							<label>
 								Quantity
 							</label>
 							<input step="1" min="0" [(ngModel)]="quantity" type="number" class="form-control" id="exampleInputPassword1" name="quantity">
 						</div>
 						<div class="form-group">
-							 
+
 							<label for="exampleInputFile">
 								Upload an image
 							</label>
 							<input type="file" (change)="onFileSelected($event)" class="form-control-file" id="exampleInputFile">
-							
+
 						</div>
 						<div class="checkbox">
-							 
+
 							<label>
 								<input type="checkbox" name="isAvailable" [(ngModel)]="available">In stock
 							</label>
-						</div> 
+						</div>
 						<button type="submit" (click)="check()" class="btn btn-primary">
 							Submit
 						</button>
@@ -93,21 +93,21 @@
 		</div>
 	</div>
 </div>-->
-
+<div class="mt-100">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
   <h1> Upload Product </h1>
 
 <form [formGroup]="rForm" (ngSubmit)="check(rForm.value)">
-    
+
   <div class = "card shadow">
     <div class="form-group">
 
 			<div class = form-comp>
 
 					<div class="dropdown">
-						
+
 							<select (change)="selectChangeHandler($event)" class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
 								<option value="select" class="dropdown-header">--Select--</option>
 								 <option value="Onion" class="dropdown-item">Onion</option>
@@ -120,7 +120,7 @@
 								 <option value="Orange" class="dropdown-item">Orange</option>
 								 <option value="Lemon" class="dropdown-item">Lemon</option>
 							</select>
-							
+
 						</div>
 				</div>
 
@@ -168,28 +168,28 @@
 			</div>
 		  </div>
 
-		 
+
 		  <input type="checkbox" name="available" formControlName="available" value="1"> In Stock
-			
+
 		 <!--<div class = form-comp>
 				<div>
-							 
+
 						<label>
 							<input type="checkbox" class="form-control" id="available" ng-model="available" ng-true-value="'YES'" ng-false-value="'NO'"/>In stock
-						</label>	
-					</div> 
+						</label>
+					</div>
 		  </div>
 		  <div class = form-comp>
 
 		  <div class="checkbox">
-							 
+
 				<label>
 					<input type="checkbox" name="isAvailable" [(ngModel)]="available">In stock
 				</label>
-			</div> 
-			</div>-->	
+			</div>
+			</div>-->
 
-  
+
             <div class = form-comp>
 					<div class = "name">
 					<label for="exampleInputFile">
@@ -205,4 +205,4 @@
    </div>
    </div>
 </form>
-  
+</div>

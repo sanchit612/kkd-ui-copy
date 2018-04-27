@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FarmerCommonHeaderComponent } from './farmer-common-header.component';
+import { ProductListComponent } from './product-list.component';
 
-describe('FarmerCommonHeaderComponent', () => {
-  let component: FarmerCommonHeaderComponent;
-  let fixture: ComponentFixture<FarmerCommonHeaderComponent>;
+describe('ProductListComponent', () => {
+  let component: ProductListComponent;
+  let fixture: ComponentFixture<ProductListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FarmerCommonHeaderComponent ]
+      declarations: [ ProductListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FarmerCommonHeaderComponent);
+    fixture = TestBed.createComponent(ProductListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -12,12 +12,12 @@ import { Router } from '@angular/router';
 export class CustomerLoginComponent implements OnInit {
 	@ViewChild('myModal') myModal;
 	rForm: FormGroup;
-	post:any;   
+	post:any;
 	mobileNo:String;
 	password:String;
 	newPassword:String;
 
-	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) { 
+	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) {
 		this.rForm = fb.group({
 			'mobileNo': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
 			'password': [null, Validators.compose([Validators.required, Validators.maxLength(12), Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$")])]
@@ -37,7 +37,7 @@ export class CustomerLoginComponent implements OnInit {
 			alert("Successfully loggedin");
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdCustId",res.results.kkdCustId);
-			this.router.navigate(['/customer/homePage']);
+			this.router.navigate(['/productList']);
 		}, (err) =>{
 			if(err.status==401){
 				this.myModal.nativeElement.click();
