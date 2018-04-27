@@ -19,7 +19,10 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+<<<<<<< HEAD
 
+=======
+>>>>>>> b335e75037a5e4688764f2ad80f9e4f0feff8d0d
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 
@@ -37,7 +40,11 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
+<<<<<<< HEAD
   CommonHeaderComponent
+=======
+  CommonHeaderComponent,
+>>>>>>> b335e75037a5e4688764f2ad80f9e4f0feff8d0d
   ],
   imports: [
   BrowserModule,
