@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from '../../services/search.service';
-
 @Component({
-  selector: 'app-customer-home-page',
-  templateUrl: './customer-home-page.component.html',
-  styleUrls: ['./customer-home-page.component.css'],
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css'],
   providers:[SearchService]
 })
-export class CustomerHomePageComponent implements OnInit {
+export class ProductListComponent implements OnInit {
 
   public searchInput:string;
   public products:Array<any>=[];
+
   constructor(private searchService: SearchService) { }
+
   ngOnInit() {
     this.searchService.getAllProducts(this.searchInput).subscribe((data)=> {
       console.log(data);
@@ -96,7 +97,7 @@ export class CustomerHomePageComponent implements OnInit {
   public cartItem={};
   public enteredQuant:number;
   addToCart(item){
-    
+
 
     this.cartItem={
       "custId":"KKDCUST1000",
@@ -109,7 +110,7 @@ export class CustomerHomePageComponent implements OnInit {
       "avgRating": 4.5
     };
     console.log(this.cartItem)
-    
+
   }
 
   proceed(){
@@ -125,6 +126,7 @@ export class CustomerHomePageComponent implements OnInit {
     else{
       alert("No stocks Available for this much Qunatity")
     }
-    
+
   }
+
 }

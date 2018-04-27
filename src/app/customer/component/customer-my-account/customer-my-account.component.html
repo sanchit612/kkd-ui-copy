@@ -35,10 +35,10 @@
         <h1> Change Password </h1>
 
         <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
-            
+
           <div class = "card shadow">
             <div class="form-group">
-        
+
             <div class = "form-comp-top">
             <div class = "name"><label for="mobileNumber">Mobile No</label></div>
             <input type="text"  class="form-control" id="mobileNumber" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumber">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
               </div>
-        
+
               <div class = "form-comp">
                 <div class = "name"><label for="currentPassword">Current Password</label></div>
               <input  type="password" class="form-control" id="currentPassword" placeholder="Enter current Password" formControlName="currentPassword">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
               </div>
-        
+
                 <div class = "form-comp">
                   <div class = "name"><label for="newPassword">New Password</label></div>
                 <input  type="password" class="form-control" id="newPassword" placeholder="Enter new Password" formControlName="newPassword">
@@ -68,8 +68,8 @@
                         </div>
                     </div>
                   </div>
-        
-        
+
+
                   <div class = "form-comp">
                     <div class = "name"><label for="reenterNewPassword">Re-enter new Password</label></div>
                   <input  type="password" class="form-control" id="reenterNewPassword" placeholder="Re-enter New Password" formControlName="reenterNewPassword">
@@ -79,21 +79,30 @@
                           </div>
                       </div>
                     </div></div>
-        
+
                     <div class = form-comp-button>
-        
+
                         <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit</button>
                      </div></div></form>
   </div>
+<<<<<<< HEAD
  
         <div class="tab-pane change-password" id="settings1" role="tabpanel">
                 <h1> Delete Profile </h1>
 
                 <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
                     
+=======
+
+        <div class="tab-pane" id="settings1" role="tabpanel">
+                <h1> Delete Profile </h1>
+
+                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
+
+>>>>>>> 60164065f00a29c3ec0983059b063b6d18a1a9f5
                   <div class = "card shadow">
                     <div class="form-group">
-                
+
                     <div class = "form-comp-top">
                     <div class = "name"><label for="mobileNumberDeleteProfile">Mobile No</label></div>
                     <input type="text"  class="form-control" id="mobileNumberDeleteProfile" placeholder="Enter your 10 digit mobile number" formControlName="mobileNumberDeleteProfile">
@@ -103,7 +112,7 @@
                             </div>
                         </div>
                       </div>
-                
+
                       <div class = "form-comp">
                         <div class = "name"><label for="currentPasswordDeleteProfile">Password</label></div>
                       <input  type="password" class="form-control" id="currentPasswordDeleteProfile" placeholder="Enter your Password" formControlName="currentPasswordDeleteProfile">
@@ -113,27 +122,27 @@
                             </div>
                         </div>
                       </div></div>
-                
+
                       <div class = form-comp-button>
-                
+
                         <button  type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rFormDeleteProfile.valid">Submit</button>
                      </div></div></form>
         </div>
 
 
 <script>
- 
+
 </script>
 </div></div>
 
-    
 
-    
-	
+
+
+
 <!-- <h1> Delete Profile </h1>
 
 <form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
-    
+
   <div class = "card shadow">
     <div class="form-group">
 
@@ -167,7 +176,7 @@
 <!-- <h1> Change Password </h1>
 
 <form [formGroup]="rForm" (ngSubmit)="onSubmit(rForm.value)">
-    
+
   <div class = "card shadow">
     <div class="form-group">
 
@@ -231,7 +240,7 @@
             </div>
       <div class="main-body">
       <div class ="total_earnings">
-      
+
                 <a routerLink="/customer/currentOrder" class="btn btn-primary change_password_button" role="button">My orders</a>
                 </div>
                 <div class ="next_buttons">
@@ -244,16 +253,16 @@
             <div class ="change_password">
                 <a routerLink="/customer/previousOrder" class="btn btn-primary change_password_button" role="button">Previous orders</a>
             </div>
-            
+
             <div class ="change_password">
                 <button type="submit" class="btn btn-primary change_password_button" data-target="#DeleteProfileModal" data-toggle="modal">Delete Profile</button>
             </div>
-            
+
             </div></div>
         </div>
     <div class="col-md-3">
     </div>
-  
+
 </div>
 
 
@@ -266,7 +275,7 @@
             <button type="button" class="close" data-dismiss="modal">
                 &times;
             </button>
-           
+
         </div>
         <div class="modal-body change-password-body ">
             <form>
@@ -312,7 +321,7 @@
             <button type="button" class="close" data-dismiss="modal">
                 &times;
             </button>
-           
+
         </div>
         <div class="modal-body">
             <form>
@@ -326,7 +335,7 @@
                     <input [(ngModel)]="currentPassword" class="form-control" placeholder="Enter current Password"
                             type="password"  id="inputPassword" name="currentPassword" />
                 </div>
-               
+
             </form>
         </div>
         <div class="modal-footer">
@@ -349,15 +358,15 @@
             <button type="button" class="close" data-dismiss="modal">
                 &times;
             </button>
-           
+
         </div>
         <div class="modal-body">
             <form>
                 <div class="form-group">
                    <h4>Are you surely want to delete your profile ? </h4>
                 </div>
-              
-               
+
+
             </form>
         </div>
         <div class="modal-footer">
@@ -374,7 +383,7 @@
 <!-- <div class="container">
     <div class="row">
         <div class="col-md-4">
-            
+
     <h2>Dynamic Tabs</h2>
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
@@ -450,7 +459,7 @@
                             </div>
                         </div>
                         <div class="col-sm-9 display-table-cell v-align">
-                            
+
                            </div>
                         </div>
                     </div>
