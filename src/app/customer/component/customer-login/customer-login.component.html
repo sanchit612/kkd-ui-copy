@@ -57,8 +57,14 @@
     <div class="modal-content">
           <div class="card shadow">
             <div class="card-body">
+                <div *ngIf="select==1">
               <h5 class="card-title"><b>Invalid Credentials!</b></h5>
               <p class="card-text">Try Login Again....</p>
+              </div>
+              <div *ngIf="select==2">
+                  <h5 class="card-title"><b>Server Down!</b></h5>
+                  <p class="card-text">Please Try Later......</p>
+                  </div>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
     </div>

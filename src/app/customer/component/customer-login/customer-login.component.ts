@@ -16,6 +16,7 @@ export class CustomerLoginComponent implements OnInit {
 	mobileNo:String;
 	password:String;
 	newPassword:String;
+	select : any=0;
 
 	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) { 
 		this.rForm = fb.group({
@@ -34,16 +35,18 @@ export class CustomerLoginComponent implements OnInit {
 		}
 
 		this.registrationService.loginCustomer(customerCredentials).subscribe((res) =>{
-			alert("Successfully loggedin");
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdCustId",res.results.kkdCustId);
 			this.router.navigate(['/customer/homePage']);
 		}, (err) =>{
 			if(err.status==401){
+				this.select=2;
 				this.myModal.nativeElement.click();
 			}
 			else{
-				alert("Server down");
+				this.select=3;
+				this.myModal.nativeElement.click();
+				
 			}
 		})
 	}

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CustomerRegisterComponent implements OnInit {
 	@ViewChild('myModal') myModal;
-	@ViewChild('myModal1') myModal1;
+	
 	rForm: FormGroup;
 	post:any;   
 	mobileNo:String;
@@ -20,6 +20,7 @@ export class CustomerRegisterComponent implements OnInit {
 	hideVar:boolean=false;
 	customerToRegister;
 	otpForm: FormGroup;
+	select : any=0;
 
 	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) {
 		this.rForm = fb.group({
@@ -80,14 +81,16 @@ export class CustomerRegisterComponent implements OnInit {
 					localStorage.setItem("kkdCustId",res.results.kkdCustId);
 					this.router.navigate(['customer/homePage']);
 				}, (err) =>{
-						alert("Already registered")
+						this.select=1;
+						this.myModal.nativeElement.click();
 				})
 			}
 			else{
-				alert("wrong otp");
-				this.myModal1.nativeElement.click();
+				this.select=2;
+				this.myModal.nativeElement.click();
 			}
 		}, (err) =>{
-			alert("wrong otp");
+			this.select=3;
+			this.myModal.nativeElement.click();
 	})}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 import { RegistrationLoginService } from '../../registration-login-services/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 	providers:[ RegistrationLoginService ]
 })
 export class ForgetPasswordComponent implements OnInit {
-
+	@ViewChild('myModal') myModal;
+	select : any=0;
 	newPasswordForm: FormGroup;
 	numberForm: FormGroup;
 	otpForm: FormGroup;
@@ -21,6 +22,7 @@ export class ForgetPasswordComponent implements OnInit {
 	hideVar:boolean=false;
 	hideVar2:boolean=false;
 	hideVar3:boolean=false;
+
 
 	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) { 
 		this.newPasswordForm = fb.group({
@@ -77,14 +79,17 @@ export class ForgetPasswordComponent implements OnInit {
 				this.hideVar3=true;
 			}
 			else{
-				alert("wrong otp")
+				this.select=1;
+				this.myModal.nativeElement.click();
 			}
 		}, (err) =>{
 			if(err.status=401){
-				alert("Invalid otp")
+				this.select=2;
+				this.myModal.nativeElement.click();
 			}
 			else{
-				alert("Server down")
+				this.select=3;
+				this.myModal.nativeElement.click();
 			}
 		})
 					}
@@ -96,12 +101,20 @@ export class ForgetPasswordComponent implements OnInit {
 						}
 
 						this.registrationService.forgetPassword(customerNewCredentials).subscribe((res) =>{
-							alert("Successfully changed");
+							
 							localStorage.setItem("token",res.results.token);
 							localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 							this.router.navigate(['/customer/homePage']);
 						}, (err) =>{
-							alert("conflict");
+							this.select=5;
+				this.myModal.nativeElement.click();
 						})
+						this.modalOpen();
 					}
-				}
+				
+modalOpen()
+{
+	this.select=4;
+	this.myModal.nativeElement.click();	
+}
+}
