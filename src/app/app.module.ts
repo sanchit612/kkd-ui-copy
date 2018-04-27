@@ -19,6 +19,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CommonHeaderComponent } from './shared/common-header/common-header.component';
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 
@@ -36,7 +37,8 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
-  CommonHeaderComponent,
+  CommonHeaderComponent
+
   ],
   imports: [
   BrowserModule,

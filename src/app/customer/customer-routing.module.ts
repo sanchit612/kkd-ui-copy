@@ -8,7 +8,7 @@ import { CustomerHomePageComponent } from './component/customer-home-page/custom
 import { CustomerAddressBookComponent } from './component/customer-my-account/customer-address-book/customer-address-book.component';
 import { CustomerCurrentOrderComponent } from './component/customer-my-account/customer-current-order/customer-current-order.component';
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
-import { ForgetPasswordComponent } from './component/forget-password/forget-password.component'
+import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { CustomerAddAddressComponent } from './component/customer-my-account/customer-address-book/customer-add-address/customer-add-address.component';
 
 const routes: Routes = [
