@@ -1,7 +1,8 @@
-import { Component, OnInit,ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RegistrationLoginService } from '../../../customer/registration-login-services/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
 	selector: 'app-customer-register',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 	providers:[ RegistrationLoginService ]
 })
 export class CustomerRegisterComponent implements OnInit {
-	@ViewChild('myModal') myModal;
+	
 	
 	rForm: FormGroup;
 	post:any;   
@@ -81,16 +82,28 @@ export class CustomerRegisterComponent implements OnInit {
 					localStorage.setItem("kkdCustId",res.results.kkdCustId);
 					this.router.navigate(['customer/homePage']);
 				}, (err) =>{
-						this.select=1;
-						this.myModal.nativeElement.click();
+					swal({
+						type: 'error',
+						title: 'Oops...',
+						text: 'Already Registered!',
+						footer: '<b>So Directly Login......</b>',
+					})	
 				})
 			}
 			else{
-				this.select=2;
-				this.myModal.nativeElement.click();
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Wrong OTP!',
+					footer: '<b>Enter The Right OTP........</b>',
+				})
 			}
 		}, (err) =>{
-			this.select=3;
-			this.myModal.nativeElement.click();
+			swal({
+				type: 'error',
+				title: 'Oops...',
+				text: 'Server Down!',
+				footer: '<b>Please Try Later......</b>',
+			})
 	})}
 }

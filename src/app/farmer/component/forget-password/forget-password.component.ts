@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationLoginService } from '../../services/registration-login-service/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import swal from 'sweetalert2';
 
 @Component({
 	selector: 'app-forget-password',
@@ -82,10 +82,21 @@ export class ForgetPasswordComponent implements OnInit {
 			}
 			else{
 				//if otp entered is wrong
-				alert("wrong otp")
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Wrong OTP!',
+					footer: 'Enter Correct OTP......',
+				})
 			}
 		}, (err) =>{
-			alert("Server down")
+			swal({
+				type: 'error',
+				title: 'Oops...',
+				text: 'Server Down!',
+				footer: 'Please Try Later.......',
+			})
+
 		})
 			}
 
@@ -99,13 +110,24 @@ export class ForgetPasswordComponent implements OnInit {
 		}
 		//calling the service to change the credentials
 		this.registrationService.forgetPassword(farmerNewCredentials).subscribe((res) =>{
-			alert("Successfully changed");
+			swal({
+				position: 'top-end',
+				type: 'success',
+				title: 'Password Changes successfully......',
+				showConfirmButton: false,
+				timer: 1000
+			  })
 			//storing the token and farmer id
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
-			console.log(err)
+			swal({
+				type: 'error',
+				title: 'Oops...',
+				text: 'Conflict!',
+				footer: 'Error In Changing password......',
+			})
 		})
 	}
 

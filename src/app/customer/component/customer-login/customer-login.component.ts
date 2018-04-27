@@ -1,7 +1,8 @@
-import { Component, OnInit ,Output, EventEmitter , Input,ViewChild} from '@angular/core';
+import { Component, OnInit ,Output, EventEmitter , Input} from '@angular/core';
 import { RegistrationLoginService } from '../../registration-login-services/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-login',
@@ -10,7 +11,6 @@ import { Router } from '@angular/router';
   providers:[RegistrationLoginService],
 })
 export class CustomerLoginComponent implements OnInit {
-	@ViewChild('myModal') myModal;
 	rForm: FormGroup;
 	post:any;   
 	mobileNo:String;
@@ -40,12 +40,20 @@ export class CustomerLoginComponent implements OnInit {
 			this.router.navigate(['/customer/homePage']);
 		}, (err) =>{
 			if(err.status==401){
-				this.select=2;
-				this.myModal.nativeElement.click();
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Invalid Credentials!',
+					footer: '<b>Enter Correct Credentials......</b>',
+				  })
 			}
 			else{
-				this.select=3;
-				this.myModal.nativeElement.click();
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Server down',
+					footer: '<b>Try Again Later......</b>',
+				  })
 				
 			}
 		})
