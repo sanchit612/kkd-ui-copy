@@ -3,7 +3,7 @@ body {
     overflow-x: hidden !important;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
     body {
         overflow-x: hidden !important;
     }
