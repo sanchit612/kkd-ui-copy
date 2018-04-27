@@ -39,6 +39,9 @@
 					<div *ngIf="rForm.controls['description'].hasError('required')">
 						description is required!
 					</div>
+					<div class="valid-feedback">
+						Looks good!
+					</div>
 				</div>
 			  </div>
 
@@ -74,16 +77,16 @@
 			</div>
 		  </div>
 
-		 
+		  <div class = form-comp>
 		  <input type="checkbox" name="available" formControlName="available" value="1"> In Stock
-			
+		</div>
+
       <div class = form-comp>
 					<div class = "name">
 					<label for="exampleInputFile">
 							Upload an image
 						</label></div>
 						<input type="file" (change)="onFileSelected($event)" class="form-control-file" id="exampleInputFile">
-						<img src={{imageUrl}} alt="upload image" width:200px height:200px>
 			</div>
 
     <div class = form-comp-button>

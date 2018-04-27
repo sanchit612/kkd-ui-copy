@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
-import { ProductService } from './product.service';
+import { FarmerAddProductService } from '../../../services/farmer-add-product/farmer-add-product.service';
 
 @Component({
   selector: 'app-farmer-add-product',
   templateUrl: './farmer-add-product.component.html',
   styleUrls: ['./farmer-add-product.component.css'],
-  providers: [ ProductService ]
+  providers: [ FarmerAddProductService ]
 })
 export class FarmerAddProductComponent implements OnInit {
 
@@ -28,7 +28,7 @@ export class FarmerAddProductComponent implements OnInit {
   }
  
 
-  constructor(private productService: ProductService,private fb: FormBuilder,public router: Router) { 
+  constructor(private productService: FarmerAddProductService,private fb: FormBuilder,public router: Router) { 
     this.rForm = fb.group({
       description : [null, Validators.compose([Validators.required])],
       price : [null, Validators.compose([Validators.required])],
@@ -97,10 +97,5 @@ export class FarmerAddProductComponent implements OnInit {
         text: 'Something went wrong!',
       })
     });
-
-
-      
-  
-    
   }
 }
