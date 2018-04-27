@@ -86,10 +86,11 @@
                      </div></div></form>
   </div>
 
-        <div class="tab-pane" id="settings1" role="tabpanel">
+        <div class="tab-pane change-password" id="settings1" role="tabpanel">
                 <h1> Delete Profile </h1>
 
-                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="validateUser(rFormDeleteProfile.value)">
+                <form [formGroup]="rFormDeleteProfile" (ngSubmit)="deleteUser(rFormDeleteProfile.value)">
+
                   <div class = "card shadow">
                     <div class="form-group">
 
