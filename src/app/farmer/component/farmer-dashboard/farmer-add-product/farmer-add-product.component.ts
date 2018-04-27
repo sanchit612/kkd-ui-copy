@@ -57,18 +57,9 @@ export class FarmerAddProductComponent implements OnInit {
   }
 
   check(post){
-    //alert(this.productName);
-    //alert(post.available);
-     //alert(this.rForm.get('available'));
-    // alert(post.description);
-     //alert(post.price);
-    // alert(this.bulkPrice);
-    // alert(this.quantity);
-     //alert(this.imageUrl);
-
     this.productSubmission = {
 
-      "kkdFarmId":this.kkdFarmId,
+    "kkdFarmId":this.kkdFarmId,
     "description":post.description,
     "price":post.price,
     "bulkOrderPrice":post.bulkOrderPrice,
@@ -78,6 +69,8 @@ export class FarmerAddProductComponent implements OnInit {
     "imageUrl":this.imageUrl,
     }
     console.log(this.productSubmission)
+
+    if(post.bulkOrderPrice<=post.price){
     this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
       console.log(res);
       swal({
@@ -97,5 +90,14 @@ export class FarmerAddProductComponent implements OnInit {
         text: 'Something went wrong!',
       })
     });
+  }
+  else{
+    swal({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Bulk Order Price should be less than Product Price',
+    })
+  }
+
   }
 }
