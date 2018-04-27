@@ -37,10 +37,14 @@
             </div>
           </div>
   
-            <div class = "form-comp">
-              <div class = "name"><label for="inputScreenshot">Screenshot</label></div>
-        <input type="file" class="form-control" id="inputScreenshot">
-      </div>
+      <div class = form-comp>
+        <div class = "name">
+        <label for="inputScreenshot">
+          Screenshot
+          </label></div>
+          <input type="file" (change)="onFileSelected($event)" class="form-control-file" id="inputScreenshot">
+          <img src={{screenshotUrl}} alt="upload image" width:200px height:200px>
+    </div>
     </div>
 
     <div class ="form-comp-button">

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-//import { Product } from './product';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import swal from 'sweetalert2';
 import { ProductService } from './product.service';
 
 
@@ -24,7 +23,6 @@ export class FarmerAddProductComponent implements OnInit {
   public quantity: any;
   public productName: any;
   public available: any;
-  public url:any;
   productSubmission;
 
   ngOnInit() {
@@ -84,12 +82,22 @@ export class FarmerAddProductComponent implements OnInit {
     console.log(this.productSubmission)
     this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
       console.log(res);
-      alert("Your product has been submitted");
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Your product has been added',
+        showConfirmButton: false,
+        timer: 1500
+      })
       this.router.navigate(['farmer/viewProduct']);
 
     },(error) => {
       console.log(error)
-      alert("Product not added");
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
     });
 
 
