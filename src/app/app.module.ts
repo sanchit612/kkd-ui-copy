@@ -37,6 +37,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
+  CommonHeaderComponent
 
   ],
   imports: [
