@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ProductService } from './product.service';
-
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-farmer-add-product',
@@ -75,17 +75,8 @@ export class FarmerAddProductComponent implements OnInit {
   }
 
   check(post){
-    alert(this.productName);
-    alert(post.available);
-     //alert(this.rForm.get('available'));
-     alert(post.description);
-     alert(post.price);
-    // alert(this.bulkPrice);
-    // alert(this.quantity);
-    // alert(this.imageUrl);
 
     this.productSubmission = {
-      
 
       "kkdFarmId":this.kkdFarmId,
     "description":post.description,
@@ -99,12 +90,22 @@ export class FarmerAddProductComponent implements OnInit {
     console.log(this.productSubmission)
     this.productService.update(this.kkdFarmId,this.productSubmission).subscribe((res) => {
       console.log(res);
-      alert("Your product has been submitted");
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Your product has been added',
+        showConfirmButton: false,
+        timer: 1500
+      })
       this.router.navigate(['farmer/viewProduct']);
 
     },(error) => {
       console.log(error)
-      alert("Product not added");
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
     });
 
 
