@@ -8,7 +8,7 @@
 .zoom:hover {
     -ms-transform: scale(1.09); /* IE 9 */
     -webkit-transform: scale(1.09); /* Safari 3-8 */
-    transform: scale(1.09); 
+    transform: scale(1.09);
 }
 
 p {
@@ -29,13 +29,4 @@ hr {
 
 .card-title {
     margin: 0.1rem;
-}
-
-.alert {
-    background: #ffaaaa;
-    padding: 0px;
-    font-size: .9em;
-    margin-bottom: 0px;
-    display: inline-block;
-    animation: 2s alertAnim forwards;
 }

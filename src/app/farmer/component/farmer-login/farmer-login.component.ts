@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationLoginService } from '../../services/registration-login-service/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
 	selector: 'app-farmer-login',
@@ -33,16 +34,26 @@ export class FarmerLoginComponent implements OnInit {
 		}
 
 		this.registrationService.loginFarmer(farmerCredentials).subscribe((res) =>{
-			alert("Successfully loggedin");
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
 			if(err.status=401){
-				alert("Invalid Credentials")
+				//alert("Invalid Credentials")
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Invalid Credentials!',
+					footer: 'Enter Correct Credentials......',
+				  })
 			}
 			else{
-				alert("Server down")
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Server down',
+					footer: 'Try Again Later......',
+				  })
 			}
 		})
 	}

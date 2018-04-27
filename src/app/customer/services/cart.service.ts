@@ -42,5 +42,14 @@ updateProducts(product){
   (err)=> console.log("hi"+err)
 )
 }
+// get customer Info
+getCustomerInfo(kkdCustId:string){
+  return this.http.get(CartConfig.customerDetails+kkdCustId).
+   map(data=>
+     data.json(),
+   error=> {
+     console.log(error);
+   });
+ }
 
 }
