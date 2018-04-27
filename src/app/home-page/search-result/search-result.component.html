@@ -1,11 +1,17 @@
+<!-- This division iterater over the searchList component and binds a single item to it for display purposes -->
 <div class="container">
   <div class="row">
     <div *ngFor="let items of itemList | paginate: {itemsPerPage:6,currentPage:p}" class="col-lg-4">
       <app-search-result-list [item]="items"></app-search-result-list>
     </div>
   </div>
-  <img src="../../../assets/Body/not-found.png" alt="No Result Found" *ngIf="!resultFlag && flag">
-  <div *ngIf="!flag && !resultFlag">
+
+  <!-- Show this image after successful search happened but no data was found -->
+  <img src="../../../assets/Body/not-found.png" alt="No Result Found" *ngIf="searchFlag && !resultFlag">
+
+  <!-- Cards originally to be displayed on Home Screen -->
+  <div *ngIf="!searchFlag && !resultFlag">
+    <!-- Hide these cards when a search occurs -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4 d-flex align-items-stretch">
@@ -44,9 +50,12 @@
       </div>
     </div>
   </div>
+
+  <!-- Pagination presentation -->
   <div class="row">
     <div class="col-md-3"></div>
     <div *ngIf="flag && resultFlag" class="justify-content-center col-md-8">
+      <!--Only display pagination when successful search occurs and some data is also revovered-->
       <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </div>
     <div class="col-md-1"></div>

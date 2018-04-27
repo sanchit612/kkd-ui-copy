@@ -1,43 +1,56 @@
 <app-farmer-header></app-farmer-header>
+<div class="container" style="margin-bottom: 170px;">
+  <div class="row">
+    <div *ngFor="let order of orderList | paginate: {itemsPerPage:8,currentPage:p}" class="col-lg-3">
 
-<div class="container-section">
-	 <div class="row">
-	    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 d-flex align-items-stretch" *ngFor="let order of orderList" >
-        <div class="card my-3 ml-5">
-						<div class="card-body text-center">
-					    <h4 class="card-title">OrderId :<strong>{{order.orderId}}</strong></h4>
-					    <hr>
-					    <div class="text-area text-left">
-					      <p class="card-text"><b>customer Id: </b>{{order.kkdCustId}}</p>
-					      <p class="card-text"><b>Customer Name : </b>{{order.name}}</p>
-					      <p class="card-text"><b>Address : </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
-					      <p class="card-text"><b>Quantity : </b>{{order.quantity}}</p>
-					      <p class="card-text"><b>Amount : </b>{{order.price}}</p>
-					    </div>
-							<div class="text-left" *ngIf="order.farmerStatus=='Accept'">
+      <div class="card shadow p-2 mb-3" style="height: 20rem;">
+        <!-- Card content -->
+        <div class="card-body text-center">
+          <!-- Title -->
+          <h5 class="card-title">
+            <strong>{{order.orderId}}</strong>
+          </h5>
+          <!-- Text -->
+          <div class="text-area">
+            <p class="card-text">
+              <b>Customer Id: </b>{{order.kkdCustId}}</p>
+            <p class="card-text">
+              <b>Product Name : </b>{{order.name}}</p>
+            <p class="card-text">
+              <b>Address : </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
+            <p class="card-text">
+              <b>Quantity : </b>{{order.quantity}}</p>
+            <p class="card-text">
+              <b>Amount : </b>{{order.price}}</p>
+							<div *ngIf="order.farmerStatus=='Accept'">
 								<p class="card-text"><b>Validity Of Order : </b>{{order.validityOfOrder}}</p>
 								<p class="card-text"><b>Customer MobileNo : </b>{{order.mobileNo}}</p>
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)">
-									Delivered
-								</button>
 							</div>
-							<div class="card-footer" *ngIf="order.farmerStatus==null">
-								<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal1" (click)="setData(order.orderId)">
-									Accept
-								</button>
-
-								<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal2" (click)="setData(order.orderId)">
-									Decline
-								</button>
-							</div>
-					  </div>
-
-
-
           </div>
+					<hr>
+					<span *ngIf="order.farmerStatus=='Accept'" >
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)" style="margin-top:13px;">
+							Delivered
+						</button>
+					</span>
+					<span *ngIf="order.farmerStatus==null">
+						<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal1" (click)="setData(order.orderId)">
+							Accept
+						</button>
+
+						<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal2" (click)="setData(order.orderId)">
+							Decline
+						</button>
+     			</span>
+        </div>
       </div>
-    </div>
+		</div>
+	</div>
 </div>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+
+
 
 
 

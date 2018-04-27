@@ -1,4 +1,20 @@
 <app-farmer-header></app-farmer-header>
-<p>
-  farmer-alternate-mobile works!
-</p>
+<h1>Alternate Mobile Number</h1> 
+<form [formGroup]="rForm" (ngSubmit)="updateFarmerMobile(rForm.value)">    
+  <div class = "card">
+    <div class="form-group">
+    <div class = form-comp>
+    <div class = "name"><label for="alternateMobileNumber">Enter Mobile Number</label></div>
+    <input type="number" class="form-control" id="alternateMobileNumber" placeholder="Enter Mobile Number" formControlName="alternateMobileNumber">
+    <div *ngIf="rForm.controls['alternateMobileNumber'].touched && rForm.controls['alternateMobileNumber'].invalid" class="alert">
+      <div *ngIf="rForm.controls['alternateMobileNumber'].hasError('required')">
+        Mobile Number is required!
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class = form-comp-button>
+    <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Update</button>
+    </div>
+  </div>
+</form>

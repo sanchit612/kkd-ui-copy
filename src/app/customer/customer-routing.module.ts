@@ -6,11 +6,10 @@ import { CustomerMyAccountComponent } from './component/customer-my-account/cust
 import { CustomerMyCartComponent } from './component/customer-my-cart/customer-my-cart.component';
 import { CustomerHomePageComponent } from './component/customer-home-page/customer-home-page.component';
 import { CustomerAddressBookComponent } from './component/customer-my-account/customer-address-book/customer-address-book.component';
-import { CustomerBankDetailsComponent } from './component/customer-my-account/customer-bank-details/customer-bank-details.component';
 import { CustomerCurrentOrderComponent } from './component/customer-my-account/customer-current-order/customer-current-order.component';
 import { CustomerPreviousOrderComponent } from './component/customer-my-account/customer-previous-order/customer-previous-order.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component'
-
+import { CustomerAddAddressComponent } from './component/customer-my-account/customer-address-book/customer-add-address/customer-add-address.component';
 
 const routes: Routes = [
     { path:'customer/login',component:CustomerLoginComponent },
@@ -19,10 +18,9 @@ const routes: Routes = [
     { path:'customer/homePage',component:CustomerHomePageComponent },
     { path:'customer/myAccount',component:CustomerMyAccountComponent },
     { path:'customer/addressBook',component:CustomerAddressBookComponent },
-    { path:'customer/bankDetails',component:CustomerBankDetailsComponent },
     { path:'customer/currentOrder',component:CustomerCurrentOrderComponent },
     { path:'customer/previousOrder',component:CustomerPreviousOrderComponent },
-
+    { path:'customer/addressBook/addAddress',component:CustomerAddAddressComponent },
     { path:'customer/forgetPassword',component:ForgetPasswordComponent},
 
   ];

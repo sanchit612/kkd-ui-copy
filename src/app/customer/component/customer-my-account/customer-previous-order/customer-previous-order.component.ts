@@ -15,13 +15,15 @@ export class CustomerPreviousOrderComponent implements OnInit {
 
    getdata(){
    this.customerAuthenticationService.getPreviousOrders(this.customerId).subscribe(results=>{
-     console.log(results)
+     console.log("results"+results)
    this.previousOrders=results;
    },error=> {
      console.log(error);
    });
  }
    ngOnInit() {
+    this.customerAuthenticationService.changeCustomerId("kkdcust3001");
+
     this.customerId = CustomerAuthenticationService.cus;
      this.getdata();
 

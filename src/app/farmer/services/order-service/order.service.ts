@@ -18,31 +18,30 @@ export class OrderService {
    (error: any)=>this.handleError(error));
    }
 
-   //getting current list of orders according to farmer id
-   getCurrentOrderListFromFarmerId(farmerId) {
+  //getting current list of orders according to farmer id
+  getCurrentOrderListFromFarmerId(farmerId) {
      return this.http.get(microServicesUrl.orderCurrentStatus+farmerId)
       .map(data => data.json(),
     (error: any)=>this.handleError(error));
-    }
+  }
 
-    //Updating values of order details for delivery
-    updateDeliveryDetails(updateValues) {
+  //Updating values of order details for delivery
+  updateDeliveryDetails(updateValues) {
       return this.http.put(microServicesUrl.orderUpdate,updateValues,{headers:this.headers})
        .map(data => data.json(),
      (error: any)=>this.handleError(error));
-     }
+  }
 
-     //Updating values of order details for decline reason
-     updateDeclineReason(updatedReason) {
+  //Updating values of order details for decline reason
+  updateDeclineReason(updatedReason) {
        return this.http.put(microServicesUrl.orderUpdate,updatedReason,{headers:this.headers})
         .map(data => data.json(),
-      (error: any)=>this.handleError(error));
-      }
+    (error: any)=>this.handleError(error));
+  }
 
-
-   //Error handler
-   private handleError(error: Response){
+  //Error handler
+  private handleError(error: Response){
      return Observable.throw(error.statusText);
-   }
+  }
 
 }

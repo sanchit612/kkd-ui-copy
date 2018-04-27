@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerHeaderService } from '../../../services/farmer-header/farmer-header.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-farmer-add-address',
   templateUrl: './farmer-add-address.component.html',
@@ -8,9 +10,37 @@ import { FarmerHeaderService } from '../../../services/farmer-header/farmer-head
 })
 export class FarmerAddAddressComponent implements OnInit {
 
-  constructor() { }
-
+  public searchedFarmerId: string="KKDFARM1000";
+  public farmerMobileNumber : string;
+  rForm: FormGroup;
+  public details;
+  constructor(private farmerHeaderService : FarmerHeaderService,private fb: FormBuilder) {
+    this.rForm = fb.group({
+      addressLine : [null, Validators.compose([Validators.required])],
+      city : [null, Validators.compose([Validators.required])],
+      district : [null, Validators.compose([Validators.required])],
+      state : [null, Validators.compose([Validators.required])],
+      pincode : [null, Validators.compose([Validators.required])]
+  })
+   }
+  updateFarmerAddress(post){
+    this.details = {
+      "addressLine" : post.addressLine,
+      "city" : post.city,
+      "district" : post.district,
+      "state" : post.state,
+      "pincode" : post.pincode
+    }
+    this.farmerHeaderService.getFarmerName(this.searchedFarmerId)
+    .subscribe((res) =>{
+    this.farmerHeaderService.updateFarmerAddress(res.mobileNo, this.details)
+    .subscribe((res)=>{
+      alert("Successfully Updated");
+    },(error)=>{
+    });
+  },(error) =>{
+  });
+}
   ngOnInit() {
   }
-
 }
