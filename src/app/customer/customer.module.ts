@@ -18,7 +18,7 @@ import { NgxPaginationModule } from 'ngx-pagination'
 import { IonRangeSliderModule } from 'ng2-ion-range-slider';
 import { CustomerCommonHeaderComponent } from './component/customer-common-header/customer-common-header.component';
 import { CustomerAddAddressComponent } from './component/customer-my-account/customer-address-book/customer-add-address/customer-add-address.component';
-
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 @NgModule({
   imports: [
@@ -28,6 +28,13 @@ import { CustomerAddAddressComponent } from './component/customer-my-account/cus
     ReactiveFormsModule,
     NgxPaginationModule,
     IonRangeSliderModule,
+    SweetAlert2Module,
+    SweetAlert2Module.forRoot({
+      buttonsStyling: false,
+      customClass: 'modal-content',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn'
+  })
   ],
   declarations: [CustomerLoginComponent, CustomerRegisterComponent, CustomerHeaderComponent, CustomerMyCartComponent, CustomerHomePageComponent, CustomerMyAccountComponent, CustomerAddressBookComponent, CustomerCurrentOrderComponent, CustomerPreviousOrderComponent, CustomerComponent, ForgetPasswordComponent,CustomerCommonHeaderComponent, CustomerAddAddressComponent]
 

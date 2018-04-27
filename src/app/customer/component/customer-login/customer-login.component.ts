@@ -1,7 +1,8 @@
-import { Component, OnInit ,Output, EventEmitter , Input,ViewChild} from '@angular/core';
+import { Component, OnInit ,Output, EventEmitter , Input} from '@angular/core';
 import { RegistrationLoginService } from '../../registration-login-services/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-login',
@@ -10,12 +11,12 @@ import { Router } from '@angular/router';
   providers:[RegistrationLoginService],
 })
 export class CustomerLoginComponent implements OnInit {
-	@ViewChild('myModal') myModal;
 	rForm: FormGroup;
 	post:any;   
 	mobileNo:String;
 	password:String;
 	newPassword:String;
+	select : any=0;
 
 	constructor(private registrationService: RegistrationLoginService,private fb: FormBuilder,public router: Router) { 
 		this.rForm = fb.group({
@@ -34,16 +35,26 @@ export class CustomerLoginComponent implements OnInit {
 		}
 
 		this.registrationService.loginCustomer(customerCredentials).subscribe((res) =>{
-			alert("Successfully loggedin");
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdCustId",res.results.kkdCustId);
 			this.router.navigate(['/customer/homePage']);
 		}, (err) =>{
 			if(err.status==401){
-				this.myModal.nativeElement.click();
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Invalid Credentials!',
+					footer: '<b>Enter Correct Credentials......</b>',
+				  })
 			}
 			else{
-				alert("Server down");
+				swal({
+					type: 'error',
+					title: 'Oops...',
+					text: 'Server down',
+					footer: '<b>Try Again Later......</b>',
+				  })
+				
 			}
 		})
 	}

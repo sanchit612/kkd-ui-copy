@@ -2,6 +2,8 @@ import { Component, OnInit,Input } from '@angular/core';
 import { RegistrationLoginService } from '../../../services/registration-login-service/registration-login.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
+
 @Component({
 	selector: 'app-farmer-register',
 	templateUrl: './farmer-register.component.html',
@@ -49,12 +51,16 @@ export class FarmerRegisterComponent implements OnInit {
 			'cities': post.cities
 		}
 		this.registrationService.addFarmer(farmerToRegister).subscribe((res) =>{
-			alert("Successfully registered");
 			localStorage.setItem("token",res.results.token);
 			localStorage.setItem("kkdFarmId",res.results.kkdFarmId);
 			this.router.navigate(['/farmer/dashboard']);
 		}, (err) =>{
-			alert("already registered")
+			swal({
+				type: 'error',
+				title: 'Oops...',
+				text: 'Already Registered!',
+				footer: 'So Directly Login......',
+			})
 		})
 	}
 }

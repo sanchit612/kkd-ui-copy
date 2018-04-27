@@ -34,17 +34,30 @@ export class SupportComponent implements OnInit {
   
   }
 
+  onFileSelected(event: any){
+    console.log(event);
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = (event:any) => {
+        this.screenshotUrl = event.target.result      }
+  
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+
   submitIssue(post) {
     this.issueSubmission = {
       "issueTitle" : post.issueTitle,
       "description" : post.issueDescription,
       "emailId" : post.inputEmail,
-      "screenShoturl" : post.screenshotUrl
+      "screenShoturl" : this.screenshotUrl
     }
     console.log(this.issueSubmission)
     this.supportService.addNewIssue(this.issueSubmission).subscribe((res) => {
 
-      alert("Your Isssue has been submitted");
+      alert("Your Issue has been submitted");
 
     },(error) => {
       console.log(error)

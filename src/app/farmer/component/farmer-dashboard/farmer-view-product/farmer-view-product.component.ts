@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerViewProductService } from '../../../services/farmer-view-product/farmer-view-product.service'
 import { viewProductServiceUrl } from '../../../config/viewProductServiceUrl.config';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 
 @Component({
@@ -15,11 +16,22 @@ export class FarmerViewProductComponent implements OnInit {
 
   public products : any = [];
   public productId : any;
-  public prod : any = [];
   //public id : any;
+  rForm: FormGroup;
+  post:any;
+  public kkdFarmId: any;
+  public imageUrl:any;
+  public description: any;
+  public price: any;
+  public bulkOrderPrice: any;
+  public quantity: any;
+  public productName: any;
+  public available: any;
+  public cities: any = [];
+  productSubmission;
 
   public getProducts() {
-    this.farmerViewProductService.getAllProducts(viewProductServiceUrl.viewProductUrl).subscribe((res)=>{
+    this.farmerViewProductService.getAllProducts().subscribe((res)=>{
       this.products=res;
     },error=>this.handleError(error))
   }
@@ -49,21 +61,59 @@ export class FarmerViewProductComponent implements OnInit {
 
   public deleteProduct() {
     //alert("here****");
-    this.farmerViewProductService.deleteParticularProduct(viewProductServiceUrl.deleteProductUrl+this.productId).subscribe((res)=>{
-      this.ngOnInit();
+    this.farmerViewProductService.deleteParticularProduct(this.productId).subscribe((res)=>{
+      this.getProducts();
     },error=>this.handleError(error))
   }
 
-  public updateId(id : any) {
-    for (var i=0; i < this.products.length; i++) {
-      if (this.products[i].productId === id) {
-        this.prod = this.products[i];
-          console.log(this.products[i]);
-         // return this.products[i];
-      }
+  public updateProduct(product : any) {
+    this.productId = product.productId;
+    this.kkdFarmId = product.kkdFarmId;
+    this.imageUrl = product.imageUrl;
+    this.productName = product.productName;
+    this.description = product.description;
+    this.price = product.price;
+    this.bulkOrderPrice = product.bulkOrderPrice;
+    this.quantity = product.quantity;
+    this.available = product.available;
+    this.cities = product.cities;
   }
+
+  public updateData(){
+
+    this.productSubmission = {
+    "productId":this.productId,
+    "kkdFarmId":this.kkdFarmId,
+    "imageUrl":this.imageUrl,
+    "productName":this.productName,
+    "description":this.description,
+    "price":this.price,
+    "bulkOrderPrice":this.bulkOrderPrice,
+    "quantity":this.quantity,
+    "available":this.available,
+    "cities":this.cities
+    }
+    console.log(this.productSubmission);
+    this.farmerViewProductService.update(this.productSubmission).subscribe((res) => {
+      console.log(res);
+      swal({
+        position: 'top-end',
+        type: 'success',
+        title: 'Your product is successfully updated',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      this.getProducts();
+    },(error) => {
+      console.log(error);
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
+    });
   }
- 
+
   ngOnInit() {
 
     this.getProducts();
