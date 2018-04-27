@@ -3,6 +3,7 @@
  import { Observable } from 'rxjs/Observable';
  import 'rxjs/add/operator/map';
  import { App } from '../config/app.config';
+ import { UserDetails } from '../config/user-details.config';
 
 @Injectable()
 export class CustomerHeaderService {
@@ -19,5 +20,11 @@ export class CustomerHeaderService {
     }
     private handleError(error: Response){
       return Observable.throw(error.statusText);
+    }
+    updateCustomerAddress(searchedCustomer,updatedInfo){
+      return this.http.put(UserDetails.updatePasswordUrl+searchedCustomer,updatedInfo,{headers: this.headers})
+      .map(data => 
+        data.json(),
+      (error: any)=>this.handleError(error));
     }
   }

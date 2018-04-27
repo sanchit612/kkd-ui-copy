@@ -15,7 +15,7 @@
             <p class="card-text">
               <b>Customer Id: </b>{{order.kkdCustId}}</p>
             <p class="card-text">
-              <b>Customer Name : </b>{{order.name}}</p>
+              <b>Product Name : </b>{{order.name}}</p>
             <p class="card-text">
               <b>Address : </b>{{order.address.addressLine}} {{order.address.city}} {{order.address.state}} {{order.address.district}} {{order.address.pincode}}</p>
             <p class="card-text">
@@ -28,8 +28,8 @@
 							</div>
           </div>
 					<hr>
-					<span *ngIf="order.farmerStatus=='Accept'">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)">
+					<span *ngIf="order.farmerStatus=='Accept'" >
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3" (click)="setDataOtp(order.orderId,order.otp)" style="margin-top:13px;">
 							Delivered
 						</button>
 					</span>

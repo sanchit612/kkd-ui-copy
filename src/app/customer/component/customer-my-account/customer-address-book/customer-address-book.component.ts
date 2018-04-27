@@ -12,7 +12,6 @@ export class CustomerAddressBookComponent implements OnInit {
   constructor(private customerAuthenticationService : CustomerAuthenticationService) { }
   handleSuccess(data){
 this.details=data.addresses;
-console.log(data.addresses);
   }
 searchDetails(){
   return this.customerAuthenticationService.getDetails(this.customerId).subscribe(

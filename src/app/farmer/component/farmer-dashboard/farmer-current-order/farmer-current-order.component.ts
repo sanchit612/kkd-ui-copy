@@ -23,13 +23,18 @@ export class FarmerCurrentOrderComponent implements OnInit {
 
 
   ngOnInit() {
+      this.loadData();
+  }
+
+  //Loading data on initialization
+  loadData(){
     let d=new Date();
     //this.date=d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate();
     this.date=d;
     //code to get the list of orders according to farmer id
     this.orderService.getCurrentOrderListFromFarmerId("kkdfarm1001").subscribe((res) =>{
-      this.orderList = res;
-    }, (error) =>{})
+    this.orderList = res;
+  }, (error) =>{})
   }
 
   //updating delivery details of order id
@@ -41,7 +46,8 @@ export class FarmerCurrentOrderComponent implements OnInit {
       'farmerStatus':"Accept",
     }
     this.orderService.updateDeliveryDetails(updateValues).subscribe((res) =>{
-    }, (error) =>{})
+      this.loadData();
+    }, (error) =>{this.loadData();})
   }
 
   //setting orderId for particular order
@@ -66,7 +72,8 @@ export class FarmerCurrentOrderComponent implements OnInit {
       'orderType':"Previous",
     }
     this.orderService.updateDeclineReason(updatedReason).subscribe((res) =>{
-    }, (error) =>{})
+        this.loadData();
+    }, (error) =>{this.loadData();})
   }
 
   //checking OTP For order delivery
@@ -88,6 +95,17 @@ export class FarmerCurrentOrderComponent implements OnInit {
   //Updating the Otp Status
   public otpStatus(){
     console.log(this.otpVerified);
+    var updatedDelivery={
+      'orderId':this.orderId,
+      'orderStatus':"Delivered",
+      'orderType':"Previous",
+      'otpVerified':true
+    }
+    this.orderService.updateDeliveryDetails(updatedDelivery).subscribe((res) =>{
+      this.loadData();
+    }, (error) =>{
+      this.loadData();
+    })
   }
 
 }
