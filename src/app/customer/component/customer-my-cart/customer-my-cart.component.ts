@@ -10,11 +10,20 @@ import { CartService } from "../../services/cart.service";
 export class CustomerMyCartComponent implements OnInit {
   constructor(private cartService: CartService) {}
   public items = [];
-  x: number;
+  public x: number;
+  public customerInfo:object={
+  };
 
   @Input() kkdCustId:string;
 
   ngOnInit() {
+    this.kkdCustId="KKDCUST2001";
+    this.cartService.getCustomerInfo(this.kkdCustId).subscribe(
+      (res)=> {
+        this.customerInfo=res;
+        console.log(this.customerInfo);},
+      (err)=> console.log(err)
+    )
     this.getCartItems();
   }
 
@@ -44,24 +53,20 @@ export class CustomerMyCartComponent implements OnInit {
   orders = [];
   convertOrder() {
     this.orders = this.items.map(ele => {
+      let d=new Date();
       ele["kkdCustId"]=ele.custId;
-      ele["kkdFarmId"]=ele.kkkdFarmID;
-      ele["orderId"] = "ORDER101";
-      ele["name"]="xyz";
-      ele["farmerStatus"] = "active";
-      ele["expectedDate"] = "9 APRIL 2018";
-      ele["mobileNo"] = "9993894794";
-      ele["transactionId"] = "COD";
+      ele["kkdFarmId"]=ele.kkdFarmID;
+      ele["name"]=ele.productName;
+      ele["address"] = this.customerInfo["primaryAddress"];
+      ele["mobileNo"]=this.customerInfo["mobileNo"];
       ele["totalAmount"] = ele.quantity*ele.productPrice;
-      ele["orderStatus"]="received";
-      ele["orderType"] = "bulk";
-      ele["otp"] = "5799";
-      ele["otpVerified"] = false;
+      ele["orderType"] = "Current";
+      ele["orderPlacingDate"]=d.getFullYear()+'-0'+(d.getMonth()+1)+'-'+d.getDate();
       this.cartService
         .postOrder(ele)
-        .subscribe(res => console.log(ele), err => console.log("error" + err));
+        .subscribe(res => console.log(ele), err => console.log(err));
     });
-  }
+}
 
   checkout() {
     this.convertOrder();
