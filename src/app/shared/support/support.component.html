@@ -1,9 +1,8 @@
-<app-common-header></app-common-header>
-
-<h1> Support </h1>
-
+<div class="mt-100">
+  <h1> Support </h1>
+</div>
 <form [formGroup]="rForm" (ngSubmit)="submitIssue(rForm.value)">
-    
+
   <div class = "card shadow">
     <div class="form-group">
 
@@ -36,11 +35,10 @@
                 </div>
             </div>
           </div>
-  
+
             <div class = "form-comp">
               <div class = "name"><label for="inputScreenshot">Screenshot</label></div>
         <input type="file" class="form-control" id="inputScreenshot">
-      </div>
     </div>
 
     <div class ="form-comp-button">
@@ -48,4 +46,5 @@
       <button type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">Submit Issue</button>
    </div>
    </div>
+  </div>
 </form>
