@@ -11,7 +11,7 @@
 export class CustomerHeaderComponent implements OnInit {
 
   @Output() success = new EventEmitter<any>();
- 	public searchedCustomer: string="KKDCUST2004";
+ 	public searchedCustomer: string="KKDCUST2000";
  	public customerName : string;
 
 
