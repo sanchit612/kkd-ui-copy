@@ -5,8 +5,10 @@
 
     </div>
     <div class="col-md-6">
-      <input  class="input-lg col-md-8" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
-      <button class="btn-primary" (click)='searchProduct()'>Search</button>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search" [(ngModel)]="searchInput"/>
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)='searchProduct()'><i class="fas fa-search"></i></button>
+    </form>
     </div>
     <div class="col-md-3">
     </div>
@@ -69,27 +71,34 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4" *ngFor="let item of products | paginate:{itemsPerPage:6,currentPage:p}">
-              <div class="card shadow p-3 mb-5">
-                  <!-- Card image -->
-                  <div class="view overlay">
-                    <img class="card-img-top" src={{item.imageUrl}} alt="Search Result Image">
-                  </div>
-                  <!-- Card content -->
-                  <div class="card-body text-center">
-                    <!-- Title -->
-                    <h4 class="card-title"><strong>{{item.productName}}</strong></h4>
-                    <hr>
-                    <!-- Text -->
-                    <div class="text-area">
-                      <p class="card-text"><b>FarmerId: </b>{{item.kkdFarmId}}</p>
-                      <p class="card-text"><b>Price: </b>{{item.price}}</p>
-                      <p class="card-text"><b>Bulk Price: </b>{{item.bulkOrderPrice}}</p>
-                      <p class="card-text"><b>Quantity: </b>{{item.quantity}}</p>
-                      <p class="card-text"><b>Description: </b>{{item.description}}</p>
-                    </div>
-                    <button type="button" class="btn btn-success" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">Add to Bag</button>
-                  </div>
+            <div class="card shadow p-2 mb-3" style="height: 26rem;">
+              <!-- Card image -->
+              <div class="view overlay zoom">
+                <img class="card-img-top" src="{{item.imageUrl}}" alt="Product Image">
+              </div>
+              <!-- Card content -->
+              <div class="card-body text-center">
+                <!-- Title -->
+                <h5 class="card-title">
+                  <strong>{{item.productName}}</strong>
+                </h5>
+                <!-- Text -->
+                <div class="text-area">
+                  <p class="card-text">
+                    <b>Description: </b>{{item.description}}</p>
+                  <p class="card-text">
+                    <b>Price: </b>{{item.price}}/kg.</p>
+                  <p class="card-text">
+                    <b>Bulk Order Price: </b>{{item.bulkOrderPrice}}/kg.</p>
+                  <p class="card-text">
+                    <b>Quantity: </b>{{item.quantity}} Kg</p>
                 </div>
+                <hr>
+                <span>
+                    <button type="button" class="btn btn-success" (click)="addToCart(item)" data-toggle="modal" data-target="#exampleModal1">Add to Bag</button>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
