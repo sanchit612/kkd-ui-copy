@@ -20,7 +20,6 @@ import { CommonHeaderComponent } from './shared/common-header/common-header.comp
 import { HttpModule } from '@angular/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { CustomerAddAddressComponent } from './src/app/customer/component/customer-my-account/customer-address-book/customer-add-address/customer-add-address.component';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 
@@ -38,8 +37,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
   PoliciesComponent,
   ConnectUsComponent,
   HomePageComponent,
-  CommonHeaderComponent,
-  CustomerAddAddressComponent
+  CommonHeaderComponent
   ],
   imports: [
   BrowserModule,
